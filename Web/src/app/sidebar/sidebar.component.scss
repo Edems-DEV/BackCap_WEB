@@ -1,0 +1,60 @@
+$text-primary: #ffffff;
+$text-secondary: #a4b1cd;
+$primary: #9fef00;
+$bg-backgroud: #141d2b;
+$bg-card: #1a2332;
+$bg-field: #111927;
+$bg-sep: #18202f;
+$blue: #0086ff;
+$yellow: #ffaf00;
+$purple: #9f00ff;
+$red: #ff3e3e;
+$green: #2ee7b6;
+
+.sidebar {
+  background-color: $bg-field;
+  width: 80px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-item {
+  display: block;
+  background-color: $bg-card;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47px;
+  height: 47px;
+  font-size: 24px;
+  margin: 10px auto 10px;
+
+  path {
+    fill: $text-secondary;
+  }
+}
+
+.sidebar-item:hover {
+  background-color: #263343;
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $bg-sep;
+}
+
+.sidebar-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 5px;
+  left: 25px;
+}
