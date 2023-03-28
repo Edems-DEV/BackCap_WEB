@@ -6,6 +6,7 @@
 $text-primary: #ffffff;
 $text-secondary: #a4b1cd;
 $primary: #9fef00;
+$secondary: $primary;
 $bg-backgroud: #141d2b;
 $bg-card: #1a2332;
 $bg-field: #111927;
@@ -17,6 +18,18 @@ $red: #ff3e3e;
 $green: #2ee7b6;
 
 /*doesnt work :|*/
+
+// Override the default color variables with the custom ones
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $yellow,
+  "danger": $red,
+  "light": $light,
+  "dark": $dark,
+);
 
 html {
   background-color: $bg-backgroud;
