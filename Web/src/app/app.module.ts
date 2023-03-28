@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarComponent } from './Components/sidebar/sidebar.component';
+import { CardLoginComponent } from './Pages/LogIn/card-login/card-login.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent],
+  declarations: [AppComponent, SidebarComponent, CardLoginComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
