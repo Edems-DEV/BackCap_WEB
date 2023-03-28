@@ -1,4 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
+
+$text-primary: #ffffff;
+$text-secondary: #a4b1cd;
+$primary: #9fef00;
+$bg-backgroud: #141d2b;
+$bg-card: #1a2332;
+$bg-field: #111927;
+$bg-sep: #18202f;
+$blue: #0086ff;
+$yellow: #ffaf00;
+$purple: #9f00ff;
+$red: #ff3e3e;
+$green: #2ee7b6;
+
+/*doesnt work :|*/
+
+html {
+  background-color: $bg-backgroud;
+}
