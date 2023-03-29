@@ -1,0 +1,19 @@
+#a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 30px;
+  gap: 12px;
+
+  width: 227px;
+  height: 136px;
+
+  border-radius: 8px;
+}
+
+#a:hover {
+  $my-primary: #9fef00; //TODO: import from main `styles.scss`
+  color: $my-primary;
+  border: 1px solid $my-primary;
+}
