@@ -1,12 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";
-
 $text-primary: #ffffff;
 $text-secondary: #a4b1cd;
-$primary: #9fef00;
-$secondary: $primary;
+$my-primary: #9fef00;
+$my-secondary: $text-secondary;
 $bg-backgroud: #141d2b;
 $bg-card: #1a2332;
 $bg-field: #111927;
@@ -17,19 +12,33 @@ $purple: #9f00ff;
 $red: #ff3e3e;
 $green: #2ee7b6;
 
-/*doesnt work :|*/
+//$white: $bg-backgroud;
 
-// Override the default color variables with the custom ones
-$theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $yellow,
-  "danger": $red,
-  "light": $light,
-  "dark": $dark,
-);
+$body-color: $text-secondary;
+$secondary-color: $text-secondary;
+$tertiary-color: $text-secondary;
+$emphasis-color: $text-primary;
+$border-color: $bg-sep;
+$primary: $my-primary;
+
+$success: $my-primary;
+$danger: $red;
+$warning: $yellow;
+$info: $blue;
+$light: $bg-card;
+$dark: $bg-field;
+
+$secondary: $my-secondary;
+$body-bg: $bg-backgroud;
+
+$input-bg: $bg-field;
+$input-border-color: $bg-sep;
+$form-check-input-checked-color: $bg-field;
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
 
 html {
   background-color: $bg-backgroud;
