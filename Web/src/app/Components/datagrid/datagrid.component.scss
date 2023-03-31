@@ -1,0 +1,51 @@
+//----------------
+$bg-backgroud: #141d2b;
+$bg-card: #1a2332;
+$bg-field: #111927;
+$bg-sep: #18202f;
+//---------------
+$blue: #0086ff;
+$yellow: #ffaf00;
+$purple: #9f00ff;
+$red: #ff3e3e;
+$mint: #2ee7b6;
+$green: #9fef00;
+//---------------
+$text-primary: #ffffff;
+$text-secondary: #a4b1cd;
+$primary: $green;
+$secondary: $text-secondary;
+//@import "src/app/styles.scss";
+
+//badge text-bg-primary
+.chip {
+  padding: 0.35em 0.65em;
+  border-radius: 5px;
+  font-size: 0.75em;
+}
+
+.chip-primary {
+  color: $primary;
+  background-color: rgba($primary, 0.2);
+}
+.chip-blue {
+  color: $blue;
+  background-color: rgba($blue, 0.2);
+}
+
+.chip-waiting {
+  color: $purple;
+  background-color: rgba($purple, 0.2);
+}
+.chip-running {
+  color: $yellow;
+  background-color: rgba($yellow, 0.2);
+}
+.chip-success {
+  color: $green;
+  background-color: rgba($green, 0.2);
+}
+.chip-failure {
+  color: $red;
+  background-color: rgba($red, 0.2);
+}
