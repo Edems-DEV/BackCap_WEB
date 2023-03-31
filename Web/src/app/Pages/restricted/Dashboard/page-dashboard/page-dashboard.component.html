@@ -1,1 +1,38 @@
-<p>page-dashboard works!</p>
+<!-- <div class="hstack m-5">
+  <div id="stats-pack" class="hstack gap-3">
+    <div class="vstack gap-3">
+      <app-card-stats/>
+      <app-card-stats/>
+      <app-card-stats/>
+    </div>
+    <div class="vstack gap-3">
+      <app-card-stats/>
+      <app-card-stats/>
+      <app-card-stats/>
+    </div>
+  </div>
+  <div>
+    <app-datagrid/>
+  </div>
+</div> -->
+
+<div class="parent">
+    <div class="d-flex justify-content-center">
+      <div class="hstack gap-3" id="stats-pack" >
+        <div class="vstack gap-3">
+          <app-card-stats/>
+          <app-card-stats/>
+          <app-card-stats/>
+        </div>
+        <div class="vstack gap-3">
+          <app-card-stats/>
+          <app-card-stats/>
+          <app-card-stats/>
+        </div>
+    </div>
+  </div>
+  <div class="right">
+    <!-- add Log card wrapper-->
+    <app-datagrid/>
+  </div>
+</div>
