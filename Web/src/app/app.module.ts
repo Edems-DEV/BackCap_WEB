@@ -9,9 +9,10 @@ import { CardLoginComponent } from './Pages/LogIn/card-login/card-login.componen
 import { CardStatsComponent } from './Components/card-stats/card-stats.component';
 import { DatagridComponent } from './Components/datagrid/datagrid.component';
 import { PageDashboardComponent } from './Pages/restricted/Dashboard/page-dashboard/page-dashboard.component';
+import { FormConfigComponent } from './Pages/restricted/Configs/form-config/form-config.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, CardLoginComponent, CardStatsComponent, DatagridComponent, PageDashboardComponent],
+  declarations: [AppComponent, SidebarComponent, CardLoginComponent, CardStatsComponent, DatagridComponent, PageDashboardComponent, FormConfigComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
