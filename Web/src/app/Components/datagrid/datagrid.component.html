@@ -115,11 +115,13 @@
           </ng-container>
         </td>
         <td>
-          {{ job.time_start | date : "dd.MM.yy - HH:mm" }}
+          <span>{{ job.time_start | date : "dd.MM.yy" }}</span>
+          <span> - </span>
+          <span class="text-white">{{ job.time_start | date : "HH:mm" }}</span>
           <ng-container *ngIf="job.time_end">
-            <i>=></i>
+            <i> => </i>
             <!--replece with icon-->
-            {{ job.time_end | date : "HH:mm" }}
+            <span class="text-white">{{ job.time_end | date : "HH:mm" }}</span>
           </ng-container>
         </td>
       </tr>
