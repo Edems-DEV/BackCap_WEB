@@ -7,9 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarComponent } from './Components/sidebar/sidebar.component';
 import { CardLoginComponent } from './Pages/LogIn/card-login/card-login.component';
 import { CardStatsComponent } from './Components/card-stats/card-stats.component';
+import { DatagridComponent } from './Components/datagrid/datagrid.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, CardLoginComponent, CardStatsComponent],
+  declarations: [AppComponent, SidebarComponent, CardLoginComponent, CardStatsComponent, DatagridComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
