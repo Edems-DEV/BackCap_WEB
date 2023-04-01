@@ -7,51 +7,6 @@
   <!--TABLE-->
   <table class="table table-striped">
     <ng-content></ng-content>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Status</th>
-        <th scope="col">Target</th>
-        <th scope="col">Time</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let job of jobs; index as i">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ job.name }}</td>
-        <td>
-          <span
-            class="chip mx-1"
-            [ngClass]="{
-              'chip-waiting': job.status === 'waiting',
-              'chip-running': job.status === 'running',
-              'chip-success': job.status === 'success',
-              'chip-failure': job.status === 'failed'
-            }"
-          >
-            {{ job.status }}
-          </span>
-        </td>
-        <td>
-          <ng-container *ngFor="let target of job.target">
-            <span class="chip chip-blue mx-1">
-              {{ target }}
-            </span>
-          </ng-container>
-        </td>
-        <td>
-          <span>{{ job.time_start | date : "dd.MM.yy" }}</span>
-          <span> - </span>
-          <span class="text-white">{{ job.time_start | date : "HH:mm" }}</span>
-          <ng-container *ngIf="job.time_end">
-            <i> => </i>
-            <!--replece with icon-->
-            <span class="text-white">{{ job.time_end | date : "HH:mm" }}</span>
-          </ng-container>
-        </td>
-      </tr>
-    </tbody>
   </table>
 </div>
 <!--FOOTER-->
@@ -116,3 +71,49 @@
       </tr>
     </tbody>
   </table>-->
+
+<!--
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Status</th>
+    <th scope="col">Target</th>
+    <th scope="col">Time</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let job of jobs; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ job.name }}</td>
+    <td>
+      <span
+        class="chip mx-1"
+        [ngClass]="{
+          'chip-waiting': job.status === 'waiting',
+          'chip-running': job.status === 'running',
+          'chip-success': job.status === 'success',
+          'chip-failure': job.status === 'failed'
+        }"
+      >
+        {{ job.status }}
+      </span>
+    </td>
+    <td>
+      <ng-container *ngFor="let target of job.target">
+        <span class="chip chip-blue mx-1">
+          {{ target }}
+        </span>
+      </ng-container>
+    </td>
+    <td>
+      <span>{{ job.time_start | date : "dd.MM.yy" }}</span>
+      <span> - </span>
+      <span class="text-white">{{ job.time_start | date : "HH:mm" }}</span>
+      <ng-container *ngIf="job.time_end">
+        <i> => </i>
+        <span class="text-white">{{ job.time_end | date : "HH:mm" }}</span>
+      </ng-container>
+    </td>
+  </tr>
+</tbody> -->
