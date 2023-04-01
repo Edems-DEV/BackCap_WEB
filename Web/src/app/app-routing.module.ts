@@ -11,20 +11,20 @@ import { AdminComponent } from './Pages/restricted/admin/admin.component';
 // prettier-ignore
 const routes: Routes = [
   //[Unrestricted]
-  { path: 'login', component: PageLoginComponent },
+  { title: 'BackCap - LogIn', path: 'login', component: PageLoginComponent },
   //[Restricted]
   {
     path: 'admin',
-    title: 'First component',
+    title: 'BackCap - Admin',
     component: AdminComponent,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { title: 'dashboard',path: 'dashboard',component: PageDashboardComponent,},
-      { title: 'groups', path: 'groups', component: PageGroupsComponent },
-      { title: 'machines', path: 'machines', component: PageMachinesComponent },
-      { title: 'jobs', path: 'jobs', component: PageJobsComponent },
-      { title: 'users', path: 'users', component: PageUsersComponent },
-      { title: 'configs', path: 'configs', component: PageUsersComponent },
+      { path: 'dashboard', component: PageDashboardComponent },
+      { path: 'groups', component: PageGroupsComponent },
+      { path: 'machines', component: PageMachinesComponent },
+      { path: 'jobs', component: PageJobsComponent },
+      { path: 'users', component: PageUsersComponent },
+      { path: 'configs', component: PageUsersComponent },
     ],
   },
   //WildCards
