@@ -19,16 +19,12 @@ $bg-sep: #18202f;
   font-size: 24px;
   margin: 10px auto 10px;
 
-  path {
-    fill: $text-secondary;
-  }
-
   &:hover {
     background-color: #263343;
   }
+}
 
-  &:active {
-    // border-color: $primary;
-    fill: $primary;
-  }
+.active {
+  border: 1px solid $primary;
+  //path {fill: $primary;} //broken
 }
