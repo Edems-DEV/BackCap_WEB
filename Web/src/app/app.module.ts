@@ -34,6 +34,9 @@ import { FormJobComponent } from './Pages/restricted/Jobs/form-job/form-job.comp
 import { FormCoreComponent } from './Components/form-core/form-core.component';
 import { AdminCoreComponent } from './Components/admin-core/admin-core.component';
 import { SectionComponent } from './Components/section/section.component';
+import { DatagridFilterComponent } from './Components/datagrid/datagrid-filter/datagrid-filter.component';
+import { DatagridPaginationComponent } from './Components/datagrid/datagrid-pagination/datagrid-pagination.component';
+import { BtnAddComponent } from './Components/datagrid/btn-add/btn-add.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +70,9 @@ import { SectionComponent } from './Components/section/section.component';
     FormCoreComponent,
     AdminCoreComponent,
     SectionComponent,
+    DatagridFilterComponent,
+    DatagridPaginationComponent,
+    BtnAddComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
