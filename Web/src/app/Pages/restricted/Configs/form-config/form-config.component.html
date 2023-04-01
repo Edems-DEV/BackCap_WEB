@@ -5,12 +5,8 @@
   </div>
   <div class="modal-body">
     <form class="row g-3">
-      <div class="col-md-6">
-        <app-input-text [label]="'Name'"/>
-      </div>
-      <div class="col-md-6">
-        <app-input-text-long [label]="'Description'"/>
-      </div>
+      <app-input-text [label]="'Name'" class="col-md-6"/>
+      <app-input-text-long [label]="'Description'" class="col-md-6"/>
       <!---->
       <div class="col-md-6">
         <label for="inputType" class="form-label">Type</label>
@@ -36,33 +32,17 @@
         </div>
       </div>
       <!-- -->
-      <div class="col-md-6">
-        <app-input-number [label]="'Package size'"/>
-      </div>
-      <div class="col-md-6">
-        <app-input-number [label]="'Retention'"/>
-      </div>
+      <app-input-number [label]="'Package size'" class="col-md-6"/>
+      <app-input-number [label]="'Retention'" class="col-md-6"/>
       <!-- -->
-      <div class="col-md-6">
-        <app-input-cron [label]="'Interval'"/>
-      </div>
-      <div class="col-md-6">
-        <app-input-date [label]="'End of interval'"/>
-      </div>
+      <app-input-cron [label]="'Interval'" class="col-md-6"/>
+      <app-input-date [label]="'End of interval'" class="col-md-6"/>
       <!-- -->
-      <div class="col-md-6">
-        <app-input-path [label]="'Source paths'"/>
-      </div>
-      <div class="col-md-6">
-        <app-input-path [label]="'Destination paths'"/>
-      </div>
+      <app-input-path [label]="'Source paths'" class="col-md-6"/>
+      <app-input-path [label]="'Destination paths'" class="col-md-6"/>
       <!-- -->
-      <div class="col-md-6">
-        <app-input-multiselect [label]="'Computers'"/>
-      </div>
-      <div class="col-md-6">
-        <app-input-multiselect [label]="'Groups'"/>
-      </div>
+      <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
+      <app-input-multiselect [label]="'Groups'" class="col-md-6"/>
     </form>
   </div>
   <!--Footer-->
