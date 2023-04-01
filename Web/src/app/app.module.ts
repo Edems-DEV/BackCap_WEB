@@ -20,6 +20,12 @@ import { PageJobsComponent } from './Pages/restricted/Jobs/page-jobs/page-jobs.c
 import { PageMachinesComponent } from './Pages/restricted/Machines/page-machines/page-machines.component';
 import { PageUsersComponent } from './Pages/restricted/Users/page-users/page-users.component';
 import { PageLoginComponent } from './Pages/LogIn/page-login/page-login.component';
+import { InputTextComponent } from './Components/input-my/_basic/input-text/input-text.component';
+import { InputTextLongComponent } from './Components/input-my/_basic/input-text-long/input-text-long.component';
+import { InputSelectComponent } from './Components/input-my/_basic/input-select/input-select.component';
+import { InputNumberComponent } from './Components/input-my/_basic/input-number/input-number.component';
+import { InputDateComponent } from './Components/input-my/_basic/input-date/input-date.component';
+import { InputCronComponent } from './Components/input-my/input-cron/input-cron.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +45,12 @@ import { PageLoginComponent } from './Pages/LogIn/page-login/page-login.componen
     PageMachinesComponent,
     PageUsersComponent,
     PageLoginComponent,
+    InputTextComponent,
+    InputTextLongComponent,
+    InputSelectComponent,
+    InputNumberComponent,
+    InputDateComponent,
+    InputCronComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
