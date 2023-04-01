@@ -52,11 +52,11 @@
       </div>
       <!-- -->
       <div class="col-md-6">
-        <label for="inputCron" class="form-label">Package size</label>
+        <label for="inputCron" class="form-label">Interval</label>
         <input type="text" class="form-control" id="inputCron" />
       </div>
       <div class="col-md-6">
-        <label for="inputDate" class="form-label">Retention</label>
+        <label for="inputDate" class="form-label">End of interval</label>
         <input type="date" class="form-control" id="inputDate" />
       </div>
       <!-- -->
@@ -65,6 +65,13 @@
       </div>
       <div class="col-md-6">
         <app-input-path [label]="'Destination paths'"/>
+      </div>
+      <!-- -->
+      <div class="col-md-6">
+        <app-input-multiselect [label]="'Computers'"/>
+      </div>
+      <div class="col-md-6">
+        <app-input-multiselect [label]="'Groups'"/>
       </div>
     </form>
   </div>

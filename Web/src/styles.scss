@@ -48,3 +48,18 @@ $btn-close-color: $text-secondary;
 html {
   background-color: $bg-backgroud;
 }
+
+.chip {
+  padding: 0.35em 0.65em;
+  border-radius: 5px;
+  font-size: 0.75em;
+  //------------
+  //(For icons)
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chip-blue {
+  color: $blue;
+  background-color: rgba($blue, 0.2);
+}

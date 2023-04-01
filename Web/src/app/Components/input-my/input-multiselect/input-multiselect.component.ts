@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   NgbTypeahead,
   NgbTypeaheadSelectItemEvent,
@@ -17,6 +17,8 @@ import {
   styleUrls: ['./input-multiselect.component.scss'],
 })
 export class InputMultiselectComponent {
+  @Input() label: string | undefined;
+
   selectedItems: Item[] = [];
   selectedItem: string = '';
 
