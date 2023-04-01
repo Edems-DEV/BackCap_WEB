@@ -1,9 +1,14 @@
-<div class="section">
+<div class="section"
+    (click)="collapse.toggle()"
+		[attr.aria-expanded]="!isCollapsed"
+		aria-controls="collapseExample">
   <div class="header">
     <span>{{ label }}</span>
     <i class="bi bi-arrow-clockwise"></i>
   </div>
-  <div class="content">
-    <ng-content/>
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="content">
+      <ng-content/>
+    </div>
   </div>
 </div>
