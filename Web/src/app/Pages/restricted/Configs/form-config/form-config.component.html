@@ -27,7 +27,7 @@
           <option value="3">Differencial</option>
         </select>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 d-flex align-items-center">
         <div class="form-check form-switch form-check-reverse">
           <label class="form-check-label" for="flexSwitchCheckChecked"
             >Compress</label
@@ -60,15 +60,29 @@
         <input type="date" class="form-control" id="inputDate" />
       </div>
       <!-- -->
+      <div class="col-md-6">
+        <app-input-path [label]="'Source paths'"/>
+      </div>
+      <div class="col-md-6">
+        <app-input-path [label]="'Destination paths'"/>
+      </div>
     </form>
   </div>
+  <!--Footer-->
   <div class="modal-footer">
     <button
       type="button"
-      class="btn btn-light"
+      class="btn btn-outline-primary"
       (click)="modal.close('Close click')"
     >
-      Close
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Close click')"
+    >
+      Save
     </button>
   </div>
 </ng-template>
