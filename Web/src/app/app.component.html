@@ -1,6 +1,4 @@
-
-
-
+<!-- <div style="width: 1px; height: 100%;"></div> -->
 <div class="container-fluid g-0">
   <div class="row g-0">
     <div class="col-auto">
@@ -13,11 +11,13 @@
         </div>
       </header>
       <router-outlet></router-outlet>
-      <!-- <app-card-stats/> -->
-      <!-- <app-datagrid/> -->
-      <!-- <app-page-dashboard/> -->
-      <app-form-config/>
-      <app-input-multiselect/>
+      <!-- <app-datagrid/>
+      <app-form-config/> -->
+      <app-section label="Job stats: 24 h">
+        <app-card-stats label="Active" [stat]="40"/>
+        <app-card-stats label="Disable" [stat]="40"/>
+        <app-card-stats label="Broken" [stat]="40"/>
+      </app-section>
     </div>
   </div>
 </div>
