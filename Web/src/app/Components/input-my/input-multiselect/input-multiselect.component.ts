@@ -1,14 +1,15 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgbTypeahead, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
-import { Observable, Subject, merge, OperatorFunction } from 'rxjs';
+import { Component } from '@angular/core';
+import {
+  NgbTypeahead,
+  NgbTypeaheadSelectItemEvent,
+} from '@ng-bootstrap/ng-bootstrap';
+import { Observable, Subject } from 'rxjs';
 import {
   debounceTime,
   distinctUntilChanged,
   filter,
   map,
 } from 'rxjs/operators';
-import { FormsModule } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-input-multiselect',
@@ -16,95 +17,77 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./input-multiselect.component.scss'],
 })
 export class InputMultiselectComponent {
-  model: any;
+  selectedItems: Item[] = [];
+  selectedItem: string = '';
 
-  @ViewChild('instance', { static: true }) instance: NgbTypeahead; //Property 'instance' has no initializer and is not definitely assigned in the constructor.
-  focus$ = new Subject<string>();
-  click$ = new Subject<string>();
+  // onSelectItem(event: NgbTypeaheadSelectItemEvent) {
+  //   const item = event.item as Item;
+  //   this.selectedItems.push(item);
+  //   this.selectedItem = ''; // Clear the input field
+  // }
+  onSelectItem(event: NgbTypeaheadSelectItemEvent) {
+    const item = event.item as Item;
+    this.selectedItems.push(item);
+    this.selectedItem = '';
+    setTimeout(() => {
+      // add a small delay to ensure the input value has been cleared
+      const inputEl = document.getElementById(
+        'input-multiselect'
+      ) as HTMLInputElement;
+      inputEl.value = '';
+    }, 50);
+  }
 
-  search: OperatorFunction<string, readonly string[]> = (
-    text$: Observable<string>
-  ) => {
-    const debouncedText$ = text$.pipe(
+  removeItem(index: number) {
+    this.selectedItems.splice(index, 1);
+  }
+
+  search = (text$: Observable<string>) =>
+    text$.pipe(
       debounceTime(200),
-      distinctUntilChanged()
-    );
-    const clicksWithClosedPopup$ = this.click$.pipe(
-      filter(() => !this.instance.isPopupOpen())
-    );
-    const inputFocus$ = this.focus$;
-
-    return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
+      distinctUntilChanged(),
+      filter((term) => term.length >= 2),
       map((term) =>
-        (term === ''
-          ? states
-          : states.filter(
-              (v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1
-            )
-        ).slice(0, 10)
+        ITEMS.filter(
+          (item) => item.name.toLowerCase().indexOf(term.toLowerCase()) > -1
+        )
       )
     );
-  };
+
+  resultFormatter = (result: Item) => result.name;
+
+  inputFormatter = (item: Item) => item.name;
 }
 
-const states = [
-  'Alabama',
-  'Alaska',
-  'American Samoa',
-  'Arizona',
-  'Arkansas',
-  'California',
-  'Colorado',
-  'Connecticut',
-  'Delaware',
-  'District Of Columbia',
-  'Federated States Of Micronesia',
-  'Florida',
-  'Georgia',
-  'Guam',
-  'Hawaii',
-  'Idaho',
-  'Illinois',
-  'Indiana',
-  'Iowa',
-  'Kansas',
-  'Kentucky',
-  'Louisiana',
-  'Maine',
-  'Marshall Islands',
-  'Maryland',
-  'Massachusetts',
-  'Michigan',
-  'Minnesota',
-  'Mississippi',
-  'Missouri',
-  'Montana',
-  'Nebraska',
-  'Nevada',
-  'New Hampshire',
-  'New Jersey',
-  'New Mexico',
-  'New York',
-  'North Carolina',
-  'North Dakota',
-  'Northern Mariana Islands',
-  'Ohio',
-  'Oklahoma',
-  'Oregon',
-  'Palau',
-  'Pennsylvania',
-  'Puerto Rico',
-  'Rhode Island',
-  'South Carolina',
-  'South Dakota',
-  'Tennessee',
-  'Texas',
-  'Utah',
-  'Vermont',
-  'Virgin Islands',
-  'Virginia',
-  'Washington',
-  'West Virginia',
-  'Wisconsin',
-  'Wyoming',
+interface Item {
+  name: string;
+}
+
+const ITEMS: Item[] = [
+  { name: 'Apple' },
+  { name: 'Banana' },
+  { name: 'Cherry' },
+  { name: 'Date' },
+  { name: 'Elderberry' },
+  { name: 'Fig' },
+  { name: 'Grape' },
+  { name: 'Honeydew' },
+  { name: 'Indian Gooseberry' },
+  { name: 'Jackfruit' },
+  { name: 'Kiwi' },
+  { name: 'Lemon' },
+  { name: 'Mango' },
+  { name: 'Nectarine' },
+  { name: 'Orange' },
+  { name: 'Pineapple' },
+  { name: 'Quince' },
+  { name: 'Raspberry' },
+  { name: 'Strawberry' },
+  { name: 'Tangerine' },
+  { name: 'Ugli Fruit' },
+  { name: 'Vanilla Bean' },
+  { name: 'Watermelon' },
+  { name: 'Xigua (Chinese Watermelon)' },
+  { name: 'Yellow Passion Fruit' },
+  { name: 'Zucchini' },
 ];
