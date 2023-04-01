@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class InputSelectComponent {
   @Input() label: string | undefined;
+  @Input() id: string | undefined;
 }
