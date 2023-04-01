@@ -31,6 +31,8 @@ import { FormUserComponent } from './Pages/restricted/Users/form-user/form-user.
 import { FormGroupComponent } from './Pages/restricted/Groups/form-group/form-group.component';
 import { FormMachineComponent } from './Pages/restricted/Machines/form-machine/form-machine.component';
 import { FormJobComponent } from './Pages/restricted/Jobs/form-job/form-job.component';
+import { FormCoreComponent } from './Components/form-core/form-core.component';
+import { AdminCoreComponent } from './Components/admin-core/admin-core.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { FormJobComponent } from './Pages/restricted/Jobs/form-job/form-job.comp
     FormGroupComponent,
     FormMachineComponent,
     FormJobComponent,
+    FormCoreComponent,
+    AdminCoreComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
