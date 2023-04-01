@@ -10,9 +10,10 @@ import { CardStatsComponent } from './Components/card-stats/card-stats.component
 import { DatagridComponent } from './Components/datagrid/datagrid.component';
 import { PageDashboardComponent } from './Pages/restricted/Dashboard/page-dashboard/page-dashboard.component';
 import { FormConfigComponent } from './Pages/restricted/Configs/form-config/form-config.component';
+import { InputPathComponent } from './Components/input-path/input-path.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, CardLoginComponent, CardStatsComponent, DatagridComponent, PageDashboardComponent, FormConfigComponent],
+  declarations: [AppComponent, SidebarComponent, CardLoginComponent, CardStatsComponent, DatagridComponent, PageDashboardComponent, FormConfigComponent, InputPathComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
