@@ -6,16 +6,10 @@
   <div class="modal-body">
     <form class="row g-3">
       <div class="col-md-6">
-        <label for="inputName" class="form-label">Name</label>
-        <input type="email" class="form-control" id="inputName" />
+        <app-input-text [label]="'Name'"/>
       </div>
       <div class="col-md-6">
-        <label for="inputDescription" class="form-label">Description</label>
-        <textarea
-          class="form-control"
-          id="inputDescription"
-          rows="1"
-        ></textarea>
+        <app-input-text-long [label]="'Description'"/>
       </div>
       <!---->
       <div class="col-md-6">
@@ -43,21 +37,17 @@
       </div>
       <!-- -->
       <div class="col-md-6">
-        <label for="inputSize" class="form-label">Package size</label>
-        <input type="number" class="form-control" id="inputSize" />
+        <app-input-number [label]="'Package size'"/>
       </div>
       <div class="col-md-6">
-        <label for="inputRetention" class="form-label">Retention</label>
-        <input type="number" class="form-control" id="inputRetention" />
+        <app-input-number [label]="'Retention'"/>
       </div>
       <!-- -->
       <div class="col-md-6">
-        <label for="inputCron" class="form-label">Interval</label>
-        <input type="text" class="form-control" id="inputCron" />
+        <app-input-cron [label]="'Interval'"/>
       </div>
       <div class="col-md-6">
-        <label for="inputDate" class="form-label">End of interval</label>
-        <input type="date" class="form-control" id="inputDate" />
+        <app-input-date [label]="'End of interval'"/>
       </div>
       <!-- -->
       <div class="col-md-6">

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input-date',
   templateUrl: './input-date.component.html',
-  styleUrls: ['./input-date.component.scss']
+  styleUrls: ['./input-date.component.scss'],
 })
 export class InputDateComponent {
-
+  @Input() label: string | undefined;
 }
