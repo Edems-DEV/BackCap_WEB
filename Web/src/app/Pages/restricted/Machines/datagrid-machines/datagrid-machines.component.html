@@ -1,1 +1,30 @@
-<p>datagrid-machines works!</p>
+<app-datagrid>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Group</th>
+        <th scope="col">Config</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let machine of machines; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ machine.name }}</td>
+        <td>{{ machine.description }}</td>
+        <td>
+          <ng-container *ngFor="let group of machine.group">
+            <span class="badge text-bg-primary mx-1">{{ group }}</span>
+          </ng-container>
+        </td>
+        <td>
+          <ng-container *ngFor="let configItem of machine.config">
+            <span class="chip chip-primary mx-1">{{ configItem }}</span>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</app-datagrid>
