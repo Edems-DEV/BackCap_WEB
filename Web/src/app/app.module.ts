@@ -11,7 +11,7 @@ import { CardStatsComponent } from './Components/card-stats/card-stats.component
 import { DatagridComponent } from './Components/datagrid/datagrid.component';
 import { PageDashboardComponent } from './Pages/restricted/Dashboard/page-dashboard/page-dashboard.component';
 import { FormConfigComponent } from './Pages/restricted/Configs/form-config/form-config.component';
-import { InputPathComponent } from './Components/input-path/input-path.component';
+import { InputPathComponent } from './Components/input-my/input-path/input-path.component';
 import { InputMultiselectComponent } from './Components/input-my/input-multiselect/input-multiselect.component';
 
 @NgModule({
