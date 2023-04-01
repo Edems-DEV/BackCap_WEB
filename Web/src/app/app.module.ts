@@ -37,6 +37,11 @@ import { SectionComponent } from './Components/section/section.component';
 import { DatagridFilterComponent } from './Components/datagrid/datagrid-filter/datagrid-filter.component';
 import { DatagridPaginationComponent } from './Components/datagrid/datagrid-pagination/datagrid-pagination.component';
 import { BtnAddComponent } from './Components/datagrid/btn-add/btn-add.component';
+import { DatagridConfigsComponent } from './Pages/restricted/Configs/datagrid-configs/datagrid-configs.component';
+import { DatagridGroupsComponent } from './Pages/restricted/Groups/datagrid-groups/datagrid-groups.component';
+import { DatagridJobsComponent } from './Pages/restricted/Jobs/datagrid-jobs/datagrid-jobs.component';
+import { DatagridMachinesComponent } from './Pages/restricted/Machines/datagrid-machines/datagrid-machines.component';
+import { DatagridUsersComponent } from './Pages/restricted/Users/datagrid-users/datagrid-users.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +78,11 @@ import { BtnAddComponent } from './Components/datagrid/btn-add/btn-add.component
     DatagridFilterComponent,
     DatagridPaginationComponent,
     BtnAddComponent,
+    DatagridConfigsComponent,
+    DatagridGroupsComponent,
+    DatagridJobsComponent,
+    DatagridMachinesComponent,
+    DatagridUsersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
