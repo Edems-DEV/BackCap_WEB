@@ -33,6 +33,7 @@ import { FormMachineComponent } from './Pages/restricted/Machines/form-machine/f
 import { FormJobComponent } from './Pages/restricted/Jobs/form-job/form-job.component';
 import { FormCoreComponent } from './Components/form-core/form-core.component';
 import { AdminCoreComponent } from './Components/admin-core/admin-core.component';
+import { SectionComponent } from './Components/section/section.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { AdminCoreComponent } from './Components/admin-core/admin-core.component
     FormJobComponent,
     FormCoreComponent,
     AdminCoreComponent,
+    SectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
