@@ -32,7 +32,6 @@ import { FormGroupComponent } from './Pages/restricted/Groups/form-group/form-gr
 import { FormMachineComponent } from './Pages/restricted/Machines/form-machine/form-machine.component';
 import { FormJobComponent } from './Pages/restricted/Jobs/form-job/form-job.component';
 import { FormCoreComponent } from './Components/form-core/form-core.component';
-import { AdminCoreComponent } from './Components/admin-core/admin-core.component';
 import { SectionComponent } from './Components/section/section.component';
 import { DatagridFilterComponent } from './Components/datagrid/datagrid-filter/datagrid-filter.component';
 import { DatagridPaginationComponent } from './Components/datagrid/datagrid-pagination/datagrid-pagination.component';
@@ -76,7 +75,6 @@ import { AdminComponent } from './Pages/restricted/admin/admin.component';
     FormMachineComponent,
     FormJobComponent,
     FormCoreComponent,
-    AdminCoreComponent,
     SectionComponent,
     DatagridFilterComponent,
     DatagridPaginationComponent,
