@@ -1,1 +1,7 @@
-<p>sidebar-btn works!</p>
+<a
+  routerLink="/{{ title?.toLowerCase() }}"
+  class="sidebar-item"
+  placement="end"
+  ngbTooltip="{{ title }}"
+  ><img src="\assets\svg\{{ icon }}.svg" />
+</a>

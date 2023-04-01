@@ -3,38 +3,25 @@
     <a href="#" class="sidebar-logo" placement="end" ngbTooltip="Machines">
       <img src="\assets\svg\logo.svg" />
     </a>
-    <a
-      href="#dashboard"
-      class="sidebar-item"
-      placement="end"
-      ngbTooltip="Dashboard"
-    >
-      <img src="\assets\svg\dashboard.svg" />
-    </a>
-    <a href="#groups" class="sidebar-item" placement="end" ngbTooltip="Groups"
-      ><img src="\assets\svg\group.svg" />
-    </a>
-    <a
-      href="#machines"
-      class="sidebar-item"
-      placement="end"
-      ngbTooltip="Machines"
-      ><img src="\assets\svg\pc.svg" />
-    </a>
-    <a href="#jobs" class="sidebar-item" placement="end" ngbTooltip="Jobs">
-      <img src="\assets\svg\job.svg" />
-    </a>
-    <a href="#users" class="sidebar-item" placement="end" ngbTooltip="Users">
-      <img src="\assets\svg\users.svg" />
-    </a>
-    <a
-      href="#configs"
-      class="sidebar-item"
-      placement="end"
-      ngbTooltip="Settings"
-    >
-      <img src="..\assets\svg\settings.svg" />
-    </a>
+
+    <app-sidebar-btn
+      [title]="'Dashboard'"
+      [icon]="'dashboard'"/>
+    <app-sidebar-btn
+      [title]="'Groups'"
+      [icon]="'group'"/>
+    <app-sidebar-btn
+      [title]="'Machines'"
+      [icon]="'pc'"/>
+    <app-sidebar-btn
+      [title]="'Jobs'"
+      [icon]="'job'"/>
+    <app-sidebar-btn
+      [title]="'Users'"
+      [icon]="'users'"/>
+    <app-sidebar-btn
+      [title]="'Configs'"
+      [icon]="'settings'"/>
   </div>
 
   <div class="bottom">

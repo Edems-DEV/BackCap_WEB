@@ -1,0 +1,34 @@
+$text-primary: #ffffff;
+$text-secondary: #a4b1cd;
+$primary: #9fef00;
+$bg-backgroud: #141d2b;
+$bg-card: #1a2332;
+$bg-field: #111927;
+$bg-sep: #18202f;
+
+.sidebar-item {
+  display: block;
+  background-color: $bg-card;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47px;
+  height: 47px;
+  font-size: 24px;
+  margin: 10px auto 10px;
+
+  path {
+    fill: $text-secondary;
+  }
+
+  &:hover {
+    background-color: #263343;
+  }
+
+  &:active {
+    // border-color: $primary;
+    fill: $primary;
+  }
+}
