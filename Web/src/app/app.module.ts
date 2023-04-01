@@ -13,6 +13,7 @@ import { PageDashboardComponent } from './Pages/restricted/Dashboard/page-dashbo
 import { FormConfigComponent } from './Pages/restricted/Configs/form-config/form-config.component';
 import { InputPathComponent } from './Components/input-my/input-path/input-path.component';
 import { InputMultiselectComponent } from './Components/input-my/input-multiselect/input-multiselect.component';
+import { SidebarBtnComponent } from './Components/sidebar/sidebar-btn/sidebar-btn.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { InputMultiselectComponent } from './Components/input-my/input-multisele
     FormConfigComponent,
     InputPathComponent,
     InputMultiselectComponent,
+    SidebarBtnComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
