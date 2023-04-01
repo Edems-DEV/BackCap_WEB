@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +14,17 @@ import { FormConfigComponent } from './Pages/restricted/Configs/form-config/form
 import { InputPathComponent } from './Components/input-path/input-path.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, CardLoginComponent, CardStatsComponent, DatagridComponent, PageDashboardComponent, FormConfigComponent, InputPathComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  declarations: [
+    AppComponent,
+    SidebarComponent,
+    CardLoginComponent,
+    CardStatsComponent,
+    DatagridComponent,
+    PageDashboardComponent,
+    FormConfigComponent,
+    InputPathComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
