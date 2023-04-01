@@ -42,6 +42,8 @@ import { DatagridGroupsComponent } from './Pages/restricted/Groups/datagrid-grou
 import { DatagridJobsComponent } from './Pages/restricted/Jobs/datagrid-jobs/datagrid-jobs.component';
 import { DatagridMachinesComponent } from './Pages/restricted/Machines/datagrid-machines/datagrid-machines.component';
 import { DatagridUsersComponent } from './Pages/restricted/Users/datagrid-users/datagrid-users.component';
+import { StatsJobsComponent } from './Pages/restricted/Jobs/stats-jobs/stats-jobs.component';
+import { StatsMachinesComponent } from './Pages/restricted/Machines/stats-machines/stats-machines.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { DatagridUsersComponent } from './Pages/restricted/Users/datagrid-users/
     DatagridJobsComponent,
     DatagridMachinesComponent,
     DatagridUsersComponent,
+    StatsJobsComponent,
+    StatsMachinesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
