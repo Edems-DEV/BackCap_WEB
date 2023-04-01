@@ -15,3 +15,10 @@
     x
   </button>
 </div>
+
+<!-- DEBUG -->
+<pre>Input: {{ selectedItem }}</pre>
+<div *ngFor="let item of selectedItems; let i = index" class="selected-item">
+  <pre>Selected: {{ item }} | {{ item.name }} </pre>
+</div>
+<!---------->
