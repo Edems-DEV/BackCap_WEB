@@ -20,11 +20,6 @@ export class InputMultiselectComponent {
   selectedItems: Item[] = [];
   selectedItem: string = '';
 
-  // onSelectItem(event: NgbTypeaheadSelectItemEvent) {
-  //   const item = event.item as Item;
-  //   this.selectedItems.push(item);
-  //   this.selectedItem = ''; // Clear the input field
-  // }
   onSelectItem(event: NgbTypeaheadSelectItemEvent) {
     const item = event.item as Item;
     this.selectedItems.push(item);
