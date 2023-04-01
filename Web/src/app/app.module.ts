@@ -27,6 +27,8 @@ import { InputNumberComponent } from './Components/input-my/_basic/input-number/
 import { InputDateComponent } from './Components/input-my/_basic/input-date/input-date.component';
 import { InputCronComponent } from './Components/input-my/input-cron/input-cron.component';
 import { InputSwitchComponent } from './Components/input-my/_basic/input-switch/input-switch.component';
+import { FormUserComponent } from './Pages/restricted/Users/form-user/form-user.component';
+import { FormGroupComponent } from './Pages/restricted/Groups/form-group/form-group.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { InputSwitchComponent } from './Components/input-my/_basic/input-switch/
     InputDateComponent,
     InputCronComponent,
     InputSwitchComponent,
+    FormUserComponent,
+    FormGroupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
