@@ -20,7 +20,7 @@
             id="floatingInput"
             placeholder="name@example.com"
           />
-          <label for="floatingInput">Email address</label>
+          <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
           <input
@@ -45,7 +45,9 @@
             >
           </div>
           <div class="d-flex align-items-end">
-            <a href="#" class="link-opacity-50-hover text-decoration-none"
+            <a
+              class="link-opacity-50-hover text-decoration-none"
+              (click)="openVerticallyCentered(content)"
               >Forgot your password?</a
             >
           </div>
@@ -63,3 +65,29 @@
     </div>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Reset your password</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label for="floatingInput">Email</label>
+      <button type="submit" class="btn btn-dark w-100 mt-2 mp-5">
+        Send request
+      </button>
+    </div>
+  </div>
+</ng-template>

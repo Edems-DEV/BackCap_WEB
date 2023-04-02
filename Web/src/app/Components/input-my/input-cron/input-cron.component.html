@@ -14,7 +14,7 @@
       </ul>
     </div>
 
-    <div class="vstack">
+    <div class="vstack gap-1 mx-2 my-3" class="border border-secondary rounded bg-dark">
       <div class="hstack">
         <input
           contentEditable="true"
@@ -35,7 +35,23 @@
           placeholder="MM"
         />
       </div>
-      <div></div>
+      <div class="hstack gap-3 z-3">
+        <div class="vstack">
+          <app-input-checkbox [label]="'Monday'" />
+          <app-input-checkbox [label]="'Tuesday'" />
+        </div>
+        <div class="vstack">
+          <app-input-checkbox [label]="'Wednesday'" />
+          <app-input-checkbox [label]="'Thursday'" />
+        </div>
+        <div class="vstack">
+          <app-input-checkbox [label]="'Friday'" />
+        </div>
+        <div class="vstack">
+          <app-input-checkbox [label]="'Saturday'" />
+          <app-input-checkbox [label]="'Sunday'" />
+        </div>
+      </div>
     </div>
   </div>
 </div>
