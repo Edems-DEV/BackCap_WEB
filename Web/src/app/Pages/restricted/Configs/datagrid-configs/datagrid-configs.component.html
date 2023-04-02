@@ -33,10 +33,10 @@
       <td>{{ 1 }}</td>
       <td>{{ config.rentention }}</td>
       <td>{{ config.interval }}</td>
-      <td><td-array [items]="config.destinations"/></td>
-      <td><td-array [items]="config.sources"/></td>
-      <td><td-array [items]="config.machines"/></td>
-      <td><td-array [items]="config.groups"/></td>
+      <td><td-array [items]="config.destinations" [style]="'chip chip-gray'"/></td>
+      <td><td-array [items]="config.sources" [style]="'chip chip-gray'"/></td>
+      <td><td-array [items]="config.machines" [style]="'chip chip-blue'"/></td>
+      <td><td-array [items]="config.groups" [style]="'chip chip-purple'"/></td>
     </tr>
   </tbody>
 </app-datagrid>
