@@ -2,14 +2,14 @@
   <div class="left parent">
     <div class="hstack gap-3" id="stats-pack" >
       <div class="vstack gap-3">
-        <app-card-stats/>
-        <app-card-stats/>
-        <app-card-stats/>
+        <app-card-stats [label]="'Active PCs'" [stat]="40" [route]="'../machines'"/>
+        <app-card-stats [label]="'Configs'" [stat]="30" [route]="'../configs'"/>
+        <app-card-stats [label]="'Users'" [stat]="20" [route]="'../users'"/>
       </div>
       <div class="vstack gap-3">
-        <app-card-stats/>
-        <app-card-stats/>
-        <app-card-stats/>
+        <app-card-stats [label]="'Disable PCs'" [stat]="30" [route]="'../machines'"/>
+        <app-card-stats [label]="'Groups'" [stat]="20" [route]="'../groups'"/>
+        <app-card-stats [label]="'Jobs'" [stat]="100" [route]="'../jobs'"/>
       </div>
     </div>
   </div>
