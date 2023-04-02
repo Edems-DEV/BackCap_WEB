@@ -49,6 +49,7 @@ import { TdArrayComponent } from './Components/datagrid/td-array/td-array.compon
 import { DatagridLogsComponent } from './Pages/restricted/Dashboard/datagrid-logs/datagrid-logs.component';
 import { FormLogComponent } from './Pages/restricted/Dashboard/form-log/form-log.component';
 import { InputCheckboxComponent } from './Components/input-my/_basic/input-checkbox/input-checkbox.component';
+import { InputPasswordComponent } from './Components/input-my/_basic/input-password/input-password.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { InputCheckboxComponent } from './Components/input-my/_basic/input-check
     DatagridLogsComponent,
     FormLogComponent,
     InputCheckboxComponent,
+    InputPasswordComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
