@@ -48,6 +48,7 @@ import { SidebarBtnSettingsComponent } from './Components/sidebar/sidebar-btn-se
 import { TdArrayComponent } from './Components/datagrid/td-array/td-array.component';
 import { DatagridLogsComponent } from './Pages/restricted/Dashboard/datagrid-logs/datagrid-logs.component';
 import { FormLogComponent } from './Pages/restricted/Dashboard/form-log/form-log.component';
+import { InputCheckboxComponent } from './Components/input-my/_basic/input-checkbox/input-checkbox.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { FormLogComponent } from './Pages/restricted/Dashboard/form-log/form-log
     TdArrayComponent,
     DatagridLogsComponent,
     FormLogComponent,
+    InputCheckboxComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
