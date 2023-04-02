@@ -4,6 +4,7 @@
       <th scope="col">#</th>
       <th scope="col">Time</th>
       <th scope="col">Target</th>
+      <th scope="col">Status</th>
       <th scope="col">Message</th>
     </tr>
   </thead>
@@ -17,6 +18,20 @@
       </td>
       <td>
         <span class="chip chip-blue">{{ log.target }}</span>
+      </td>
+      <td>
+        <span
+          class="chip mx-1"
+          [ngClass]="{
+            'chip-purple': log.status === 'waiting',
+            'chip-yellow': log.status === 'running',
+            'chip-green': log.status === 'success',
+            'chip-red': log.status === 'failed'
+          }"
+        >
+          {{ log.status }}
+          <!--TODO=>own component-->
+        </span>
       </td>
       <td>
         <span class="chip chip-gray">{{ log.message }}</span>
