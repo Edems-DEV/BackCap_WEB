@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-datagrid-configs',

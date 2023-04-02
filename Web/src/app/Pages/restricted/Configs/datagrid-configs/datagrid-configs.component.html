@@ -3,10 +3,10 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col"><i class="bi bi-file-earmark-zip"></i></th>
+      <th scope="col"><i class="bi bi-file-earmark-zip" placement="top" ngbTooltip="isZip"></i></th>
       <th scope="col">Type</th>
-      <th scope="col"><i class="bi bi-arrow-repeat"></i></th>
-      <th scope="col"><i class="bi bi-box2-fill"></i></th>
+      <th scope="col"><i class="bi bi-arrow-repeat" placement="top" ngbTooltip="Retention"></i></th>
+      <th scope="col"><i class="bi bi-box2-fill" placement="top" ngbTooltip="Package size"></i></th>
       <th scope="col">Interval</th>
       <th scope="col">Destinations</th>
       <th scope="col">Sources</th>
@@ -18,7 +18,7 @@
     <tr *ngFor="let config of configs; index as i">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ config.name }}</td>
-      <td>{{ config.isZip }}</td> <!--config.isZip ? '<i class="bi bi-check-lg"></i>' : '<i class="bi bi-square"></i>'-->
+      <td><i class="bi bi-{{config.isZip ? 'check' : 'x'}}-lg"></i></td>
       <td>{{ config.type }}</td>
       <td>{{ 1 }}</td>
       <td>{{ config.rentention }}</td>
