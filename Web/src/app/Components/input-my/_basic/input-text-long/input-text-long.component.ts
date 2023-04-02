@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class InputTextLongComponent {
   @Input() label: string = 'Description';
+  @Input() rows: number = 1;
 }

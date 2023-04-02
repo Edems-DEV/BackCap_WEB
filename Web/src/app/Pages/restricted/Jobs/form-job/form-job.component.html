@@ -1,0 +1,25 @@
+<app-form-core [title]="'Details'" [icon]="'job'">
+  <!-- -->
+  <app-input-text [label]="'Name'" class="col-md-6"/>
+  <app-input-text-long [label]="'Description'" class="col-md-6"/>
+  <!-- -->
+  <app-input-select [label]="'Type'" class="col-md-6">
+    <option value="0">Waiting</option>
+    <option value="1">Running</option>
+    <option value="2">Success</option>
+    <option value="3">Failure</option>
+  </app-input-select>
+  <app-input-text [label]="'Status'" class="col-md-6"/>
+
+  <!-- -->
+  <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
+  <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
+  <!-- -->
+  <!-- TIME -->
+</app-form-core>
+
+<!--TODO-->
+<!--
+  1. change to READONLY
+  2. chagne to text only (i will never enter data only display)
+-->
