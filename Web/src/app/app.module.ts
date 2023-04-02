@@ -44,6 +44,7 @@ import { DatagridUsersComponent } from './Pages/restricted/Users/datagrid-users/
 import { StatsJobsComponent } from './Pages/restricted/Jobs/stats-jobs/stats-jobs.component';
 import { StatsMachinesComponent } from './Pages/restricted/Machines/stats-machines/stats-machines.component';
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
+import { SidebarBtnSettingsComponent } from './Components/sidebar/sidebar-btn-settings/sidebar-btn-settings.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { AdminComponent } from './Pages/restricted/admin/admin.component';
     StatsJobsComponent,
     StatsMachinesComponent,
     AdminComponent,
+    SidebarBtnSettingsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
