@@ -2,7 +2,7 @@
   <!--HEADER-->
   <div class="d-flex justify-content-between">
     <app-datagrid-filter/>
-    <app-btn-add/>
+    <ng-content select="[btn]"></ng-content> <!--<app-btn-add/>-->
   </div>
   <!--TABLE-->
   <div class="table-responsive">
