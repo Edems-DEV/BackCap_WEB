@@ -1,55 +1,24 @@
-<ng-template #content let-modal>
-  <div class="modal-header text-center">
-    <div class="d-flex">
-      <h4 class="modal-title">Settings</h4>
-      <!-- <img src="\assets\svg\settings.svg" class="ms-2"/> -->
-    </div>
-  </div>
-  <div class="modal-body">
-    <form class="row g-3">
-      <app-input-text [label]="'Name'" class="col-md-6"/>
-      <app-input-text-long [label]="'Description'" class="col-md-6"/>
-      <!---->
-      <app-input-select [label]="'Type'" class="col-md-6">
-        <option value="1">Full</option>
-        <option value="2">Incremental</option>
-        <option value="3">Differencial</option>
-      </app-input-select>
-      <app-input-switch [label]="'Compress'" class="col-md-6 d-flex align-items-center"/>
-      <!-- -->
-      <app-input-number [label]="'Package size'" class="col-md-6"/>
-      <app-input-number [label]="'Retention'" class="col-md-6"/>
-      <!-- -->
-      <app-input-cron [label]="'Interval'" class="col-md-6"/>
-      <app-input-date [label]="'End of interval'" class="col-md-6"/>
-      <!-- -->
-      <app-input-path [label]="'Source paths'" class="col-md-6"/>
-      <app-input-path [label]="'Destination paths'" class="col-md-6"/>
-      <!-- -->
-      <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
-      <app-input-multiselect [label]="'Groups'" class="col-md-6"/>
-    </form>
-  </div>
-  <!--Footer-->
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-outline-primary"
-      (click)="modal.close('Close click')"
-    >
-      Cancel
-    </button>
-    <button
-      type="button"
-      class="btn btn-primary"
-      (click)="modal.close('Close click')"
-    >
-      Save
-    </button>
-  </div>
-</ng-template>
-
-<a (click)="openVerticallyCentered(content)">
-  <app-btn-add/>
-</a>
-
+<app-form-core [title]="'Settings'" [icon2]="'bi bi-gear-fill'">
+  <!---->
+  <app-input-text [label]="'Name'" class="col-md-6"/>
+  <app-input-text-long [label]="'Description'" class="col-md-6"/>
+  <!---->
+  <app-input-select [label]="'Type'" class="col-md-6">
+    <option value="1">Full</option>
+    <option value="2">Incremental</option>
+    <option value="3">Differencial</option>
+  </app-input-select>
+  <app-input-switch [label]="'Compress'" class="col-md-6 d-flex align-items-center"/>
+  <!-- -->
+  <app-input-number [label]="'Package size'" class="col-md-6"/>
+  <app-input-number [label]="'Retention'" class="col-md-6"/>
+  <!-- -->
+  <app-input-cron [label]="'Interval'" class="col-md-6"/>
+  <app-input-date [label]="'End of interval'" class="col-md-6"/>
+  <!-- -->
+  <app-input-path [label]="'Source paths'" class="col-md-6"/>
+  <app-input-path [label]="'Destination paths'" class="col-md-6"/>
+  <!-- -->
+  <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
+  <app-input-multiselect [label]="'Groups'" class="col-md-6"/>
+</app-form-core>
