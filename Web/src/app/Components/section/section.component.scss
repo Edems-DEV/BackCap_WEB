@@ -12,7 +12,6 @@ $roundness: 0.5em;
 .section {
   border: 1px solid $bg-sep;
   border-radius: $roundness;
-  margin: 3em; //move to wrapper container (so datagrid and this have same margin)
 }
 
 .header {
