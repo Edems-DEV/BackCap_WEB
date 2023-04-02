@@ -13,7 +13,7 @@ export class DatagridConfigsComponent {
 interface Config {
   name: string;
   isZip: boolean;
-  type: number;
+  type: string;
   rentention: number;
   interval: string;
   destinations: string[];
@@ -22,12 +22,18 @@ interface Config {
   groups: string[];
 }
 
+// const values = [
+//   { value: 0, title: 'full', class: 'chip-green' },
+//   { value: 1, title: 'diff', class: 'chip-orange' },
+//   { value: 2, title: 'Inc', class: 'chip-blue' },
+// ];
+
 // prettier-ignore
 const CONFIGS: Config[] = [
   {
     name: 'Cfg_1',
     isZip: true,
-    type: 0,
+    type: 'full',
     rentention: 1,
     interval: 'Every Monday at 9:00',
     destinations: [
@@ -46,7 +52,7 @@ const CONFIGS: Config[] = [
   {
     name: 'Cfg_1',
     isZip: false,
-    type: 1,
+    type: 'diff',
     rentention: 5,
     interval: 'Every Monday at 9:00',
     destinations: [
@@ -65,7 +71,7 @@ const CONFIGS: Config[] = [
   {
     name: 'Cfg_3',
     isZip: true,
-    type: 2,
+    type: 'inc',
     rentention: 4,
     interval: 'Every Monday at 9:00',
     destinations: [
@@ -84,7 +90,7 @@ const CONFIGS: Config[] = [
   {
     name: 'Cfg_x',
     isZip: true,
-    type: 1,
+    type: 'diff',
     rentention: 1,
     interval: 'Every Monday at 9:00',
     destinations: [
@@ -103,7 +109,7 @@ const CONFIGS: Config[] = [
   {
     name: 'Cfg_x',
     isZip: true,
-    type: 1,
+    type: 'diff',
     rentention: 1,
     interval: 'Every Monday at 9:00',
     destinations: [
@@ -122,7 +128,7 @@ const CONFIGS: Config[] = [
   {
     name: 'Cfg_x',
     isZip: true,
-    type: 1,
+    type: 'diff',
     rentention: 1,
     interval: 'Every Monday at 9:00',
     destinations: [

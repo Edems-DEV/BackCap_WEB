@@ -62,19 +62,23 @@ html {
   background-color: rgba($blue, 0.2);
 }
 
-.chip-waiting {
+.chip-purple {
+  //waiting
   color: $purple;
   background-color: rgba($purple, 0.2);
 }
-.chip-running {
+.chip-yellow {
+  //running
   color: $yellow;
   background-color: rgba($yellow, 0.2);
 }
-.chip-failure {
+.chip-red {
+  //failure
   color: $red;
   background-color: rgba($red, 0.2);
 }
-.chip-success {
+.chip-green {
+  //success
   color: $primary;
   background-color: rgba($primary, 0.2);
 }

@@ -19,7 +19,17 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ config.name }}</td>
       <td><i class="bi bi-{{config.isZip ? 'check' : 'x'}}-lg"></i></td>
-      <td>{{ config.type }}</td>
+      <td>
+        <span
+          class="chip mx-1"
+          [ngClass]="{
+            'chip-green': config.type === 'full',
+            'chip-yellow': config.type === 'diff',
+            'chip-purple': config.type === 'inc'
+          }">
+          {{ config.type.toLocaleUpperCase() }}
+        </span>
+      </td>
       <td>{{ 1 }}</td>
       <td>{{ config.rentention }}</td>
       <td>{{ config.interval }}</td>

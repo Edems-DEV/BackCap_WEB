@@ -16,10 +16,10 @@
         <span
           class="chip mx-1"
           [ngClass]="{
-            'chip-waiting': job.status === 'waiting',
-            'chip-running': job.status === 'running',
-            'chip-success': job.status === 'success',
-            'chip-failure': job.status === 'failed'
+            'chip-purple': job.status === 'waiting',
+            'chip-yellow': job.status === 'running',
+            'chip-green': job.status === 'success',
+            'chip-red': job.status === 'failed'
           }"
         >
           {{ job.status }}
