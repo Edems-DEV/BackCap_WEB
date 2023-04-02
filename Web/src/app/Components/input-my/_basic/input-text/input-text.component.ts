@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class InputTextComponent {
   @Input() label: string = 'Name';
+  @Input() type: string = 'text';
 }

@@ -1,1 +1,66 @@
-<p>sidebar-btn-settings works!</p>
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <a id="dropdownForm1" ngbDropdownToggle>
+        <img src="\assets\svg\profile.svg" />
+      </a>
+      <div ngbDropdownMenu style="background-color: #18202f; padding: 0.3em">
+        <div
+          class="flex-container g-0 ps-2 pl-1"
+          style="justify-content: space-between"
+        >
+          <div>
+            <span>{{ username }}</span>
+          </div>
+          <div>
+            <a (click)="openVerticallyCentered(content)">
+              <img src="\assets\svg\settings.svg" />
+            </a>
+            <a routerLink="/login">
+              <!--TODO: unauthorized-->
+              <img src="\assets\svg\poweroff.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #content let-modal>
+  <div class="modal-header text-center">
+      <h4 class="modal-title">My Account</h4>
+  </div>
+  <!-- <div class="d-flex justify-content-center align-items-center flex-row">
+    <img src="\assets\svg\profile.svg" />
+  </div> -->
+  <!--Body-->
+  <div class="modal-body">
+    <form class="row g-3">
+      <app-input-text [label]="'Name'" class="col-md-12"/>
+      <!-- -->
+      <app-input-text [label]="'Email'" [type]="'email'" class="col-md-12"/>
+      <!-- -->
+      <app-input-cron [label]="'Interval'" class="col-md-12"/>
+    </form>
+  </div>
+  <!--Footer-->
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="modal.close('Close click')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Close click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
