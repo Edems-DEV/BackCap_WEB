@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 export class CardStatsComponent {
   @Input() label: string | undefined = 'Label';
   @Input() stat: number | undefined = 40;
-  @Input() route: string = '/.';
+  @Input() route: string = '.';
 }
