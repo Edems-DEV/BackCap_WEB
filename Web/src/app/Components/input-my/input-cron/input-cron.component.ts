@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-input-cron',
@@ -6,5 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./input-cron.component.scss'],
 })
 export class InputCronComponent {
+  public isCollapsed = false;
   @Input() label: string = 'Interval';
 }

@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class InputNumberComponent {
   @Input() label: string | undefined;
+  @Input() placeholder: string = '';
 }

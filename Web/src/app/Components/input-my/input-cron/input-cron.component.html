@@ -1,2 +1,41 @@
 <label for="inputCron" class="form-label">{{ label }}</label>
 <input type="text" class="form-control" id="inputCron" />
+
+<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+  <div>
+    <div class="TAB-Simple">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Simple</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Advance</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="vstack">
+      <div class="hstack">
+        <input
+          contentEditable="true"
+          class="form-control"
+          onkeydown="if(event.keyCode == 13) return false;"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          maxlength="2"
+          style="width: 3.3em"
+          placeholder="HH"
+        />
+        <input
+          contentEditable="true"
+          class="form-control"
+          onkeydown="if(event.keyCode == 13) return false;"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          maxlength="2"
+          style="width: 3.3em"
+          placeholder="MM"
+        />
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>
