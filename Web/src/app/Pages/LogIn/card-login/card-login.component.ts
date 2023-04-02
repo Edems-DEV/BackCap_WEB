@@ -11,4 +11,12 @@ export class CardLoginComponent {
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
+
+  copyToClipboard(): void {
+    const emailInput = document.getElementById(
+      'email-input'
+    ) as HTMLInputElement;
+    emailInput.select();
+    document.execCommand('copy');
+  }
 }

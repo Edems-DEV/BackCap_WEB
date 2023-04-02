@@ -116,8 +116,14 @@
         placeholder="name@example.com"
         value="admins@backcap.com"
         readonly
+        id="email-input"
       />
-      <button type="submit" class="outline-button">
+      <button
+        type="submit"
+        class="outline-button"
+        id="copy-button"
+        (click)="copyToClipboard()"
+      >
         <i class="bi bi-clipboard text-primary"></i>
       </button>
     </div>
