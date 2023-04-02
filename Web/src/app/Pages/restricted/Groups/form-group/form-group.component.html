@@ -1,1 +1,8 @@
-<p>form-group works!</p>
+<app-form-core [title]="'Details'" [icon]="'group'">
+  <!-- -->
+  <app-input-text [label]="'Name'" class="col-md-6"/>
+  <app-input-text-long [label]="'Description'" [rows]="1" class="col-md-6"/>
+  <!-- -->
+  <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
+  <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
+</app-form-core>
