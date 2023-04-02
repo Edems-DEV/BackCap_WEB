@@ -1,1 +1,12 @@
-<p>form-log works!</p>
+<app-form-core [title]="'Settings'" [icon2]="'bi-terminal'">
+  <!-- -->
+  <app-input-text [label]="'Name'" class="col-md-6"/>
+  <app-input-text [label]="'Time'" class="col-md-6"/>
+ <!-- -->
+  <app-input-text-long [label]="'Message'" [rows]="3" class="col-md-12"/>
+</app-form-core>
+<!--TODO:-->
+<!--
+  1. Time
+  2. better formating
+-->
