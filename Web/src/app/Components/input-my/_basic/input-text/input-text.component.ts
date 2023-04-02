@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 export class InputTextComponent {
   @Input() label: string = 'Name';
   @Input() type: string = 'text';
+  @Input() value: string = '';
+  @Input() class: string = '';
 }
