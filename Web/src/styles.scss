@@ -44,6 +44,7 @@ $btn-close-color: $text-secondary;
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons";
 
 html {
   background-color: $bg-backgroud;
