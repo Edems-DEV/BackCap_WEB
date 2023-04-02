@@ -45,6 +45,7 @@ import { StatsJobsComponent } from './Pages/restricted/Jobs/stats-jobs/stats-job
 import { StatsMachinesComponent } from './Pages/restricted/Machines/stats-machines/stats-machines.component';
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
 import { SidebarBtnSettingsComponent } from './Components/sidebar/sidebar-btn-settings/sidebar-btn-settings.component';
+import { TdArrayComponent } from './Components/datagrid/td-array/td-array.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { SidebarBtnSettingsComponent } from './Components/sidebar/sidebar-btn-se
     StatsMachinesComponent,
     AdminComponent,
     SidebarBtnSettingsComponent,
+    TdArrayComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
