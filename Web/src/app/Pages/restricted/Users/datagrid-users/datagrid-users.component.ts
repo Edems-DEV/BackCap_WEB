@@ -45,4 +45,74 @@ const USERS: User[] = [
     email: 'Baz@gmail.com',
     interval: 'Every Friday at 9:00',
   },
+  {
+    name: 'Qux',
+    email: 'Qux@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Foo',
+    email: 'Foo@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Joe',
+    email: 'Joe@gmail.com',
+    interval: 'Every Monday at 9:00',
+  },
+  {
+    name: 'Bob',
+    email: 'Bob@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Alice',
+    email: 'Alice@gmail.com',
+    interval: 'Every Monday at 9:00',
+  },
+  {
+    name: 'Foo',
+    email: 'Foo@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Bar',
+    email: 'Bar@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Joe',
+    email: 'Joe@gmail.com',
+    interval: 'Every Monday at 9:00',
+  },
+  {
+    name: 'Bob',
+    email: 'Bob@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Bob',
+    email: 'Bob@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Alice',
+    email: 'Alice@gmail.com',
+    interval: 'Every Monday at 9:00',
+  },
+  {
+    name: 'Foo',
+    email: 'Foo@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Bar',
+    email: 'Bar@gmail.com',
+    interval: 'Every Friday at 9:00',
+  },
+  {
+    name: 'Alice',
+    email: 'Alice@gmail.com',
+    interval: 'Every Monday at 9:00',
+  },
 ];

@@ -37,14 +37,14 @@ const CONFIGS: Config[] = [
     rentention: 1,
     interval: 'Every Monday at 9:00',
     destinations: [
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
-    sources:[
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
     machines: ['Pc1', 'Pc2'],
     groups: ['Group_1', 'Group_2'],
@@ -56,14 +56,14 @@ const CONFIGS: Config[] = [
     rentention: 5,
     interval: 'Every Monday at 9:00',
     destinations: [
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
-    sources:[
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
     machines: ['Pc1', 'Pc2'],
     groups: ['Group_1', 'Group_2'],
@@ -75,33 +75,14 @@ const CONFIGS: Config[] = [
     rentention: 4,
     interval: 'Every Monday at 9:00',
     destinations: [
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
-    sources:[
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'diff',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
-    ],
-    sources:[
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
     machines: ['Pc1', 'Pc2'],
     groups: ['Group_1', 'Group_2'],
@@ -113,14 +94,33 @@ const CONFIGS: Config[] = [
     rentention: 1,
     interval: 'Every Monday at 9:00',
     destinations: [
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
-    sources:[
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    machines: ['Pc1', 'Pc2'],
+    groups: ['Group_1', 'Group_2'],
+  },
+  {
+    name: 'Cfg_x',
+    isZip: true,
+    type: 'full',
+    rentention: 1,
+    interval: 'Every Monday at 9:00',
+    destinations: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
     machines: ['Pc1', 'Pc2'],
     groups: ['Group_1', 'Group_2'],
@@ -132,14 +132,90 @@ const CONFIGS: Config[] = [
     rentention: 1,
     interval: 'Every Monday at 9:00',
     destinations: [
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
-    sources:[
-      'C:\Program Files\Adobe\Adobe Creative Cloud',
-      'C:\Program Files',
-      'C:\Users\root\Documents'
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    machines: ['Pc1', 'Pc2'],
+    groups: ['Group_1', 'Group_2'],
+  },
+  {
+    name: 'Cfg_x',
+    isZip: true,
+    type: 'inc',
+    rentention: 1,
+    interval: 'Every Monday at 9:00',
+    destinations: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    machines: ['Pc1', 'Pc2'],
+    groups: ['Group_1', 'Group_2'],
+  },
+  {
+    name: 'Cfg_x',
+    isZip: true,
+    type: 'inc',
+    rentention: 1,
+    interval: 'Every Monday at 9:00',
+    destinations: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    machines: ['Pc1', 'Pc2'],
+    groups: ['Group_1', 'Group_2'],
+  },
+  {
+    name: 'Cfg_x',
+    isZip: true,
+    type: 'diff',
+    rentention: 1,
+    interval: 'Every Monday at 9:00',
+    destinations: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    machines: ['Pc1', 'Pc2'],
+    groups: ['Group_1', 'Group_2'],
+  },
+  {
+    name: 'Cfg_x',
+    isZip: true,
+    type: 'full',
+    rentention: 1,
+    interval: 'Every Monday at 9:00',
+    destinations: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
+    ],
+    sources: [
+      'C:Program FilesAdobeAdobe Creative Cloud',
+      'C:Program Files',
+      'C:Users\rootDocuments',
     ],
     machines: ['Pc1', 'Pc2'],
     groups: ['Group_1', 'Group_2'],
