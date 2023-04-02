@@ -46,6 +46,7 @@ import { StatsMachinesComponent } from './Pages/restricted/Machines/stats-machin
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
 import { SidebarBtnSettingsComponent } from './Components/sidebar/sidebar-btn-settings/sidebar-btn-settings.component';
 import { TdArrayComponent } from './Components/datagrid/td-array/td-array.component';
+import { DatagridLogsComponent } from './Pages/restricted/Dashboard/datagrid-logs/datagrid-logs.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { TdArrayComponent } from './Components/datagrid/td-array/td-array.compon
     AdminComponent,
     SidebarBtnSettingsComponent,
     TdArrayComponent,
+    DatagridLogsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
