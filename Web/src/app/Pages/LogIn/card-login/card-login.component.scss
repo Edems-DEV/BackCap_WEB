@@ -1,0 +1,14 @@
+$my-primary: #9fef00;
+
+.outline-button {
+  border: 1px solid $my-primary; /* set the button border */
+  border-radius: 0.3em; /* round the corners of the button */
+  background-color: transparent; /* make the background transparent */
+  padding: 10px 20px; /* add some padding to the button */
+  transition: background-color 0.3s ease-in-out; /* add a transition effect for the background color */
+  width: 5em;
+}
+
+.outline-button:hover {
+  background-color: rgba($my-primary, 0.2);
+}
