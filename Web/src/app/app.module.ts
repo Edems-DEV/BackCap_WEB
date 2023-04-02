@@ -47,6 +47,7 @@ import { AdminComponent } from './Pages/restricted/admin/admin.component';
 import { SidebarBtnSettingsComponent } from './Components/sidebar/sidebar-btn-settings/sidebar-btn-settings.component';
 import { TdArrayComponent } from './Components/datagrid/td-array/td-array.component';
 import { DatagridLogsComponent } from './Pages/restricted/Dashboard/datagrid-logs/datagrid-logs.component';
+import { FormLogComponent } from './Pages/restricted/Dashboard/form-log/form-log.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { DatagridLogsComponent } from './Pages/restricted/Dashboard/datagrid-log
     SidebarBtnSettingsComponent,
     TdArrayComponent,
     DatagridLogsComponent,
+    FormLogComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
