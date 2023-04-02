@@ -1,7 +1,7 @@
 <!-- <td> //<= this is broken :/ -->
 <div class="d-flex flex-wrap overflow-hidden gap-2">
   <ng-container *ngFor="let item of items">
-    <span class="badge text-bg-primary">{{ item }}</span>
+    <span class="{{ style }}">{{ item }}</span>
     <!-- <span class="chip chip-primary">{{ config }}</span> -->
   </ng-container>
 </div>
