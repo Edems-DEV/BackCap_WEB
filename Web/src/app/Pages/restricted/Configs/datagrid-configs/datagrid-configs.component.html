@@ -17,7 +17,7 @@
   <tbody>
     <tr *ngFor="let config of configs; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ config.name }}</td>
+      <td><b>{{ config.name }}</b></td>
       <td><i class="bi bi-{{config.isZip ? 'check' : 'x'}}-lg"></i></td>
       <td>
         <span

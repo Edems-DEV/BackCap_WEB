@@ -1,1 +1,26 @@
-<p>datagrid-pagination works!</p>
+<div class="container d-flex justify-content-between">
+  <div id="left">
+    <span>1-20 of 27</span>
+  </div>
+  <div id="right" class="hstack gap-3">
+    <div id="display">
+      <span>Rows per page: 20</span>
+    </div>
+    <div id="switch" class="hstack gap-2">
+      <a><i class="bi bi-chevron-left" style="font-size: 0.6em"></i></a>
+      <div>
+        <span
+          contentEditable="true"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          class="text-primary"
+          onkeydown="if(event.keyCode == 13) return false;"
+          oninput="this.innerText = this.innerText.replace(/[^0-9]/g, '')"
+          >1</span
+        >
+        <span>/2</span>
+      </div>
+      <a><i class="bi bi-chevron-right" style="font-size: 0.6em"></i></a>
+    </div>
+  </div>
+</div>
