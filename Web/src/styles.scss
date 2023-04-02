@@ -55,12 +55,26 @@ html {
   border-radius: 5px;
   font-size: 0.75em;
   //------------
-  //(For icons)
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 }
 .chip-blue {
   color: $blue;
   background-color: rgba($blue, 0.2);
+}
+
+.chip-waiting {
+  color: $purple;
+  background-color: rgba($purple, 0.2);
+}
+.chip-running {
+  color: $yellow;
+  background-color: rgba($yellow, 0.2);
+}
+.chip-failure {
+  color: $red;
+  background-color: rgba($red, 0.2);
+}
+.chip-success {
+  color: $primary;
+  background-color: rgba($primary, 0.2);
 }

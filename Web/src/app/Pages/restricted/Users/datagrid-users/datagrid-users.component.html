@@ -1,1 +1,18 @@
-<p>datagrid-users works!</p>
+<app-datagrid>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Interval for report</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.interval }}</td>
+    </tr>
+  </tbody>
+</app-datagrid>

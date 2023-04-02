@@ -1,1 +1,32 @@
-<p>datagrid-configs works!</p>
+<app-datagrid>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col"><i class="bi bi-file-earmark-zip"></i></th>
+      <th scope="col">Type</th>
+      <th scope="col"><i class="bi bi-arrow-repeat"></i></th>
+      <th scope="col"><i class="bi bi-box2-fill"></i></th>
+      <th scope="col">Interval</th>
+      <th scope="col">Destinations</th>
+      <th scope="col">Sources</th>
+      <th scope="col">Computers</th>
+      <th scope="col">Groups</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let config of configs; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ config.name }}</td>
+      <td>{{ config.isZip }}</td> <!--config.isZip ? '<i class="bi bi-check-lg"></i>' : '<i class="bi bi-square"></i>'-->
+      <td>{{ config.type }}</td>
+      <td>{{ 1 }}</td>
+      <td>{{ config.rentention }}</td>
+      <td>{{ config.interval }}</td>
+      <td><td-array [items]="config.destinations"/></td>
+      <td><td-array [items]="config.sources"/></td>
+      <td><td-array [items]="config.machines"/></td>
+      <td><td-array [items]="config.groups"/></td>
+    </tr>
+  </tbody>
+</app-datagrid>

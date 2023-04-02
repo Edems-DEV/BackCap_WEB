@@ -26,18 +26,15 @@
         </span>
       </td>
       <td>
-        <ng-container *ngFor="let target of job.target">
-          <span class="chip chip-blue mx-1">
-            {{ target }}
-          </span>
-        </ng-container>
+        <td-array [items]="job.target" />
       </td>
       <td>
         <span>{{ job.time_start | date : "dd.MM.yy" }}</span>
-        <span> - </span>
+        <span class="text-info"> - </span>
         <span class="text-white">{{ job.time_start | date : "HH:mm" }}</span>
         <ng-container *ngIf="job.time_end">
-          <i> => </i>
+          <!-- <i class="bi bi-chevron-double-right"></i> -->
+          <i class="bi bi-arrow-right-short text-info"></i>
           <span class="text-white">{{ job.time_end | date : "HH:mm" }}</span>
         </ng-container>
       </td>

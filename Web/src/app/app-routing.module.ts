@@ -7,6 +7,7 @@ import { PageJobsComponent } from './Pages/restricted/Jobs/page-jobs/page-jobs.c
 import { PageUsersComponent } from './Pages/restricted/Users/page-users/page-users.component';
 import { PageLoginComponent } from './Pages/LogIn/page-login/page-login.component';
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
+import { PageConfigsComponent } from './Pages/restricted/Configs/page-configs/page-configs.component';
 
 // prettier-ignore
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
       { path: 'machines', component: PageMachinesComponent },
       { path: 'jobs', component: PageJobsComponent },
       { path: 'users', component: PageUsersComponent },
-      { path: 'configs', component: PageUsersComponent },
+      { path: 'configs', component: PageConfigsComponent },
     ],
   },
   //WildCards

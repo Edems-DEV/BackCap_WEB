@@ -1,22 +1,20 @@
 <app-datagrid>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Computers</th>
-        <th scope="col">Config</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let group of groups; index as i">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ group.name }}</td>
-        <td>{{ group.description }}</td>
-        <td><td-array [items]="group.machines"/></td>
-        <td><td-array [items]="group.configs"/></td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Computers</th>
+      <th scope="col">Config</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let group of groups; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ group.name }}</td>
+      <td>{{ group.description }}</td>
+      <td><td-array [items]="group.machines"/></td>
+      <td><td-array [items]="group.configs"/></td>
+    </tr>
+  </tbody>
 </app-datagrid>
