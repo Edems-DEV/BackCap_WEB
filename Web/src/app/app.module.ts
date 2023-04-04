@@ -51,6 +51,7 @@ import { DatagridLogsComponent } from './Pages/restricted/Dashboard/datagrid-log
 import { FormLogComponent } from './Pages/restricted/Dashboard/form-log/form-log.component';
 import { InputCheckboxComponent } from './Components/input-my/_basic/input-checkbox/input-checkbox.component';
 import { InputPasswordComponent } from './Components/input-my/_basic/input-password/input-password.component';
+import { InputFlPasswordComponent } from './Components/input-my/_basic/input-fl-password/input-fl-password.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { InputPasswordComponent } from './Components/input-my/_basic/input-passw
     FormLogComponent,
     InputCheckboxComponent,
     InputPasswordComponent,
+    InputFlPasswordComponent,
   ],
   imports: [
     BrowserModule,
