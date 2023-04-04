@@ -27,7 +27,7 @@ export class PageLoginComponent {
       enable: true,
       zIndex: 0,
     },
-    fpsLimit: 120,
+    fpsLimit: 60,
     interactivity: {
       events: {
         onClick: {
@@ -42,11 +42,11 @@ export class PageLoginComponent {
       },
       modes: {
         push: {
-          quantity: 4,
+          quantity: 1,
         },
         repulse: {
           distance: 120,
-          duration: 0.4,
+          duration: 1,
         },
       },
     },
@@ -58,7 +58,7 @@ export class PageLoginComponent {
         color: '#a4b1cd',
         distance: 150,
         enable: true,
-        opacity: 0.5,
+        opacity: 1,
         width: 2,
       },
       collisions: {
@@ -75,20 +75,16 @@ export class PageLoginComponent {
         straight: false,
       },
       number: {
-        density: {
-          enable: true,
-          area: 6969,
-        },
-        value: 150,
+        value: 15,
       },
       opacity: {
-        value: 0.5,
+        value: 1,
       },
       shape: {
         type: 'circle',
       },
       size: {
-        value: { min: 3, max: 4 },
+        value: { min: 5, max: 6 },
       },
     },
     detectRetina: true,
