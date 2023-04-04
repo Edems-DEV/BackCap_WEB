@@ -71,15 +71,15 @@ export class PageLoginComponent {
           default: OutMode.bounce,
         },
         random: false,
-        speed: 2,
+        speed: 1,
         straight: false,
       },
       number: {
         density: {
           enable: true,
-          area: 10000,
+          area: 6969,
         },
-        value: 300,
+        value: 150,
       },
       opacity: {
         value: 0.5,
@@ -88,7 +88,7 @@ export class PageLoginComponent {
         type: 'circle',
       },
       size: {
-        value: { min: 3, max: 7 },
+        value: { min: 3, max: 4 },
       },
     },
     detectRetina: true,
