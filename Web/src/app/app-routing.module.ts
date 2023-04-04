@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageDashboardComponent } from './Pages/restricted/Dashboard/page-dashboard/page-dashboard.component';
-import { PageGroupsComponent } from './Pages/restricted/Groups/page-groups/page-groups.component';
-import { PageMachinesComponent } from './Pages/restricted/Machines/page-machines/page-machines.component';
-import { PageJobsComponent } from './Pages/restricted/Jobs/page-jobs/page-jobs.component';
-import { PageUsersComponent } from './Pages/restricted/Users/page-users/page-users.component';
+import { PageDashboardComponent } from './Pages/restricted/admin/Dashboard/page-dashboard/page-dashboard.component';
+import { PageGroupsComponent } from './Pages/restricted/admin/Groups/page-groups/page-groups.component';
+import { PageMachinesComponent } from './Pages/restricted/admin/Machines/page-machines/page-machines.component';
+import { PageJobsComponent } from './Pages/restricted/admin/Jobs/page-jobs/page-jobs.component';
+import { PageUsersComponent } from './Pages/restricted/admin/Users/page-users/page-users.component';
 import { PageLoginComponent } from './Pages/LogIn/page-login/page-login.component';
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
-import { PageConfigsComponent } from './Pages/restricted/Configs/page-configs/page-configs.component';
+import { PageConfigsComponent } from './Pages/restricted/admin/Configs/page-configs/page-configs.component';
 
 // prettier-ignore
 const routes: Routes = [
-  //[Unrestricted]
+  //[Unrestricted/admin]
   { title: 'BackCap - LogIn', path: 'login', component: PageLoginComponent },
-  //[Restricted]
+  //[restricted/admin]
   {
     path: 'admin',
     title: 'BackCap - Admin',
