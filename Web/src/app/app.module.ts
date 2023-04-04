@@ -52,6 +52,8 @@ import { FormLogComponent } from './Pages/restricted/Dashboard/form-log/form-log
 import { InputCheckboxComponent } from './Components/input-my/_basic/input-checkbox/input-checkbox.component';
 import { InputPasswordComponent } from './Components/input-my/_basic/input-password/input-password.component';
 import { InputFlPasswordComponent } from './Components/input-my/_basic/input-fl-password/input-fl-password.component';
+import { InputFlTextComponent } from './Components/input-my/_basic/input-fl-text/input-fl-text.component';
+import { ParticlesJsComponent } from './Pages/LogIn/particles-js/particles-js.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +104,8 @@ import { InputFlPasswordComponent } from './Components/input-my/_basic/input-fl-
     InputCheckboxComponent,
     InputPasswordComponent,
     InputFlPasswordComponent,
+    InputFlTextComponent,
+    ParticlesJsComponent,
   ],
   imports: [
     BrowserModule,

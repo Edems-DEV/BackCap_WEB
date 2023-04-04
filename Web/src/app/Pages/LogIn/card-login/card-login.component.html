@@ -13,15 +13,7 @@
         <span>Sign in to your account</span>
       </div>
       <form>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
-          />
-          <label for="floatingInput">Email</label>
-        </div>
+        <app-input-fl-text [placeholder]="'name@example.com'"/>
         <app-input-fl-password/>
         <div
           class="mt-4 mb-2 w-100 d-inline-flex align-items-center justify-content-between"
