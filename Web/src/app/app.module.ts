@@ -1,3 +1,4 @@
+import { NgParticlesModule } from 'ng-particles';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -100,7 +101,13 @@ import { InputPasswordComponent } from './Components/input-my/_basic/input-passw
     InputCheckboxComponent,
     InputPasswordComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    NgParticlesModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

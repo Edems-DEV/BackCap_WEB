@@ -1,3 +1,12 @@
-<app-card-login class="d-flex align-items-center justify-content-center" style="height: 94vh"/>
-<!--header is destroing => height: 94vh-->
-<!--HIDE admin UI-->
+<div class="container">
+  <ng-particles
+    [id]="id"
+    [options]="particlesOptions"
+    [particlesInit]="particlesInit"
+    (particlesLoaded)="particlesLoaded($event)"
+    class="particles"
+  ></ng-particles>
+  <div class="card-login">
+    <app-card-login></app-card-login>
+  </div>
+</div>
