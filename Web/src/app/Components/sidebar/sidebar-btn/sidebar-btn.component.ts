@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class SidebarBtnComponent {
   @Input() title: string | undefined;
-  @Input() icon: string | undefined;
+  @Input() icon: string = 'add';
   @Input() isActive: boolean | undefined;
 }

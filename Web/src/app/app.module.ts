@@ -54,6 +54,7 @@ import { InputPasswordComponent } from './Components/input-my/_basic/input-passw
 import { InputFlPasswordComponent } from './Components/input-my/_basic/input-fl-password/input-fl-password.component';
 import { InputFlTextComponent } from './Components/input-my/_basic/input-fl-text/input-fl-text.component';
 import { ParticlesJsComponent } from './Pages/LogIn/particles-js/particles-js.component';
+import { MyIconComponent } from './Components/_other/my-icon/my-icon.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +107,7 @@ import { ParticlesJsComponent } from './Pages/LogIn/particles-js/particles-js.co
     InputFlPasswordComponent,
     InputFlTextComponent,
     ParticlesJsComponent,
+    MyIconComponent,
   ],
   imports: [
     BrowserModule,

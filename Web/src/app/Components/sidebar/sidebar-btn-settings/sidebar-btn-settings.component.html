@@ -3,6 +3,7 @@
     <div ngbDropdown class="d-inline-block">
       <a id="dropdownForm1" ngbDropdownToggle>
         <img src="\assets\svg\profile.svg" />
+        <!-- <my-icon [name]="'profile'"/> IDK broken -->
       </a>
       <div ngbDropdownMenu style="background-color: #18202f; padding: 0.3em">
         <div
@@ -12,13 +13,13 @@
           <div>
             <span>{{ username }}</span>
           </div>
-          <div>
+          <div class="hstack">
             <a (click)="openVerticallyCentered(content)">
-              <img src="\assets\svg\settings.svg" />
+              <my-icon [name]="'settings'"/>
             </a>
             <a routerLink="/login">
               <!--TODO: unauthorized-->
-              <img src="\assets\svg\poweroff.svg" />
+              <my-icon [name]="'poweroff'"/>
             </a>
           </div>
         </div>
@@ -34,7 +35,7 @@
       <h4 class="modal-title">My Account</h4>
   </div>
   <!-- <div class="d-flex justify-content-center align-items-center flex-row">
-    <img src="\assets\svg\profile.svg" />
+    <my-icon [name]="'profile'"/>
   </div> -->
   <!--Body-->
   <div class="modal-body">
