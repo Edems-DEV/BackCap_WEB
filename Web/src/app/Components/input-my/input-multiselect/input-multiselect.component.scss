@@ -1,10 +1,4 @@
-$text-primary: #ffffff;
-$text-secondary: #a4b1cd;
-$my-primary: #9fef00;
-$bg-backgroud: #141d2b;
-$bg-card: #1a2332;
-$bg-field: #111927;
-$bg-sep: #18202f;
+@import "./../../../../assets/styles/colors.scss";
 
 ::ng-deep ngb-typeahead-window.dropdown-menu {
   background-color: $bg-backgroud;

@@ -1,3 +1,4 @@
+@import "./../../../assets/styles/colors.scss";
 #a {
   display: flex;
   flex-direction: column;
@@ -13,7 +14,6 @@
 }
 
 #a:hover {
-  $my-primary: #9fef00; //TODO: import from main `styles.scss`
   color: $my-primary;
   border: 1px solid $my-primary;
 }
