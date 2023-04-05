@@ -1,0 +1,47 @@
+@import "./colors.scss";
+
+html {
+  background-color: $bg-backgroud;
+}
+
+.chip {
+  padding: 0.35em 0.65em;
+  border-radius: 5px;
+  font-size: 0.75em;
+  //------------
+  display: inline-block;
+}
+.chip-blue {
+  color: $blue;
+  background-color: rgba($blue, 0.2);
+}
+.chip-purple {
+  color: $purple;
+  background-color: rgba($purple, 0.2);
+}
+.chip-yellow {
+  color: $yellow;
+  background-color: rgba($yellow, 0.2);
+}
+.chip-red {
+  color: $red;
+  background-color: rgba($red, 0.2);
+}
+.chip-green {
+  color: $primary;
+  background-color: rgba($primary, 0.2);
+}
+.chip-gray {
+  color: $text-secondary;
+  background-color: rgba($bg-field, 0.2);
+}
+
+.table-header {
+  background-color: $bg-card;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

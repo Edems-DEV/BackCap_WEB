@@ -1,94 +1,10 @@
-$text-primary: #ffffff;
-$text-secondary: #a4b1cd;
-$my-primary: #9fef00;
-$my-secondary: $text-secondary;
-$bg-backgroud: #141d2b;
-$bg-card: #1a2332;
-$bg-field: #111927;
-$bg-sep: #18202f;
-$blue: #0086ff;
-$yellow: #ffaf00;
-$purple: #9f00ff;
-$red: #ff3e3e;
-$green: #2ee7b6;
-
-//$white: $bg-backgroud;
-
-$body-color: $text-secondary;
-$secondary-color: $text-secondary;
-$tertiary-color: $text-secondary;
-$emphasis-color: $text-primary;
-$border-color: $bg-sep;
-$primary: $my-primary;
-
-$success: $my-primary;
-$danger: $red;
-$warning: $yellow;
-$info: $blue;
-$light: $bg-card;
-$dark: $bg-field;
-
-$secondary: $my-secondary;
-$body-bg: $bg-backgroud;
-
-$input-bg: $bg-field;
-$input-border-color: $bg-sep;
-$form-check-input-checked-color: $bg-field;
-
-$modal-content-bg: $bg-card;
-
-$list-group-bg: $bg-field;
-$list-group-color: $text-secondary;
-$btn-close-color: $text-secondary;
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/fonts/fonts.scss";
+@import "./assets/styles/colors.scss";
 
 /* Importing Bootstrap SCSS file. */
-@import "./assets/fonts/fonts.scss";
+@import "./assets/styles/boostrap-override.scss";
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons";
 
-html {
-  background-color: $bg-backgroud;
-}
-
-.chip {
-  padding: 0.35em 0.65em;
-  border-radius: 5px;
-  font-size: 0.75em;
-  //------------
-  display: inline-block;
-}
-.chip-blue {
-  color: $blue;
-  background-color: rgba($blue, 0.2);
-}
-.chip-purple {
-  color: $purple;
-  background-color: rgba($purple, 0.2);
-}
-.chip-yellow {
-  color: $yellow;
-  background-color: rgba($yellow, 0.2);
-}
-.chip-red {
-  color: $red;
-  background-color: rgba($red, 0.2);
-}
-.chip-green {
-  color: $primary;
-  background-color: rgba($primary, 0.2);
-}
-.chip-gray {
-  color: $text-secondary;
-  background-color: rgba($bg-field, 0.2);
-}
-
-.table-header {
-  background-color: $bg-card;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+@import "./assets/styles/global.scss";

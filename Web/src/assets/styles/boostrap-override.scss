@@ -1,0 +1,30 @@
+@import "./colors.scss";
+
+//$white: $bg-backgroud;
+
+$body-color: $text-secondary;
+$secondary-color: $text-secondary;
+$tertiary-color: $text-secondary;
+$emphasis-color: $text-primary;
+$border-color: $bg-sep;
+$primary: $my-primary;
+
+$success: $my-primary;
+$danger: $red;
+$warning: $yellow;
+$info: $blue;
+$light: $bg-card;
+$dark: $bg-field;
+
+$secondary: $my-secondary;
+$body-bg: $bg-backgroud;
+
+$input-bg: $bg-field;
+$input-border-color: $bg-sep;
+$form-check-input-checked-color: $bg-field;
+
+$modal-content-bg: $bg-card;
+
+$list-group-bg: $bg-field;
+$list-group-color: $text-secondary;
+$btn-close-color: $text-secondary;
