@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../../../../../models/user.model';
 import { UsersService } from '../../../../../services/users.service';
 
@@ -10,9 +11,13 @@ import { UsersService } from '../../../../../services/users.service';
 export class DatagridUsersComponent {
   users: User[] = [];
 
-  constructor(private service: UsersService) {}
+  constructor(private router: Router, private service: UsersService) {}
 
   ngOnInit(): void {
     this.users = this.service.findAll();
+  }
+
+  public edit(user: User): void {
+    this.router.navigate(['admin/users', user.id]);
   }
 }

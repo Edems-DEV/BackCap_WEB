@@ -26,12 +26,6 @@ export class UsersService {
       interval: '12345',
     },
     {
-      id: 3,
-      name: 'Alice',
-      email: 'Alice@gmail.com',
-      interval: '12345',
-    },
-    {
       id: 4,
       name: 'Foo',
       email: 'Foo@gmail.com',
