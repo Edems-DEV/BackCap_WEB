@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from '../../../../../models/user.model';
+import { UsersService } from '../../../../../services/users.service';
 
 @Component({
   selector: 'app-datagrid-users',
@@ -6,113 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./datagrid-users.component.scss'],
 })
 export class DatagridUsersComponent {
-  users = USERS;
-}
+  users: User[] = [];
 
-interface User {
-  name: string;
-  email: string;
-  interval: string;
+  constructor(private service: UsersService) {}
+
+  ngOnInit(): void {
+    this.users = this.service.findAll();
+  }
 }
-const USERS: User[] = [
-  {
-    name: 'Joe',
-    email: 'Joe@gmail.com',
-    interval: 'Every Monday at 9:00',
-  },
-  {
-    name: 'Bob',
-    email: 'Bob@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Alice',
-    email: 'Alice@gmail.com',
-    interval: 'Every Monday at 9:00',
-  },
-  {
-    name: 'Foo',
-    email: 'Foo@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Bar',
-    email: 'Bar@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Baz',
-    email: 'Baz@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Qux',
-    email: 'Qux@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Foo',
-    email: 'Foo@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Joe',
-    email: 'Joe@gmail.com',
-    interval: 'Every Monday at 9:00',
-  },
-  {
-    name: 'Bob',
-    email: 'Bob@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Alice',
-    email: 'Alice@gmail.com',
-    interval: 'Every Monday at 9:00',
-  },
-  {
-    name: 'Foo',
-    email: 'Foo@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Bar',
-    email: 'Bar@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Joe',
-    email: 'Joe@gmail.com',
-    interval: 'Every Monday at 9:00',
-  },
-  {
-    name: 'Bob',
-    email: 'Bob@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Bob',
-    email: 'Bob@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Alice',
-    email: 'Alice@gmail.com',
-    interval: 'Every Monday at 9:00',
-  },
-  {
-    name: 'Foo',
-    email: 'Foo@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Bar',
-    email: 'Bar@gmail.com',
-    interval: 'Every Friday at 9:00',
-  },
-  {
-    name: 'Alice',
-    email: 'Alice@gmail.com',
-    interval: 'Every Monday at 9:00',
-  },
-];
