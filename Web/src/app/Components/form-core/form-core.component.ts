@@ -11,9 +11,4 @@ export class FormCoreComponent {
   @Input() title: string = 'Settings';
   @Input() icon: string | undefined;
   @Input() icon2: string | undefined;
-  //Modal
-  constructor(private modalService: NgbModal) {}
-  openVerticallyCentered(content: any) {
-    this.modalService.open(content, { centered: true });
-  }
 }
