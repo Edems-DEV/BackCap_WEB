@@ -9,7 +9,6 @@ import { PageLoginComponent } from './Pages/LogIn/page-login/page-login.componen
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
 import { PageConfigsComponent } from './Pages/restricted/admin/Configs/page-configs/page-configs.component';
 import { FormUserComponent } from './Pages/restricted/admin/Users/form-user/form-user.component';
-import { ModalContainerComponent } from './Pages/restricted/admin/Users/form-user/modal-user';
 
 // prettier-ignore
 const routes: Routes = [
@@ -29,7 +28,7 @@ const routes: Routes = [
       { path: 'users', component: PageUsersComponent },
       { path: 'configs', component: PageConfigsComponent },
       //edits
-      { path: 'users/:id', component: ModalContainerComponent },
+      { path: 'users/:id', component: FormUserComponent },
     ],
   },
   //WildCards
