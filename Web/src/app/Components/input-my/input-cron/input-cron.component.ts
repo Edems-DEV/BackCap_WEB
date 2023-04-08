@@ -9,4 +9,6 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 export class InputCronComponent {
   public isCollapsed = true;
   @Input() label: string = 'Interval';
+
+  active = 1;
 }

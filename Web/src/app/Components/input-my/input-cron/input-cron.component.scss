@@ -1,0 +1,25 @@
+@import "./../../../../assets/styles/colors.scss";
+
+.sf {
+  font-size: 0.9em;
+}
+.f-mini {
+  font-size: 0.8em;
+}
+
+.cron-field {
+  min-width: 428.28px; //10em (same as SIMPLE)
+  width: 100%; //style="width: 6em"
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.dropdown-menu {
+  background-color: $bg-sep; //$bg-card => after border is added
+  //border: 1px solid $bg-sep !important; //broken
+}
+
+// .nav-content { TODO: fix this
+//   border: 1px solid $bg-sep !important;
+// }
