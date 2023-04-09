@@ -10,3 +10,7 @@
 
 // .flex-item {
 // }
+
+.dropdown-toggle::after {
+  display: none;
+}
