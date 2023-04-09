@@ -23,3 +23,7 @@
 // .nav-content { TODO: fix this
 //   border: 1px solid $bg-sep !important;
 // }
+
+.dropdown-toggle::after {
+  display: none;
+}

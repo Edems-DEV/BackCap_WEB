@@ -2,9 +2,9 @@
 	<div class="col">
 		<div ngbDropdown class="d-inline-block">
       <label for="inputCron" class="form-label">{{ label }}</label>
-      <div class="input-group">
+      <div class="input-group" id="dropdownForm1" ngbDropdownToggle>
         <input type="text" class="form-control" id="inputCron" readonly/>
-        <i class="bi bi-clock-history input-group-text bg-dark" id="dropdownForm1" ngbDropdownToggle></i>
+        <i class="bi bi-clock-history input-group-text bg-dark" ></i>
       </div>
 			<div ngbDropdownMenu aria-labelledby="dropdownForm1">
         <ul ngbNav #nav="ngbNav" class="nav-tabs">
