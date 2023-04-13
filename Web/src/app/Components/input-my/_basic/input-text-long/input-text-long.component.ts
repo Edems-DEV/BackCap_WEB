@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-text-long',
@@ -8,4 +8,12 @@ import { Component, Input } from '@angular/core';
 export class InputTextLongComponent {
   @Input() label: string = 'Description';
   @Input() rows: number = 1;
+  @Input() value: string = '';
+  @Input() class: string = '';
+
+  @Output() valueChanged = new EventEmitter<string>();
+
+  onInput() {
+    this.valueChanged.emit(this.value);
+  }
 }

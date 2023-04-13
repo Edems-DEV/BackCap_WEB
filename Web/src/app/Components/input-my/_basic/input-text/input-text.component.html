@@ -4,4 +4,6 @@
   class="form-control {{ class }}"
   id="inputName"
   value="{{ value }}"
+  [(ngModel)]="value"
+  (input)="onInput()"
 />

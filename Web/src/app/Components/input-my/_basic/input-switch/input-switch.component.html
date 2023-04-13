@@ -9,6 +9,8 @@
       role="switch"
       id="flexSwitchCheckChecked"
       checked
+      [(ngModel)]="value"
+      (input)="onInput()"
     />
   </div>
 </div>

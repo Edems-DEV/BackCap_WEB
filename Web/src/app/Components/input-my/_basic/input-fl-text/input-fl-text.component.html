@@ -4,6 +4,8 @@
     class="form-control"
     id="floatingInput"
     placeholder="{{ placeholder }}"
+    [(ngModel)]="value"
+    (input)="onInput()"
   />
   <label for="floatingInput">{{ label }}</label>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-fl-password',
@@ -13,5 +13,10 @@ export class InputFlPasswordComponent {
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
+  }
+  //--------------------------
+  @Output() valueChanged = new EventEmitter<string>();
+  onInput() {
+    this.valueChanged.emit(this.value);
   }
 }

@@ -3,4 +3,6 @@
   class="form-control"
   id="inputDescription"
   rows="{{ rows }}"
+  [(ngModel)]="value"
+  (input)="onInput()"
 ></textarea>

@@ -4,4 +4,7 @@
   class="form-control"
   id="inputRetention"
   placeholder="{{ placeholder }}"
+  value="{{ value }}"
+  [(ngModel)]="value"
+  (input)="onInput()"
 />

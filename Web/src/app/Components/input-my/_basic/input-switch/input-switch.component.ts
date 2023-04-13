@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-switch',
@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class InputSwitchComponent {
   @Input() label: string = '';
+  @Input() value: boolean = false;
+
+  @Output() valueChanged = new EventEmitter<boolean>();
+  onInput() {
+    this.valueChanged.emit(this.value);
+  }
 }

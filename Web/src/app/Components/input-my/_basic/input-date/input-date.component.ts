@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-date',
@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class InputDateComponent {
   @Input() label: string | undefined;
+  @Input() value: string = '';
+
+  @Output() valueChanged = new EventEmitter<string>();
+  onInput() {
+    this.valueChanged.emit(this.value);
+  }
 }

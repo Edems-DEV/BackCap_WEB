@@ -1,2 +1,9 @@
 <label for="inputDate" class="form-label">{{ label }}</label>
-<input type="date" class="form-control" id="inputDate" />
+<input
+  type="date"
+  class="form-control"
+  id="inputDate"
+  value="{{ value }}"
+  [(ngModel)]="value"
+  (input)="onInput()"
+/>
