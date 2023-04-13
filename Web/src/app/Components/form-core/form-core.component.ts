@@ -1,10 +1,4 @@
-import {
-  Component,
-  ContentChild,
-  Input,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component, ContentChild, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -21,14 +15,5 @@ export class FormCoreComponent {
   constructor(private modalService: NgbModal) {}
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
-  }
-  //@output
-  @Output() cancel = new EventEmitter<void>();
-  onCancel() {
-    this.cancel.emit();
-  }
-  @Output() save = new EventEmitter<void>();
-  onSave() {
-    this.save.emit();
   }
 }
