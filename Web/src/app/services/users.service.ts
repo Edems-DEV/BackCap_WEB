@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import { User } from '../models/user.model';
 export class UsersService {
   constructor(private http: HttpClient) {}
 
-  url: string = 'http://localhost:5056/api/Users';
+  url: string = environment.apiEndpoint + 'users';
 
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.url);
