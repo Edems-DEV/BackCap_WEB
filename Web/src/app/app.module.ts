@@ -29,7 +29,7 @@ import { InputNumberComponent } from './Components/input-my/_basic/input-number/
 import { InputDateComponent } from './Components/input-my/_basic/input-date/input-date.component';
 import { InputCronComponent } from './Components/input-my/input-cron/input-cron.component';
 import { InputSwitchComponent } from './Components/input-my/_basic/input-switch/input-switch.component';
-import { FormUserComponent } from './Pages/restricted/admin/Users/form-user/form-user.component';
+import { FormUserComponent } from './Pages/restricted/admin/Users/forms/form-user/form-user.component';
 import { FormGroupComponent } from './Pages/restricted/admin/Groups/form-group/form-group.component';
 import { FormMachineComponent } from './Pages/restricted/admin/Machines/form-machine/form-machine.component';
 import { FormJobComponent } from './Pages/restricted/admin/Jobs/form-job/form-job.component';
@@ -56,6 +56,8 @@ import { InputFlPasswordComponent } from './Components/input-my/_basic/input-fl-
 import { InputFlTextComponent } from './Components/input-my/_basic/input-fl-text/input-fl-text.component';
 import { ParticlesJsComponent } from './Pages/LogIn/particles-js/particles-js.component';
 import { MyIconComponent } from './Components/_other/my-icon/my-icon.component';
+import { FormUserCreateComponent } from './Pages/restricted/admin/Users/forms/form-user-create/form-user-create.component';
+import { FormUserEditComponent } from './Pages/restricted/admin/Users/forms/form-user-edit/form-user-edit.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +111,8 @@ import { MyIconComponent } from './Components/_other/my-icon/my-icon.component';
     InputFlTextComponent,
     ParticlesJsComponent,
     MyIconComponent,
+    FormUserCreateComponent,
+    FormUserEditComponent,
   ],
   imports: [
     BrowserModule,

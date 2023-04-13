@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../../../../../models/user.model';
 import { UsersService } from '../../../../../services/users.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormUserComponent } from '../form-user/form-user.component';
+import { FormUserComponent } from '../forms/form-user/form-user.component';
 
 @Component({
   selector: 'app-datagrid-users',

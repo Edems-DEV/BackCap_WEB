@@ -8,7 +8,7 @@ import { PageUsersComponent } from './Pages/restricted/admin/Users/page-users/pa
 import { PageLoginComponent } from './Pages/LogIn/page-login/page-login.component';
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
 import { PageConfigsComponent } from './Pages/restricted/admin/Configs/page-configs/page-configs.component';
-import { FormUserComponent } from './Pages/restricted/admin/Users/form-user/form-user.component';
+import { FormUserComponent } from './Pages/restricted/admin/Users/forms/form-user/form-user.component';
 
 // prettier-ignore
 const routes: Routes = [

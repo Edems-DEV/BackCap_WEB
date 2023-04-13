@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/models/user.model';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-form-user',
@@ -21,4 +22,23 @@ export class FormUserComponent implements OnInit {
     this.email = this.user.email;
     this.interval = this.user.interval_Report;
   }
+
+  // @Input()
+  // form: FormGroup;
+
+  // @Output()
+  // saved: EventEmitter<any> = new EventEmitter<any>();
+
+  // public static createForm(fb: FormBuilder, user: User): FormGroup {
+  //   return fb.group({
+  //     name: user.name,
+  //     email: user.email,
+  //     interval: user.interval_Report,
+  //     password: 'user.password',
+  //   });
+  // }
+
+  // public save(): void {
+  //   this.saved.emit(this.form.value);
+  // }
 }
