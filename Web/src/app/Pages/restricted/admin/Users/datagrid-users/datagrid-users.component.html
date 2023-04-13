@@ -9,11 +9,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users; index as i" (click)="edit(user)">
+    <tr *ngFor="let user of data; index as i" (click)="editUser(user)">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ user.name }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.interval }}</td>
+      <td>{{ user.interval_Report }}</td>
     </tr>
   </tbody>
 </app-datagrid>

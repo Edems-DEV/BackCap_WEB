@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../../../../models/user.model';
 import { UsersService } from '../../../../../services/users.service';
@@ -8,16 +8,25 @@ import { UsersService } from '../../../../../services/users.service';
   templateUrl: './datagrid-users.component.html',
   styleUrls: ['./datagrid-users.component.scss'],
 })
-export class DatagridUsersComponent {
-  users: User[] = [];
+export class DatagridUsersComponent implements OnInit {
+  public data: User[];
 
-  constructor(private router: Router, private service: UsersService) {}
+  public constructor(private service: UsersService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.users = this.service.findAll();
+  public ngOnInit(): void {
+    console.log('ngOnInit()');
+    this.refresh();
   }
 
-  public edit(user: User): void {
-    this.router.navigate(['admin/users', user.id]);
+  public editUser(user: User): void {
+    this.router.navigate(['/users/edit', user.id]);
+  }
+
+  public deleteUser(user: User): void {
+    this.service.delete(user).subscribe(() => this.refresh());
+  }
+
+  private refresh(): void {
+    this.service.findAll().subscribe((result) => (this.data = result));
   }
 }

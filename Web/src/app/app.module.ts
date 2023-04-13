@@ -2,6 +2,7 @@ import { NgParticlesModule } from 'ng-particles';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -116,6 +117,7 @@ import { MyIconComponent } from './Components/_other/my-icon/my-icon.component';
     FormsModule,
     NgParticlesModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
