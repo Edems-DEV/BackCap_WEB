@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 export class UsersService {
   constructor(private http: HttpClient) {}
 
-  url: string = environment.apiEndpoint + 'users';
+  //url: string = environment.apiEndpoint + 'users';
+  url: string = 'assets/users.json';
 
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.url);
