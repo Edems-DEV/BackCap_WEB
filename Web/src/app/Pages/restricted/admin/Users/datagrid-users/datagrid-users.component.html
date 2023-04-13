@@ -1,5 +1,5 @@
 <app-datagrid>
-  <app-form-user btn> <app-btn-add/> </app-form-user>
+  <app-btn-add (clicked)="createUser()" btn/>
   <thead class="table-header">
     <tr>
       <th scope="col">#</th>
@@ -13,7 +13,7 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ user.name }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.interval }}</td>
+      <td>{{ user.interval_Report }}</td>
     </tr>
   </tbody>
 </app-datagrid>

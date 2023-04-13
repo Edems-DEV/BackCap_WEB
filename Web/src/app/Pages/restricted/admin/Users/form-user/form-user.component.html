@@ -1,12 +1,11 @@
-<app-form-core [title]="'Settings'" [icon]="'users'">
+<app-form-core [title]=title [icon]="'users'">
   <!-- -->
-  <app-input-text [label]="'Name'" class="col-md-6"/>
-  <app-input-text [label]="'Email'" [type]="'email'" class="col-md-6"/>
+  <app-input-text [label]="'Name'" class="col-md-6" value="{{name}}"/>
+  <app-input-text [label]="'Email'" [type]="'email'" class="col-md-6" value="{{email}}"/>
  <!-- -->
-  <app-input-cron [label]="'Interval'" class="col-md-12"/>
+  <app-input-cron [label]="'Interval'" class="col-md-12" value="{{interval}}"/>
  <!-- -->
   <app-input-password [label]="'Password'" class="col-md-6"/>
   <app-input-password [label]="'Repeat password'" class="col-md-6"/>
   <!-- -->
-  <ng-content btn/>
 </app-form-core>

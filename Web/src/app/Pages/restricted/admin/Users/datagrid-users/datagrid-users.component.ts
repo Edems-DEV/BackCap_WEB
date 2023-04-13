@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../../../../models/user.model';
 import { UsersService } from '../../../../../services/users.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormUserComponent } from '../form-user/form-user.component';
 
 @Component({
   selector: 'app-datagrid-users',
@@ -11,15 +13,27 @@ import { UsersService } from '../../../../../services/users.service';
 export class DatagridUsersComponent implements OnInit {
   public data: User[];
 
-  public constructor(private service: UsersService, private router: Router) {}
+  public constructor(
+    private service: UsersService,
+    private modalService: NgbModal
+  ) {}
 
   public ngOnInit(): void {
     console.log('ngOnInit()');
     this.refresh();
   }
 
+  //Modal data: User
+  public createUser(): void {
+    this.modalService.open(FormUserComponent, { centered: true });
+  }
+
   public editUser(user: User): void {
-    this.router.navigate(['/users/edit', user.id]);
+    const modalRef = this.modalService.open(FormUserComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.user = user;
+    modalRef.componentInstance.title = 'Edit';
   }
 
   public deleteUser(user: User): void {

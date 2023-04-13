@@ -2,7 +2,7 @@ export class User {
   public id: number = 0;
   public name: string = '';
   public email: string = '';
-  public interval: string = '';
+  public interval_Report: string = '';
 
   public constructor(
     id: number,
@@ -13,6 +13,6 @@ export class User {
     this.id = id;
     this.name = name;
     this.email = email;
-    this.interval = interval_Report;
+    this.interval_Report = interval_Report;
   }
 }
