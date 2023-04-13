@@ -10,8 +10,7 @@ import { environment } from 'src/environments/environment';
 export class UsersService {
   constructor(private http: HttpClient) {}
 
-  //url: string = environment.apiEndpoint + 'users';
-  url: string = 'assets/users.json';
+  url: string = environment.apiEndpoint + 'users';
 
   public findAll(): Observable<User[]> {
     return this.http.get<User[]>(this.url);
@@ -33,31 +32,3 @@ export class UsersService {
     return this.http.delete<User>(this.url + '/' + user.id);
   }
 }
-
-// //simulate a database data
-// private users: User[] = [
-//   {
-//     id: 1,
-//     name: 'Joe',
-//     email: 'Joe@gmail.com',
-//     interval: '12345',
-//   },
-//   {
-//     id: 2,
-//     name: 'Bob',
-//     email: 'Bob@gmail.com',
-//     interval: '12345',
-//   },
-//   {
-//     id: 3,
-//     name: 'Alice',
-//     email: 'Alice@gmail.com',
-//     interval: '12345',
-//   },
-//   {
-//     id: 4,
-//     name: 'Foo',
-//     email: 'Foo@gmail.com',
-//     interval: '12345',
-//   },
-// ];
