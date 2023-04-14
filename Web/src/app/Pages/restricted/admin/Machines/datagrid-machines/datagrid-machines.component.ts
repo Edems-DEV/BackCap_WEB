@@ -13,7 +13,7 @@ import { FormMachineEditComponent } from 'src/app/Pages/restricted/admin/Machine
   styleUrls: ['./datagrid-machines.component.scss'],
 })
 export class DatagridMachinesComponent {
-  public data: Machine[];
+  public machines: Machine[];
 
   public constructor(
     private service: MachinesService,
@@ -43,6 +43,6 @@ export class DatagridMachinesComponent {
   }
 
   private refresh(): void {
-    this.service.findAll().subscribe((result) => (this.data = result));
+    this.service.findAll().subscribe((result) => (this.machines = result));
   }
 }

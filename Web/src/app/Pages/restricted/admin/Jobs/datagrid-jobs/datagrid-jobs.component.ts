@@ -13,7 +13,7 @@ import { FormJobEditComponent } from 'src/app/Pages/restricted/admin/Jobs/forms/
   styleUrls: ['./datagrid-jobs.component.scss'],
 })
 export class DatagridJobsComponent {
-  public data: Job[];
+  public jobs: Job[];
 
   public constructor(
     private service: JobsService,
@@ -43,6 +43,6 @@ export class DatagridJobsComponent {
   }
 
   private refresh(): void {
-    this.service.findAll().subscribe((result) => (this.data = result));
+    this.service.findAll().subscribe((result) => (this.jobs = result));
   }
 }

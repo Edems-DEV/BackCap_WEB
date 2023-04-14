@@ -8,6 +8,9 @@ export class Config {
   public interval_end: string;
   public sources: string[];
   public destinations: string[];
+  //public machines: MachineName[];
+  ///public groups: GroupName[];
+  //public name: string;
 
   public constructor(
     id: number,

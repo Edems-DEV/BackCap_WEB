@@ -13,7 +13,7 @@ import { FormConfigCreateComponent } from 'src/app/Pages/restricted/admin/Config
   styleUrls: ['./datagrid-configs.component.scss'],
 })
 export class DatagridConfigsComponent {
-  public data: Config[];
+  public configs: Config[];
 
   public constructor(
     private service: ConfigsService,

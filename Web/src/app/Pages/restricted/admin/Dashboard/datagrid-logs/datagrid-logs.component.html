@@ -3,8 +3,8 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Time</th>
-      <th scope="col">Target</th>
-      <th scope="col">Status</th>
+      <!-- <th scope="col">Target</th>
+      <th scope="col">Status</th> -->
       <th scope="col">Message</th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
         <span class="text-info px-1">:</span>
         <span class="text-white">{{ log.time | date : "HH:mm" }}</span>
       </td>
-      <td>
+      <!-- <td>
         <span class="chip chip-blue">{{ log.target }}</span>
       </td>
       <td>
@@ -30,9 +30,8 @@
           }"
         >
           {{ log.status }}
-          <!--TODO=>own component-->
         </span>
-      </td>
+      </td> -->
       <td>
         <span class="chip chip-gray">{{ log.message }}</span>
       </td>

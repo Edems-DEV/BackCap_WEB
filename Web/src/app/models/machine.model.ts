@@ -1,12 +1,3 @@
-//convert this json into a class
-// "id": 1,
-//     "name": "PC10",
-//     "description": "",
-//     "os": "Win",
-//     "ip_Address": "154.251.15.1",
-//     "mac_Address": "1425142625",
-//     "is_Active": true
-
 export class Machine {
   public id: number;
   public name: string;
@@ -15,6 +6,8 @@ export class Machine {
   public ip_Address: string;
   public mac_Address: string;
   public is_Active: boolean;
+  //groups
+  //configs
 
   public constructor(
     id: number,

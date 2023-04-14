@@ -11,22 +11,24 @@
   <tbody>
     <tr *ngFor="let job of jobs; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ job.name }}</td>
+      <td>{{ job.id }}</td>
       <td>
         <span
           class="chip mx-1"
           [ngClass]="{
-            'chip-purple': job.status === 'waiting',
-            'chip-yellow': job.status === 'running',
-            'chip-green': job.status === 'success',
-            'chip-red': job.status === 'failed'
+            'chip-purple': job.status === 0,
+            'chip-yellow': job.status === 1,
+            'chip-green': job.status === 2,
+            'chip-red': job.status === 3
           }"
         >
           {{ job.status }}
         </span>
       </td>
       <td>
-        <td-array [items]="job.target" [style]="'chip chip-purple'"/>
+        <span class="chip chip-purple">{{ job.machine }}</span>
+        <span class="chip chip-purple">{{ job.groups }}</span>
+        <!--CHANGE: ID => NAME -->
       </td>
       <td>
         <span>{{ job.time_start | date : "dd.MM.yy" }}</span>

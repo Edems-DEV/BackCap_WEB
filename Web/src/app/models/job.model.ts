@@ -1,14 +1,14 @@
 export class Job {
   public id: number;
-  public id_Machine: number;
-  public id_Group: number;
+  public id_Machine: number; // => name
+  public id_Group: number; // => name
   public id_Config: number;
   public status: number;
   public time_schedule: string;
   public time_start: string;
   public time_end: string;
   public bytes: number;
-  public machine: string;
+  public machine: string; // name?
   public groups: string;
   public config: string;
 

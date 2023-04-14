@@ -5,6 +5,9 @@ export class Log {
   public time: string;
   public job: string;
 
+  //status
+  //target (PC,GROUP)
+
   public constructor(
     id: number,
     id_Job: number,
