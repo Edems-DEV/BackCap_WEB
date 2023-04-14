@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../../../../models/user.model';
-import { UsersService } from '../../../../../services/users.service';
+import { User } from 'src/app/models/user.model';
+import { UsersService } from 'src/app/services/users/users.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 //import { FormUserComponent } from '../forms/form-user/form-user.component';
 import { FormUserEditComponent } from '../forms/form-user-edit/form-user-edit.component';
