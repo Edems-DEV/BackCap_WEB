@@ -30,9 +30,9 @@ import { InputDateComponent } from './Components/input-my/_basic/input-date/inpu
 import { InputCronComponent } from './Components/input-my/input-cron/input-cron.component';
 import { InputSwitchComponent } from './Components/input-my/_basic/input-switch/input-switch.component';
 import { FormUserComponent } from './Pages/restricted/admin/Users/forms/form-user/form-user.component';
-import { FormGroupComponent } from './Pages/restricted/admin/Groups/form-group/form-group.component';
-import { FormMachineComponent } from './Pages/restricted/admin/Machines/form-machine/form-machine.component';
-import { FormJobComponent } from './Pages/restricted/admin/Jobs/form-job/form-job.component';
+import { FormGroupComponent } from './Pages/restricted/admin/Groups/forms/form-group/form-group.component';
+import { FormMachineComponent } from './Pages/restricted/admin/Machines/forms/form-machine/form-machine.component';
+import { FormJobComponent } from './Pages/restricted/admin/Jobs/forms/form-job/form-job.component';
 import { FormCoreComponent } from './Components/form-core/form-core.component';
 import { SectionComponent } from './Components/section/section.component';
 import { DatagridFilterComponent } from './Components/datagrid/datagrid-filter/datagrid-filter.component';
@@ -49,7 +49,7 @@ import { AdminComponent } from './Pages/restricted/admin/admin.component';
 import { SidebarBtnSettingsComponent } from './Components/sidebar/sidebar-btn-settings/sidebar-btn-settings.component';
 import { TdArrayComponent } from './Components/datagrid/td-array/td-array.component';
 import { DatagridLogsComponent } from './Pages/restricted/admin/Dashboard/datagrid-logs/datagrid-logs.component';
-import { FormLogComponent } from './Pages/restricted/admin/Dashboard/form-log/form-log.component';
+import { FormLogComponent } from './Pages/restricted/admin/Dashboard/forms/form-log/form-log.component';
 import { InputCheckboxComponent } from './Components/input-my/_basic/input-checkbox/input-checkbox.component';
 import { InputPasswordComponent } from './Components/input-my/_basic/input-password/input-password.component';
 import { InputFlPasswordComponent } from './Components/input-my/_basic/input-fl-password/input-fl-password.component';
@@ -59,6 +59,10 @@ import { MyIconComponent } from './Components/_other/my-icon/my-icon.component';
 import { FormUserCreateComponent } from './Pages/restricted/admin/Users/forms/form-user-create/form-user-create.component';
 import { FormUserEditComponent } from './Pages/restricted/admin/Users/forms/form-user-edit/form-user-edit.component';
 import { FieldErrorsComponent } from './Components/input-my/_other/field-errors/field-errors.component';
+import { FormMachineEditComponent } from './Pages/restricted/admin/Machines/forms/form-machine-edit/form-machine-edit.component';
+import { FormJobEditComponent } from './Pages/restricted/admin/Jobs/forms/form-job-edit/form-job-edit.component';
+import { FormGroupEditComponent } from './Pages/restricted/admin/Groups/forms/form-group-edit/form-group-edit.component';
+import { FormLogEditComponent } from './Pages/restricted/admin/Dashboard/forms/form-log-edit/form-log-edit.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +119,10 @@ import { FieldErrorsComponent } from './Components/input-my/_other/field-errors/
     FormUserCreateComponent,
     FormUserEditComponent,
     FieldErrorsComponent,
+    FormMachineEditComponent,
+    FormJobEditComponent,
+    FormGroupEditComponent,
+    FormLogEditComponent,
   ],
   imports: [
     BrowserModule,
