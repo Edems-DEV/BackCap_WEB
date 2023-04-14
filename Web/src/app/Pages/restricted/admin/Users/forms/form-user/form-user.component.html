@@ -10,15 +10,23 @@
     [parentForm]="form"
     fieldName="name"
     label="Name"
-    formControlName="name"/>
+    formControlName="name"
+  />
   <app-input-text
     class="col-md-6"
     [parentForm]="form"
     fieldName="email"
     label="Email"
-    formControlName="email"/>
+    formControlName="email"
+  />
   <!-- -->
-  <app-input-cron [label]="'Interval'" class="col-md-12" />
+  <app-input-cron
+    class="col-md-12"
+    [parentForm]="form"
+    fieldName="interval_Report"
+    label="Interval"
+    formControlName="interval_Report"
+  />
   <!-- -->
   <app-input-password
       class="col-md-6"

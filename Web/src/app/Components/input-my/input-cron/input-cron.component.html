@@ -1,9 +1,23 @@
 <div class="row">
 	<div class="col">
 		<div ngbDropdown class="d-inline-block">
-      <label for="inputCron" class="form-label">{{ label }}</label>
+      <label [for]="fieldName" class="form-label">{{ label }}</label>
       <div class="input-group" id="dropdownForm1" ngbDropdownToggle>
-        <input type="text" class="form-control" id="inputCron" value="{{value}}" readonly />
+        <input
+          readonly
+          class="form-control"
+          [ngClass]="{
+              'has-error':
+                  formField?.invalid
+                  && formField?.dirty
+          }"
+          [id]="fieldName"
+          [name]="fieldName"
+          [value]="value"
+          [disabled]="isDisabled"
+          (input)="onChange( $event )"
+          (blur)="touched()"
+        />
         <i class="bi bi-clock-history input-group-text bg-dark" ></i>
       </div>
 			<div ngbDropdownMenu aria-labelledby="dropdownForm1">
