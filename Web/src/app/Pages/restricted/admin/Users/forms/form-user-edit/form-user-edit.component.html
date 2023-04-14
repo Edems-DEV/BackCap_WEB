@@ -1,1 +1,5 @@
-<p>form-user-edit works!</p>
+<app-form-user
+  [form]="form"
+  (saved)="saveUser($event)"
+  *ngIf="form"
+></app-form-user>

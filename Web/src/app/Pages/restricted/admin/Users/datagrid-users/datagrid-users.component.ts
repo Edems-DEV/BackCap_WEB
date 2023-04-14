@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { User } from '../../../../../models/user.model';
 import { UsersService } from '../../../../../services/users.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormUserComponent } from '../forms/form-user/form-user.component';
+//import { FormUserComponent } from '../forms/form-user/form-user.component';
+import { FormUserEditComponent } from '../forms/form-user-edit/form-user-edit.component';
 
 @Component({
   selector: 'app-datagrid-users',
@@ -25,11 +26,11 @@ export class DatagridUsersComponent implements OnInit {
 
   //Modal data: User
   public createUser(): void {
-    this.modalService.open(FormUserComponent, { centered: true });
+    this.modalService.open(FormUserEditComponent, { centered: true });
   }
 
   public editUser(user: User): void {
-    const modalRef = this.modalService.open(FormUserComponent, {
+    const modalRef = this.modalService.open(FormUserEditComponent, {
       centered: true,
     });
     modalRef.componentInstance.user = user;

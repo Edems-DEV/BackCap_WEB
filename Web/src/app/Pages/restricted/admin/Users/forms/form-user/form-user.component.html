@@ -3,14 +3,44 @@
 </app-form-core> -->
 
 <!--[formGroup]="form"-->
-<form class="row g-3" >
+<form [formGroup]="form" class="row g-3" autocomplete="off">
   <!-- -->
-  <app-input-text [label]="'Name'" class="col-md-6" value="{{name}}"/>
-  <app-input-text [label]="'Email'" [type]="'email'" class="col-md-6" value="{{email}}"/>
+  <app-input-text
+    class="col-md-6"
+    [parentForm]="form"
+    fieldName="name"
+    label="Name"
+    formControlName="name"/>
+  <app-input-text
+    class="col-md-6"
+    [parentForm]="form"
+    fieldName="email"
+    label="Email"
+    formControlName="email"/>
   <!-- -->
-  <app-input-cron [label]="'Interval'" class="col-md-12" value="{{interval}}"/>
+  <app-input-cron [label]="'Interval'" class="col-md-12" />
   <!-- -->
-  <app-input-password [label]="'Password'" class="col-md-6"/>
-  <app-input-password [label]="'Repeat password'" class="col-md-6"/>
+  <app-input-password
+      class="col-md-6"
+			[parentForm]="form"
+			fieldName="password"
+			label="Password"
+			formControlName="password">
+  </app-input-password>
+  <app-input-password
+      class="col-md-6"
+			[parentForm]="form"
+			fieldName="password2"
+			label="Repeat password"
+			formControlName="password2">
+		</app-input-password>
   <!-- -->
+  <div class="modal-footer">
+  <button type="button" class="btn btn-outline-primary">
+    Cancel
+  </button>
+  <button type="submit" class="btn btn-primary" (click)="save()">
+    Save
+  </button>
+</div>
 </form>

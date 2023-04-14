@@ -58,6 +58,7 @@ import { ParticlesJsComponent } from './Pages/LogIn/particles-js/particles-js.co
 import { MyIconComponent } from './Components/_other/my-icon/my-icon.component';
 import { FormUserCreateComponent } from './Pages/restricted/admin/Users/forms/form-user-create/form-user-create.component';
 import { FormUserEditComponent } from './Pages/restricted/admin/Users/forms/form-user-edit/form-user-edit.component';
+import { FieldErrorsComponent } from './Components/input-my/_other/field-errors/field-errors.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { FormUserEditComponent } from './Pages/restricted/admin/Users/forms/form
     MyIconComponent,
     FormUserCreateComponent,
     FormUserEditComponent,
+    FieldErrorsComponent,
   ],
   imports: [
     BrowserModule,

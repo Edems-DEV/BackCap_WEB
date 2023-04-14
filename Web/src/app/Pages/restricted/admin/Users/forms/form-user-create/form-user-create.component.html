@@ -1,1 +1,17 @@
 <p>form-user-create works!</p>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="row align-items-center">
+          <div class="col">Nový uživatel</div>
+
+          <div class="col text-end"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <app-form-user [form]="form" (saved)="saveUser($event)"></app-form-user>
+      </div>
+    </div>
+  </div>
+</div>
