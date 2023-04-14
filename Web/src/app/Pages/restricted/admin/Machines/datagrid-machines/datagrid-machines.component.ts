@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+//-----------------------------------------------------------
+import { Machine } from 'src/app/models/machine.model';
+import { MachinesService } from 'src/app/services/machines/machines.service';
+//-----------------------------------------------------------
+import { FormMachineEditComponent } from 'src/app/Pages/restricted/admin/Machines/forms/form-machine-edit/form-machine-edit.component';
+//import { FormMachineCreateComponent } from 'src/app/Pages/restricted/admin/Machines/forms/form-machine-create/form-machine-create.component';
 
 @Component({
   selector: 'app-datagrid-machines',
@@ -6,120 +13,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./datagrid-machines.component.scss'],
 })
 export class DatagridMachinesComponent {
-  machines = MACHINES;
-}
+  public data: Machine[];
 
-interface Machine {
-  name: string;
-  description: string;
-  status: number;
-  group: string[];
-  config: string[];
+  public constructor(
+    private service: MachinesService,
+    private modalService: NgbModal
+  ) {}
+
+  public ngOnInit(): void {
+    console.log('ngOnInit()');
+    this.refresh();
+  }
+
+  //Modal data: Machine
+  // public createMachine(): void {
+  //   this.modalService.open(FormMachineCreateComponent, { centered: true });
+  // }
+
+  public editMachine(machine: Machine): void {
+    const modalRef = this.modalService.open(FormMachineEditComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.machine = machine;
+    modalRef.componentInstance.title = 'Edit';
+  }
+
+  public deleteMachine(machine: Machine): void {
+    this.service.delete(machine).subscribe(() => this.refresh());
+  }
+
+  private refresh(): void {
+    this.service.findAll().subscribe((result) => (this.data = result));
+  }
 }
-const MACHINES: Machine[] = [
-  {
-    name: 'Pc_1',
-    description: 'SupaPC',
-    status: 0,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_2',
-    description: 'SupaPC',
-    status: 1,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_3',
-    description: 'SupaPC',
-    status: 2,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_4',
-    description: 'SupaPC',
-    status: 2,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_5',
-    description: 'SupaPC',
-    status: 1,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2', 'config3', 'config3'],
-  },
-  {
-    name: 'Pc_6',
-    description: 'SupaPC',
-    status: 0,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_7',
-    description: 'SupaPC',
-    status: 2,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_8',
-    description: 'SupaPC',
-    status: 1,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_9',
-    description: 'SupaPC',
-    status: 2,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_10',
-    description: 'SupaPC',
-    status: 1,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_11',
-    description: 'SupaPC',
-    status: 0,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_12',
-    description: 'SupaPC',
-    status: 2,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_13',
-    description: 'SupaPC',
-    status: 2,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_14',
-    description: 'SupaPC',
-    status: 1,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-  {
-    name: 'Pc_15',
-    description: 'SupaPC',
-    status: 2,
-    group: ['group1', 'group2'],
-    config: ['config1', 'config2'],
-  },
-];

@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+//-----------------------------------------------------------
+import { Job } from 'src/app/models/job.model';
+import { JobsService } from 'src/app/services/jobs/jobs.service';
+//-----------------------------------------------------------
+import { FormJobEditComponent } from 'src/app/Pages/restricted/admin/Jobs/forms/form-job-edit/form-job-edit.component';
+//import { FormJobCreateComponent } from 'src/app/Pages/restricted/admin/Jobs/forms/form-job-create/form-job-create.component';
 
 @Component({
   selector: 'app-datagrid-jobs',
@@ -6,121 +13,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./datagrid-jobs.component.scss'],
 })
 export class DatagridJobsComponent {
-  jobs = JOBS;
-}
+  public data: Job[];
 
-interface Job {
-  name: string;
-  status: 'waiting' | 'running' | 'success' | 'failed';
-  target: string[];
-  time_start: Date;
-  time_end: Date | null;
-}
+  public constructor(
+    private service: JobsService,
+    private modalService: NgbModal
+  ) {}
 
-const JOBS: Job[] = [
-  {
-    name: 'PC1-diff_1',
-    status: 'running',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_2',
-    status: 'success',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_3',
-    status: 'failed',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_4',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_5',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_6',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_7',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_8',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_9',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_10',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_11',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_12',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_13',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_14',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-  {
-    name: 'PC1-diff_15',
-    status: 'waiting',
-    target: ['Group_1', 'Group_2'],
-    time_start: new Date('2022-04-30T12:00:00Z'),
-    time_end: new Date('2022-04-30T13:00:00Z'),
-  },
-];
+  public ngOnInit(): void {
+    console.log('ngOnInit()');
+    this.refresh();
+  }
+
+  //Modal data: Job
+  // public createJob(): void {
+  //   this.modalService.open(FormJobCreateComponent, { centered: true });
+  // }
+
+  public editJob(job: Job): void {
+    const modalRef = this.modalService.open(FormJobEditComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.job = job;
+    modalRef.componentInstance.title = 'Edit';
+  }
+
+  public deleteJob(job: Job): void {
+    this.service.delete(job).subscribe(() => this.refresh());
+  }
+
+  private refresh(): void {
+    this.service.findAll().subscribe((result) => (this.data = result));
+  }
+}

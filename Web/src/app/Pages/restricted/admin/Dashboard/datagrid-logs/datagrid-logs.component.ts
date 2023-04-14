@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+//-----------------------------------------------------------
+import { Log } from 'src/app/models/log.model';
+import { LogsService } from 'src/app/services/logs/logs.service';
+//-----------------------------------------------------------
+// import { FormLogEditComponent } from 'src/app/Pages/restricted/admin/Logs/forms/form-log-edit/form-log-edit.component';
+// import { FormLogCreateComponent } from 'src/app/Pages/restricted/admin/Logs/forms/form-log-create/form-log-create.component';
 
 @Component({
   selector: 'app-datagrid-logs',
@@ -6,74 +13,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./datagrid-logs.component.scss'],
 })
 export class DatagridLogsComponent {
-  logs = LOGS;
-}
+  public data: Log[];
 
-interface Log {
-  time: Date;
-  status: string;
-  target: string;
-  message: string;
+  public constructor(
+    private service: LogsService,
+    private modalService: NgbModal
+  ) {}
+
+  public ngOnInit(): void {
+    console.log('ngOnInit()');
+    this.refresh();
+  }
+
+  //Modal data: Log
+  // public createLog(): void {
+  //   this.modalService.open(FormLogCreateComponent, { centered: true });
+  // }
+
+  // public editLog(log: Log): void {
+  //   const modalRef = this.modalService.open(FormLogEditComponent, {
+  //     centered: true,
+  //   });
+  //   modalRef.componentInstance.log = log;
+  //   modalRef.componentInstance.title = 'Edit';
+  // }
+
+  public deleteLog(log: Log): void {
+    this.service.delete(log).subscribe(() => this.refresh());
+  }
+
+  private refresh(): void {
+    this.service.findAll().subscribe((result) => (this.data = result));
+  }
 }
-const LOGS: Log[] = [
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Differncial backup was successfuly created on Pc1',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'failed',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'failed',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-  {
-    time: new Date('2022-04-30T12:00:00Z'),
-    status: 'success',
-    target: 'Pc1',
-    message: 'Pc1 - backed up',
-  },
-];
