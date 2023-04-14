@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class MachinesService {
   constructor(private http: HttpClient) {}
 
-  url: string = environment.apiEndpoint + 'machines';
+  url: string = environment.apiEndpoint + 'Machines';
 
   public findAll(): Observable<Machine[]> {
     return this.http.get<Machine[]>(this.url);

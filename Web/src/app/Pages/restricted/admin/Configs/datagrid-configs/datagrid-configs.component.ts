@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 //-----------------------------------------------------------
 import { Config } from 'src/app/models/config.model';
+import { Machine } from 'src/app/models/machine.model';
 import { ConfigsService } from 'src/app/services/configs/configs.service';
 //-----------------------------------------------------------
 import { FormConfigEditComponent } from 'src/app/Pages/restricted/admin/Configs/forms/form-config-edit/form-config-edit.component';
@@ -20,10 +21,10 @@ export class DatagridConfigsComponent {
     private modalService: NgbModal
   ) {}
 
-  // public ngOnInit(): void {
-  //   console.log('ngOnInit()');
-  //   this.refresh();
-  // }
+  public ngOnInit(): void {
+    console.log('ngOnInit()');
+    this.refresh();
+  }
 
   //Modal data: Config
   public createConfig(): void {
@@ -42,9 +43,7 @@ export class DatagridConfigsComponent {
   //   this.service.delete(config).subscribe(() => this.refresh());
   // }
 
-  // private refresh(): void {
-  //   this.service.findAll().subscribe((result) => (this.data = result));
-  // }
+  private refresh(): void {
+    this.service.findAll().subscribe((result) => (this.configs = result));
+  }
 }
-
-//cant handle array of objects as property?

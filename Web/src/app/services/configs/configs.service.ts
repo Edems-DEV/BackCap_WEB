@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Machine } from 'src/app/models/machine.model';
+import { Config } from 'src/app/models/config.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -11,25 +11,25 @@ import { environment } from 'src/environments/environment';
 export class ConfigsService {
   constructor(private http: HttpClient) {}
 
-  url: string = environment.apiEndpoint + 'machines';
+  url: string = environment.apiEndpoint + 'configs';
 
-  public findAll(): Observable<Machine[]> {
-    return this.http.get<Machine[]>(this.url);
+  public findAll(): Observable<Config[]> {
+    return this.http.get<Config[]>(this.url);
   }
 
-  public findById(id: number): Observable<Machine> {
-    return this.http.get<Machine>(this.url + '/' + id);
+  public findById(id: number): Observable<Config> {
+    return this.http.get<Config>(this.url + '/' + id);
   }
 
-  public insert(machine: Machine): Observable<Machine> {
-    return this.http.post<Machine>(this.url, machine);
+  public insert(config: Config): Observable<Config> {
+    return this.http.post<Config>(this.url, config);
   }
 
-  public update(machine: Machine): Observable<Machine> {
-    return this.http.put<Machine>(this.url + '/' + machine.id, machine);
+  public update(config: Config): Observable<Config> {
+    return this.http.put<Config>(this.url + '/' + config.id, config);
   }
 
-  public delete(machine: Machine): Observable<Machine> {
-    return this.http.delete<Machine>(this.url + '/' + machine.id);
+  public delete(config: Config): Observable<Config> {
+    return this.http.delete<Config>(this.url + '/' + config.id);
   }
 }
