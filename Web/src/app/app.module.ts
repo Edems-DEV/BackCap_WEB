@@ -63,6 +63,8 @@ import { FormMachineEditComponent } from './Pages/restricted/admin/Machines/form
 import { FormJobEditComponent } from './Pages/restricted/admin/Jobs/forms/form-job-edit/form-job-edit.component';
 import { FormGroupEditComponent } from './Pages/restricted/admin/Groups/forms/form-group-edit/form-group-edit.component';
 import { FormLogEditComponent } from './Pages/restricted/admin/Dashboard/forms/form-log-edit/form-log-edit.component';
+import { FormConfigEditComponent } from './Pages/restricted/admin/Configs/forms/form-config-edit/form-config-edit.component';
+import { FormConfigCreateComponent } from './Pages/restricted/admin/Configs/forms/form-config-create/form-config-create.component';
 
 @NgModule({
   declarations: [
@@ -123,6 +125,8 @@ import { FormLogEditComponent } from './Pages/restricted/admin/Dashboard/forms/f
     FormJobEditComponent,
     FormGroupEditComponent,
     FormLogEditComponent,
+    FormConfigEditComponent,
+    FormConfigCreateComponent,
   ],
   imports: [
     BrowserModule,
