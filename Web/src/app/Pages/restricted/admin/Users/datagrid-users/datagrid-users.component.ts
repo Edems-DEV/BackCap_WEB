@@ -5,6 +5,7 @@ import { UsersService } from '../../../../../services/users.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 //import { FormUserComponent } from '../forms/form-user/form-user.component';
 import { FormUserEditComponent } from '../forms/form-user-edit/form-user-edit.component';
+import { FormUserCreateComponent } from '../forms/form-user-create/form-user-create.component';
 
 @Component({
   selector: 'app-datagrid-users',
@@ -26,7 +27,7 @@ export class DatagridUsersComponent implements OnInit {
 
   //Modal data: User
   public createUser(): void {
-    this.modalService.open(FormUserEditComponent, { centered: true });
+    this.modalService.open(FormUserCreateComponent, { centered: true });
   }
 
   public editUser(user: User): void {

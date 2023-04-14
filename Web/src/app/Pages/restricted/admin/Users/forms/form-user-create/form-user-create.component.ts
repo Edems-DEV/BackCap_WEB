@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { User } from '../../../../../../models/user.model';
 import { UsersService } from '../../../../../../services/users.service';
 import { FormUserComponent } from '../form-user/form-user.component';
@@ -15,11 +14,7 @@ export class FormUserCreateComponent {
 
   user: User;
 
-  public constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private service: UsersService
-  ) {}
+  public constructor(private fb: FormBuilder, private service: UsersService) {}
 
   public ngOnInit(): void {
     this.form = FormUserComponent.createForm(
@@ -29,8 +24,6 @@ export class FormUserCreateComponent {
   }
 
   public saveUser(values: any): void {
-    this.service
-      .insert(values)
-      .subscribe(() => this.router.navigate(['/users']));
+    this.service.insert(values).subscribe();
   }
 }
