@@ -12,7 +12,7 @@ import { CardLoginComponent } from './Pages/LogIn/card-login/card-login.componen
 import { CardStatsComponent } from './Components/card-stats/card-stats.component';
 import { DatagridComponent } from './Components/datagrid/datagrid.component';
 import { PageDashboardComponent } from './Pages/restricted/admin/Dashboard/page-dashboard/page-dashboard.component';
-import { FormConfigComponent } from './Pages/restricted/admin/Configs/form-config/form-config.component';
+import { FormConfigComponent } from './Pages/restricted/admin/Configs/forms/form-config/form-config.component';
 import { InputPathComponent } from './Components/input-my/input-path/input-path.component';
 import { InputMultiselectComponent } from './Components/input-my/input-multiselect/input-multiselect.component';
 import { SidebarBtnComponent } from './Components/sidebar/sidebar-btn/sidebar-btn.component';

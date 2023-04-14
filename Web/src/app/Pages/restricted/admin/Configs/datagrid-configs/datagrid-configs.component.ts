@@ -1,5 +1,11 @@
-import { Component } from '@angular/core';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+//-----------------------------------------------------------
+import { Config } from 'src/app/models/config.model';
+import { ConfigsService } from 'src/app/services/configs/configs.service';
+//-----------------------------------------------------------
+// import { FormConfigEditComponent } from 'src/app/Pages/restricted/admin/Configs/forms/form-config-edit/form-config-edit.component';
+// import { FormConfigCreateComponent } from 'src/app/Pages/restricted/admin/Configs/forms/form-config-create/form-config-create.component';
 
 @Component({
   selector: 'app-datagrid-configs',
@@ -7,217 +13,38 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./datagrid-configs.component.scss'],
 })
 export class DatagridConfigsComponent {
-  configs = CONFIGS;
+  public data: Config[];
+
+  public constructor(
+    private service: ConfigsService,
+    private modalService: NgbModal
+  ) {}
+
+  // public ngOnInit(): void {
+  //   console.log('ngOnInit()');
+  //   this.refresh();
+  // }
+
+  //Modal data: Config
+  // public createConfig(): void {
+  //   this.modalService.open(FormConfigCreateComponent, { centered: true });
+  // }
+
+  // public editConfig(config: Config): void {
+  //   const modalRef = this.modalService.open(FormConfigEditComponent, {
+  //     centered: true,
+  //   });
+  //   modalRef.componentInstance.config = config;
+  //   modalRef.componentInstance.title = 'Edit';
+  // }
+
+  // public deleteConfig(config: Config): void {
+  //   this.service.delete(config).subscribe(() => this.refresh());
+  // }
+
+  // private refresh(): void {
+  //   this.service.findAll().subscribe((result) => (this.data = result));
+  // }
 }
 
-interface Config {
-  name: string;
-  isZip: boolean;
-  type: string;
-  rentention: number;
-  interval: string;
-  destinations: string[];
-  sources: string[];
-  machines: string[];
-  groups: string[];
-}
-
-// const values = [
-//   { value: 0, title: 'full', class: 'chip-green' },
-//   { value: 1, title: 'diff', class: 'chip-orange' },
-//   { value: 2, title: 'Inc', class: 'chip-blue' },
-// ];
-
-// prettier-ignore
-const CONFIGS: Config[] = [
-  {
-    name: 'Cfg_1',
-    isZip: true,
-    type: 'full',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_1',
-    isZip: false,
-    type: 'diff',
-    rentention: 5,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_3',
-    isZip: true,
-    type: 'inc',
-    rentention: 4,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'diff',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'full',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'diff',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'inc',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'inc',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'diff',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-  {
-    name: 'Cfg_x',
-    isZip: true,
-    type: 'full',
-    rentention: 1,
-    interval: 'Every Monday at 9:00',
-    destinations: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    sources: [
-      'C:Program FilesAdobeAdobe Creative Cloud',
-      'C:Program Files',
-      'C:Users\rootDocuments',
-    ],
-    machines: ['Pc1', 'Pc2'],
-    groups: ['Group_1', 'Group_2'],
-  },
-];
+//cant handle array of objects as property?

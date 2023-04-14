@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+//-----------------------------------------------------------
 import { User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users/users.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-//import { FormUserComponent } from '../forms/form-user/form-user.component';
-import { FormUserEditComponent } from '../forms/form-user-edit/form-user-edit.component';
-import { FormUserCreateComponent } from '../forms/form-user-create/form-user-create.component';
+//-----------------------------------------------------------
+import { FormUserEditComponent } from 'src/app/Pages/restricted/admin/Users/forms/form-user-edit/form-user-edit.component';
+import { FormUserCreateComponent } from 'src/app/Pages/restricted/admin/Users/forms/form-user-create/form-user-create.component';
 
 @Component({
   selector: 'app-datagrid-users',
