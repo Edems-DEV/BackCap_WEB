@@ -11,21 +11,4 @@ export class FormCoreComponent {
   @Input() title: string = 'Settings';
   @Input() icon: string | undefined;
   @Input() icon2: string | undefined;
-  //Modal
-  constructor(private modalService: NgbModal) {}
-  openVerticallyCentered(content: any) {
-    this.modalService.open(content, { centered: true });
-  }
-  closeModal() {
-    console.log('close');
-    this.modalService.dismissAll();
-  }
-  @ContentChild('form') childForm: HTMLFormElement;
-
-  ngAfterContentInit() {
-    this.childForm.addEventListener('submit', () =>
-      console.log('user-from => saved')
-    );
-    this.childForm.addEventListener('submit', () => this.closeModal());
-  }
 }
