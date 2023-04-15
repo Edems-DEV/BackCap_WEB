@@ -32,4 +32,8 @@ export class JobsService {
   public delete(job: Job): Observable<Job> {
     return this.http.delete<Job>(this.url + '/' + job.id);
   }
+  //--------------------------------------------------------------
+  public count(): Observable<number> {
+    return this.http.get<number>(this.url + '/count');
+  }
 }

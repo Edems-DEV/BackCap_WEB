@@ -32,4 +32,8 @@ export class GroupsService {
   public delete(group: Group): Observable<Group> {
     return this.http.delete<Group>(this.url + '/' + group.id);
   }
+  //--------------------------------------------------------------
+  public count(): Observable<number> {
+    return this.http.get<number>(this.url + '/count');
+  }
 }

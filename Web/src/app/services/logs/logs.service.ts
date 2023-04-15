@@ -32,4 +32,8 @@ export class LogsService {
   public delete(log: Log): Observable<Log> {
     return this.http.delete<Log>(this.url + '/' + log.id);
   }
+  //--------------------------------------------------------------
+  public count(): Observable<number> {
+    return this.http.get<number>(this.url + '/count');
+  }
 }

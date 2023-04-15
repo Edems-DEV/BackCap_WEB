@@ -32,4 +32,8 @@ export class UsersService {
   public delete(user: User): Observable<User> {
     return this.http.delete<User>(this.url + '/' + user.id);
   }
+  //--------------------------------------------------------------
+  public count(): Observable<number> {
+    return this.http.get<number>(this.url + '/count');
+  }
 }

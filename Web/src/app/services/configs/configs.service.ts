@@ -32,4 +32,8 @@ export class ConfigsService {
   public delete(config: Config): Observable<Config> {
     return this.http.delete<Config>(this.url + '/' + config.id);
   }
+  //--------------------------------------------------------------
+  public count(): Observable<number> {
+    return this.http.get<number>(this.url + '/count');
+  }
 }

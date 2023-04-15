@@ -20,13 +20,13 @@
       <th scope="row">{{ i + 1 }}</th>
       <!-- <td><b>{{ config.name }}</b></td> -->
       <td><i class="bi bi-{{config.isCompressed ? 'check' : 'x'}}-lg"></i></td>
-      <td>
+      <!-- <td>
         <div class="chip mx-1">
           <span class="chip-green" *ngIf="config.type === 0">FULL</span>
           <span class="chip-yellow" *ngIf="config.type === 1">DIFF</span>
           <span class="chip-purple" *ngIf="config.type === 2">INC</span>
         </div>
-      </td>
+      </td> -->
       <td>{{ config.retention }}</td>
       <td>{{ config.packageSize }}</td>
       <td>{{ config.backup_interval }}</td>

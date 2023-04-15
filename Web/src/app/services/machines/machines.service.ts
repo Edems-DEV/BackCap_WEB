@@ -32,4 +32,15 @@ export class MachinesService {
   public delete(machine: Machine): Observable<Machine> {
     return this.http.delete<Machine>(this.url + '/' + machine.id);
   }
+
+  //--------------------------------------------------------------
+  public count(): Observable<number> {
+    return this.http.get<number>(this.url + '/count');
+  }
+  public countActive(): Observable<number> {
+    return this.http.get<number>(this.url + '/count?active=true');
+  }
+  public countDisable(): Observable<number> {
+    return this.http.get<number>(this.url + '/count?active=false');
+  }
 }
