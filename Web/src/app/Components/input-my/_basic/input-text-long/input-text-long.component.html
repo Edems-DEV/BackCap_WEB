@@ -5,10 +5,10 @@
   [ngClass]="{
     'has-error': formField?.invalid && formField?.dirty
   }"
+  [readonly] = isReadonly
   [id]="fieldName"
   [name]="fieldName"
   [value]="value"
-  [disabled]="isDisabled"
   (input)="onChange($event)"
   (blur)="touched()"
 ></textarea>

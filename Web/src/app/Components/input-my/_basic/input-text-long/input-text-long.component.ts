@@ -23,6 +23,7 @@ export class InputTextLongComponent {
   @Input() rows: number = 1;
   @Input() value: string = '';
   @Input() class: string = '';
+  @Input() isReadonly: boolean = false;
 
   @Input()
   public parentForm: FormGroup;

@@ -23,6 +23,7 @@ export class InputTextComponent {
   @Input() type: string = 'text';
   @Input() value: string = '';
   @Input() class: string = '';
+  @Input() isReadonly: boolean = false;
 
   @Input() //forgor :|
   public parentForm: FormGroup;
