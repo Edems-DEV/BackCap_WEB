@@ -22,8 +22,9 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 export class InputCronComponent {
   public isCollapsed = true;
   @Input() label: string = 'Interval';
+  @Input() class: string = '';
 
-  active = 1;
+  active = 2;
   //-----------------------------------
   @Input() public parentForm: FormGroup;
   @Input() public fieldName: string;
@@ -48,7 +49,7 @@ export class InputCronComponent {
 
   public onChange(event: Event): void {
     const value: string = (<HTMLInputElement>event.target).value;
-
+    this.value = value; // Update the value property
     this.changed(value);
   }
 

@@ -5,24 +5,14 @@
       <div class="input-group" id="dropdownForm1" ngbDropdownToggle>
         <input
           readonly
-          class="form-control"
-          [ngClass]="{
-              'has-error':
-                  formField?.invalid
-                  && formField?.dirty
-          }"
-          [id]="fieldName"
-          [name]="fieldName"
-          [value]="value"
-          [disabled]="isDisabled"
-          (input)="onChange( $event )"
-          (blur)="touched()"
+          class="form-control {{ class }}"
+          [(ngModel)]="value"
         />
         <i class="bi bi-clock-history input-group-text bg-dark" ></i>
       </div>
 			<div ngbDropdownMenu aria-labelledby="dropdownForm1">
-        <ul ngbNav #nav="ngbNav" class="nav-tabs">
-          <li ngbNavItem>
+        <ul ngbNav #nav="ngbNav" class="nav-tabs" [activeId]="2">
+          <li [ngbNavItem]="1" [disabled]="true">
             <a ngbNavLink>Simple</a>
             <ng-template ngbNavContent>
               <div class="d-flex flex-column gap-1 mx-2 my-3">
@@ -66,13 +56,24 @@
               </div>
             </ng-template>
           </li>
-          <li ngbNavItem>
+          <li [ngbNavItem]="2">
             <a ngbNavLink>Advance</a>
             <ng-template ngbNavContent>
               <input
                   class="form-control cron-field"
                   placeholder="* * * * *"
                   style="text-align: center;"
+                  [ngClass]="{
+                      'has-error':
+                          formField?.invalid
+                          && formField?.dirty
+                  }"
+                  [id]="fieldName"
+                  [name]="fieldName"
+                  [value]="value"
+                  [disabled]="isDisabled"
+                  (input)="onChange( $event )"
+                  (blur)="touched()"
                 />
               <div class="d-flex flex-row align-items-top justify-content-center gap-2 sf">
                 <span>minute</span>
