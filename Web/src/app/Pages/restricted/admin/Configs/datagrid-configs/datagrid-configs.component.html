@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let config of configs; index as i">
+    <tr *ngFor="let config of configs; index as i" (click)="editConfig(config)">
       <th scope="row">{{ i + 1 }}</th>
       <!-- <td><b>{{ config.name }}</b></td> -->
       <td><i class="bi bi-{{config.isCompressed ? 'check' : 'x'}}-lg"></i></td>

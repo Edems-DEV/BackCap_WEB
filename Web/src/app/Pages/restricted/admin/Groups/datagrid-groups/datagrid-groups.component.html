@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let group of groups; index as i">
+    <tr *ngFor="let group of groups; index as i" (click)="editGroup(group)">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ group.name }}</td>
       <!-- <td>{{ group.description }}</td>

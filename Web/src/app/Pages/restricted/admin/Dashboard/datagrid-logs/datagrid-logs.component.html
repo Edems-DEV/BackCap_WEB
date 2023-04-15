@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let log of logs; index as i">
+    <tr *ngFor="let log of logs; index as i" (click)="editLog(log)">
       <th scope="row">{{ i + 1 }}</th>
       <td id="Time">
         <span>{{ log.time | date : "yyyy.MM.dd" }}</span>
