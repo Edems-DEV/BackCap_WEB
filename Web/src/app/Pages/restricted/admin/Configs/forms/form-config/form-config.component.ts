@@ -18,7 +18,22 @@ export class FormConfigComponent {
 
   public static createForm(fb: FormBuilder, config: Config): FormGroup {
     return fb.group({
+      // name: [config.name, [Validators.required]],
+      // descripton: [config.descripton, [Validators.required]],
       type: [config.type, [Validators.required]],
+      isCompressed: [config.isCompressed, [Validators.required]],
+      //---------------------------------------------------------
+      packageSize: [config.packageSize, [Validators.required]],
+      retention: [config.retention, [Validators.required]],
+      //---------------------------------------------------------
+      backup_interval: [config.backup_interval, [Validators.required]],
+      interval_end: [config.interval_end, [Validators.required]],
+      //---------------------------------------------------------
+      sources: [config.sources, [Validators.required]],
+      destinations: [config.destinations, [Validators.required]],
+      //---------------------------------------------------------
+      // computers: [config.computers, [Validators.required]],
+      // groups: [config.groups, [Validators.required]],
     });
   }
 

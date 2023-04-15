@@ -19,6 +19,8 @@ export class FormLogComponent {
   public static createForm(fb: FormBuilder, log: Log): FormGroup {
     return fb.group({
       name: [log.id, [Validators.required]],
+      time: [log.time, [Validators.required]],
+      message: [log.message, [Validators.required]],
     });
   }
 

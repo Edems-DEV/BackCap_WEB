@@ -1,28 +1,61 @@
 <app-form-core [title]=title [icon2]="'bi bi-gear-fill'">
   <form [formGroup]="form" class="row g-3" autocomplete="off">
     <!-- -->
-    <!-- <app-input-text
+    <app-input-text
       class="col-md-6"
       [parentForm]="form"
       fieldName="name"
       label="Name"
       formControlName="name"
-    /> -->
-    <app-input-text [label]="'Name'" class="col-md-6"/>
-    <app-input-text-long [label]="'Description'" class="col-md-6"/>
+    />
+    <app-input-text-long
+      class="col-md-6"
+      [parentForm]="form"
+      fieldName="description"
+      label="Description"
+      formControlName="description"
+    />
+    <!-- <app-input-text [label]="'Name'" class="col-md-6"/>
+    <app-input-text-long [label]="'Description'" class="col-md-6"/> -->
     <!---->
     <app-input-select [label]="'Type'" class="col-md-6">
-    <option value="1">Full</option>
-    <option value="2">Incremental</option>
-    <option value="3">Differencial</option>
+      <option value="1">Full</option>
+      <option value="2">Incremental</option>
+      <option value="3">Differencial</option>
     </app-input-select>
     <app-input-switch [label]="'Compress'" class="col-md-6"/>
     <!-- -->
-    <app-input-number [label]="'Package size'" class="col-md-6"/>
-    <app-input-number [label]="'Retention'" class="col-md-6"/>
+    <app-input-number
+    class="col-md-6"
+    [parentForm]="form"
+    fieldName="packageSize"
+    label="Package size"
+    formControlName="packageSize"
+    />
+    <app-input-number
+    class="col-md-6"
+    [parentForm]="form"
+    fieldName="retention"
+    label="Retention"
+    formControlName="retention"
+    />
+    <!-- <app-input-number [label]="'Package size'" class="col-md-6"/>
+    <app-input-number [label]="'Retention'" class="col-md-6"/> -->
     <!-- -->
-    <app-input-cron [label]="'Interval'" class="col-md-6"/>
-    <app-input-date [label]="'End of interval'" class="col-md-6"/>
+    <app-input-cron
+      class="col-md-6"
+      [parentForm]="form"
+      fieldName="backup_interval"
+      label="Interval"
+      formControlName="backup_interval"
+    />
+    <app-input-date
+      class="col-md-6"
+      [parentForm]="form"
+      fieldName="interval_end"
+      label="End of interval"
+      formControlName="interval_end"
+    />
     <!-- -->
     <app-input-path [label]="'Source paths'" class="col-md-6"/>
     <app-input-path [label]="'Destination paths'" class="col-md-6"/>

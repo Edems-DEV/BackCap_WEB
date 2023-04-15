@@ -19,6 +19,9 @@ export class FormMachineComponent {
   public static createForm(fb: FormBuilder, machine: Machine): FormGroup {
     return fb.group({
       name: [machine.name, [Validators.required]],
+      description: [machine.description, [Validators.required]],
+      ip_Address: [machine.ip_Address, [Validators.required]],
+      is_Active: [machine.is_Active, [Validators.required]],
     });
   }
 

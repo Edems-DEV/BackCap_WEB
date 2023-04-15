@@ -19,6 +19,7 @@ export class FormGroupComponent {
   public static createForm(fb: FormBuilder, group: Group): FormGroup {
     return fb.group({
       name: [group.name, [Validators.required]],
+      //name: [group.description, [Validators.required]],
     });
   }
 

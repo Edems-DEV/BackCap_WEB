@@ -18,7 +18,12 @@ export class FormJobComponent {
 
   public static createForm(fb: FormBuilder, job: Job): FormGroup {
     return fb.group({
-      id: [job.id, [Validators.required]],
+      name: [job.id, [Validators.required]], //change to name from id
+      // description: [job.description, [Validators.required]],
+      // type: [job.type, [Validators.required]],
+      status: [job.status, [Validators.required]],
+      config: [job.id_Config, [Validators.required]], //use title
+      machine: [job.machine, [Validators.required]],
     });
   }
 

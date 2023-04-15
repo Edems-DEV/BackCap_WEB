@@ -1,8 +1,21 @@
 <app-form-core [title]=title [icon]="'group'">
   <form [formGroup]="form" class="row g-3" autocomplete="off">
     <!-- -->
-    <app-input-text [label]="'Name'" class="col-md-6"/>
-    <app-input-text-long [label]="'Description'" [rows]="1" class="col-md-6"/>
+    <app-input-text
+      class="col-md-6"
+      [parentForm]="form"
+      fieldName="name"
+      label="Name"
+      formControlName="name"
+    />
+    <app-input-text-long
+      class="col-md-6"
+      [rows]="1"
+      [parentForm]="form"
+      fieldName="description"
+      label="Description"
+      formControlName="description"
+    />
     <!-- -->
     <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
     <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
