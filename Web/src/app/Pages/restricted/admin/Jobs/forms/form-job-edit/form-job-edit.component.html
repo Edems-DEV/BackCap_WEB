@@ -1,1 +1,5 @@
-<p>form-job-edit works!</p>
+<app-form-job
+  [form]="form"
+  (saved)="saveJob($event)"
+  *ngIf="form"
+></app-form-job>

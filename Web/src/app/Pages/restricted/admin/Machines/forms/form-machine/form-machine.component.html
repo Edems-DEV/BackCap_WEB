@@ -1,11 +1,22 @@
-<app-form-core [title]="'Details'" [icon]="'pc'">
-  <!-- -->
-  <app-input-text [label]="'Name'" class="col-md-6"/>
-  <app-input-text-long [label]="'Description'" [rows]="1" class="col-md-6"/>
-  <!-- -->
-  <app-input-text [label]="'IPv4'" class="col-md-6"/>
-  <app-input-switch [label]="'isActive'" class="col-md-6"/>
-  <!-- -->
-  <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
-  <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
+<app-form-core [title]=title [icon]="'pc'">
+  <form [formGroup]="form" class="row g-3" autocomplete="off">
+    <!-- -->
+    <app-input-text [label]="'Name'" class="col-md-6"/>
+    <app-input-text-long [label]="'Description'" [rows]="1" class="col-md-6"/>
+    <!-- -->
+    <app-input-text [label]="'IPv4'" class="col-md-6"/>
+    <app-input-switch [label]="'isActive'" class="col-md-6"/>
+    <!-- -->
+    <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
+    <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
+    <!-- -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-primary">
+        Cancel
+      </button>
+      <button type="submit" class="btn btn-primary" (click)="save()">
+        Save
+      </button>
+    </div>
+  </form>
 </app-form-core>

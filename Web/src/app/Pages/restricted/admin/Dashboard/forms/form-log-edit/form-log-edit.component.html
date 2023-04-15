@@ -1,1 +1,5 @@
-<p>form-log-edit works!</p>
+<app-form-log
+  [form]="form"
+  (saved)="saveLog($event)"
+  *ngIf="form"
+></app-form-log>

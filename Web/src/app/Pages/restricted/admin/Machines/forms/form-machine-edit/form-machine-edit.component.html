@@ -1,1 +1,5 @@
-<p>form-machine-edit works!</p>
+<app-form-machine
+  [form]="form"
+  (saved)="saveMachine($event)"
+  *ngIf="form"
+></app-form-machine>

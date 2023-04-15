@@ -1,1 +1,5 @@
-<p>form-group-edit works!</p>
+<app-form-group
+  [form]="form"
+  (saved)="saveGroup($event)"
+  *ngIf="form"
+></app-form-group>
