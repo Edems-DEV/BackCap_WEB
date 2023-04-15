@@ -14,7 +14,7 @@ export class JobsService {
   url: string = environment.apiEndpoint + 'jobs';
 
   public findAll(): Observable<Job[]> {
-    return this.http.get<Job[]>(this.url);
+    return this.http.get<Job[]>(this.url + '?limit=15');
   }
 
   public findById(id: number): Observable<Job> {

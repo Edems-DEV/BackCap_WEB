@@ -14,7 +14,7 @@ export class ConfigsService {
   url: string = environment.apiEndpoint + 'configs';
 
   public findAll(): Observable<Config[]> {
-    return this.http.get<Config[]>(this.url);
+    return this.http.get<Config[]>(this.url + '?limit=10');
   }
 
   public findById(id: number): Observable<Config> {

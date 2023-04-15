@@ -14,7 +14,7 @@ export class MachinesService {
   url: string = environment.apiEndpoint + 'Machines';
 
   public findAll(): Observable<Machine[]> {
-    return this.http.get<Machine[]>(this.url);
+    return this.http.get<Machine[]>(this.url + '?limit=15');
   }
 
   public findById(id: number): Observable<Machine> {

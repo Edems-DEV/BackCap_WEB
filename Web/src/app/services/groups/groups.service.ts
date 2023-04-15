@@ -14,7 +14,7 @@ export class GroupsService {
   url: string = environment.apiEndpoint + 'groups';
 
   public findAll(): Observable<Group[]> {
-    return this.http.get<Group[]>(this.url);
+    return this.http.get<Group[]>(this.url + '?limit=20');
   }
 
   public findById(id: number): Observable<Group> {

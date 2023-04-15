@@ -14,7 +14,7 @@ export class UsersService {
   url: string = environment.apiEndpoint + 'users';
 
   public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.url);
+    return this.http.get<User[]>(this.url + '?limit=20');
   }
 
   public findById(id: number): Observable<User> {

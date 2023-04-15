@@ -14,7 +14,7 @@ export class LogsService {
   url: string = environment.apiEndpoint + 'logs';
 
   public findAll(): Observable<Log[]> {
-    return this.http.get<Log[]>(this.url);
+    return this.http.get<Log[]>(this.url + '?limit=10');
   }
 
   public findById(id: number): Observable<Log> {
