@@ -27,6 +27,12 @@ export class FormUserComponent {
   }
 
   public save(): void {
+    console.log('user-from => saved');
     this.saved.emit(this.form.value);
+    close();
+  }
+
+  public close(): void {
+    console.log('user-from => close');
   }
 }

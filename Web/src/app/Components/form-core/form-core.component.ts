@@ -20,4 +20,12 @@ export class FormCoreComponent {
     console.log('close');
     this.modalService.dismissAll();
   }
+  @ContentChild('form') childForm: HTMLFormElement;
+
+  ngAfterContentInit() {
+    this.childForm.addEventListener('submit', () =>
+      console.log('user-from => saved')
+    );
+    this.childForm.addEventListener('submit', () => this.closeModal());
+  }
 }
