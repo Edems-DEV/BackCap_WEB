@@ -1,9 +1,22 @@
-import { Component, Input } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
+import {
+  ControlValueAccessor,
+  FormControl,
+  FormGroup,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input-path',
   templateUrl: './input-path.component.html',
   styleUrls: ['./input-path.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputPathComponent),
+      multi: true,
+    },
+  ],
 })
 export class InputPathComponent {
   @Input() label: string | undefined;

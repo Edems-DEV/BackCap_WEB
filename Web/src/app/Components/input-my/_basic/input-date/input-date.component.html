@@ -1,9 +1,14 @@
-<label for="inputDate" class="form-label">{{ label }}</label>
+<label [for]="fieldName" class="form-label">{{ label }}</label>
 <input
   type="date"
-  class="form-control"
-  id="inputDate"
-  value="{{ value }}"
-  [(ngModel)]="value"
-  (input)="onInput()"
+  class="form-control {{ class }}"
+  [ngClass]="{
+    'has-error': formField?.invalid && formField?.dirty
+  }"
+  [id]="fieldName"
+  [name]="fieldName"
+  [value]="value"
+  [disabled]="isDisabled"
+  (input)="onChange($event)"
+  (blur)="touched()"
 />

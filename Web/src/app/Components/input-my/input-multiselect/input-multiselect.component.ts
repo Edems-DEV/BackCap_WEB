@@ -1,4 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
+import {
+  ControlValueAccessor,
+  FormControl,
+  FormGroup,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 import {
   NgbTypeahead,
   NgbTypeaheadSelectItemEvent,
@@ -15,6 +21,13 @@ import {
   selector: 'app-input-multiselect',
   templateUrl: './input-multiselect.component.html',
   styleUrls: ['./input-multiselect.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputMultiselectComponent),
+      multi: true,
+    },
+  ],
 })
 export class InputMultiselectComponent {
   @Input() label: string | undefined;

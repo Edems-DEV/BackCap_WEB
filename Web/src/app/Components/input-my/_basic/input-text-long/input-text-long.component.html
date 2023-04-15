@@ -1,8 +1,15 @@
-<label for="inputDescription" class="form-label">{{ label }}</label>
+<label [for]="fieldName" class="form-label">{{ label }}</label>
 <textarea
   class="form-control"
-  id="inputDescription"
   rows="{{ rows }}"
-  [(ngModel)]="value"
-  (input)="onInput()"
+  [ngClass]="{
+    'has-error': formField?.invalid && formField?.dirty
+  }"
+  [id]="fieldName"
+  [name]="fieldName"
+  [value]="value"
+  [disabled]="isDisabled"
+  (input)="onChange($event)"
+  (blur)="touched()"
 ></textarea>
+<app-field-errors [formField]="formField"/>

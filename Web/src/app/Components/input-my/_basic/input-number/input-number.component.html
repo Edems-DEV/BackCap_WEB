@@ -1,10 +1,17 @@
-<label for="inputRetention" class="form-label">{{ label }}</label>
+<label [for]="fieldName" class="form-label">{{ label }}</label>
 <input
   type="number"
-  class="form-control"
-  id="inputRetention"
+  class="form-control {{ class }}"
   placeholder="{{ placeholder }}"
-  value="{{ value }}"
-  [(ngModel)]="value"
-  (input)="onInput()"
+  [ngClass]="{
+    'has-error': formField?.invalid && formField?.dirty
+  }"
+  [id]="fieldName"
+  [name]="fieldName"
+  [value]="value"
+  [disabled]="isDisabled"
+  (input)="onChange($event)"
+  (blur)="touched()"
 />
+<app-field-errors [formField]="formField"/>
+<!-- Just use input-text with type of number? -->
