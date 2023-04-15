@@ -5,7 +5,7 @@ import { Group } from 'src/app/models/group.model';
 import { GroupsService } from 'src/app/services/groups/groups.service';
 //-----------------------------------------------------------
 import { FormGroupEditComponent } from 'src/app/Pages/restricted/admin/Groups/forms/form-group-edit/form-group-edit.component';
-//import { FormGroupCreateComponent } from 'src/app/Pages/restricted/admin/Groups/forms/form-group-create/form-group-create.component';
+import { FormGroupCreateComponent } from 'src/app/Pages/restricted/admin/Groups/forms/form-group-create/form-group-create.component';
 
 @Component({
   selector: 'app-datagrid-groups',
@@ -25,10 +25,10 @@ export class DatagridGroupsComponent {
     this.refresh();
   }
 
-  //Modal data: Group
-  // public createGroup(): void {
-  //   this.modalService.open(FormGroupCreateComponent, { centered: true });
-  // }
+  Modaldata: Group;
+  public createGroup(): void {
+    this.modalService.open(FormGroupCreateComponent, { centered: true });
+  }
 
   public editGroup(group: Group): void {
     const modalRef = this.modalService.open(FormGroupEditComponent, {

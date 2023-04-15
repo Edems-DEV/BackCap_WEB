@@ -65,6 +65,7 @@ import { FormGroupEditComponent } from './Pages/restricted/admin/Groups/forms/fo
 import { FormLogEditComponent } from './Pages/restricted/admin/Dashboard/forms/form-log-edit/form-log-edit.component';
 import { FormConfigEditComponent } from './Pages/restricted/admin/Configs/forms/form-config-edit/form-config-edit.component';
 import { FormConfigCreateComponent } from './Pages/restricted/admin/Configs/forms/form-config-create/form-config-create.component';
+import { FormGroupCreateComponent } from './Pages/restricted/admin/Groups/forms/form-group-create/form-group-create.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { FormConfigCreateComponent } from './Pages/restricted/admin/Configs/form
     FormLogEditComponent,
     FormConfigEditComponent,
     FormConfigCreateComponent,
+    FormGroupCreateComponent,
   ],
   imports: [
     BrowserModule,
