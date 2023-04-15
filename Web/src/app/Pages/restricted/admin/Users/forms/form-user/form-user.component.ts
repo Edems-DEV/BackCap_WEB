@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-form-user',
   templateUrl: './form-user.component.html',
@@ -33,6 +35,14 @@ export class FormUserComponent {
   }
 
   public close(): void {
+    this.closeModal();
     console.log('user-from => close');
+  }
+
+  constructor(private modalService: NgbModal) {}
+
+  closeModal() {
+    console.log('close');
+    this.modalService.dismissAll();
   }
 }
