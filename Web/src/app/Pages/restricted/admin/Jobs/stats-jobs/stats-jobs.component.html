@@ -1,7 +1,7 @@
 <app-section label="Stats last: 24 h">
-  <app-card-stats label="Running" [stat]="16"/>
-  <app-card-stats label="Waiting" [stat]="16"/>
-  <app-card-stats label="Successful" [stat]="16"/>
-  <app-card-stats label="Warning" [stat]="16"/>
-  <app-card-stats label="Failed" [stat]="16"/>
+  <app-card-stats label="Running" [stat]="jobRunning"/>
+  <app-card-stats label="Waiting" [stat]="jobWaiting"/>
+  <app-card-stats label="Successful" [stat]="jobSuccessful"/>
+  <app-card-stats label="Warning" [stat]="jobWarning"/>
+  <app-card-stats label="Failed" [stat]="jobFailed"/>
 </app-section>
