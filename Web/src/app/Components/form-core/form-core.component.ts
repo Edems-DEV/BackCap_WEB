@@ -16,4 +16,8 @@ export class FormCoreComponent {
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
+  closeModal() {
+    console.log('close');
+    this.modalService.dismissAll();
+  }
 }
