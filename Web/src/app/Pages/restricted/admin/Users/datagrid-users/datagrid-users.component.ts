@@ -21,7 +21,6 @@ export class DatagridUsersComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    console.log('ngOnInit()');
     this.refresh();
   }
 
@@ -36,6 +35,7 @@ export class DatagridUsersComponent implements OnInit {
     });
     modalRef.componentInstance.user = user;
     modalRef.componentInstance.title = 'Edit';
+    modalRef.result.then(() => this.refresh());
   }
 
   public deleteUser(user: User): void {

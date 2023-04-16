@@ -26,6 +26,7 @@ export class FormGroupComponent {
     return fb.group({
       name: [group.name, [Validators.required]],
       description: [group.description, [Validators.required]],
+      configs: [group.configs],
     });
   }
 
