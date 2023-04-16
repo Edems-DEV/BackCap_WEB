@@ -26,7 +26,8 @@ export class GroupsService {
   }
 
   public update(group: Group): Observable<Group> {
-    return this.http.put<Group>(this.url + '/' + group.id, group);
+    console.log('insert:', group);
+    return null;
   }
 
   public delete(group: Group): Observable<Group> {
