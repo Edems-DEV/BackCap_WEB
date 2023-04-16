@@ -26,6 +26,7 @@ export class MachinesService {
   }
 
   public update(machine: Machine): Observable<Machine> {
+    console.log('update machine: ', machine);
     return this.http.put<Machine>(this.url + '/' + machine.id, machine);
   }
 

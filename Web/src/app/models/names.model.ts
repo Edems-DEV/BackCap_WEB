@@ -8,6 +8,11 @@ export interface GroupName {
   name: string;
 }
 
+export interface ConfigName {
+  id: number;
+  name: string;
+}
+
 export interface Source {
   id: number;
   name: string;

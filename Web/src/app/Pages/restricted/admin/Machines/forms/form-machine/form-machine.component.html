@@ -25,7 +25,13 @@
       formControlName="ip_Address"
       [isReadonly]=true
     />
-    <app-input-switch [label]="'isActive'" class="col-md-6"/>
+    <app-input-switch
+      class="col-md-6"
+      [parentForm]="form"
+      fieldName="is_Active"
+      label="is_Active"
+      formControlName="is_Active"
+    />
     <!-- -->
     <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
     <app-input-multiselect [label]="'Groups'" class="col-md-6"/>
