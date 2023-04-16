@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Group } from 'src/app/models/group.model';
 import { environment } from 'src/environments/environment';
 
+import { ConfigName } from 'src/app/models/names.model';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -35,5 +37,9 @@ export class GroupsService {
   //--------------------------------------------------------------
   public count(): Observable<number> {
     return this.http.get<number>(this.url + '/count');
+  }
+  //--------------------------------------------------------------
+  public getNames(): Observable<ConfigName[]> {
+    return this.http.get<ConfigName[]>(this.url + '/names');
   }
 }

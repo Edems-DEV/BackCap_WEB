@@ -3,12 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Config } from 'src/app/models/config.model';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {
-  MachineName,
-  GroupName,
-  Source,
-  Destination,
-} from 'src/app/models/names.model';
+
+import { MachinesService } from 'src/app/services/machines/machines.service';
+import { GroupsService } from 'src/app/services/groups/groups.service';
+import { MachineName, GroupName } from 'src/app/models/names.model';
 
 @Component({
   selector: 'app-form-config',
@@ -54,5 +52,21 @@ export class FormConfigComponent {
     this.modalService.dismissAll();
   }
 
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private service: MachinesService,
+    private service2: GroupsService
+  ) {
+    this.service.getNames().subscribe((data) => {
+      this.pcList = data;
+    });
+    this.service2.getNames().subscribe((data) => {
+      this.groupList = data;
+    });
+    console.log(this.pcList);
+  }
+
+  //data for dropdown
+  pcList: MachineName[];
+  groupList: GroupName[];
 }

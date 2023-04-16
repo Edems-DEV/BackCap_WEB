@@ -4,6 +4,10 @@ import { Machine } from 'src/app/models/machine.model';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+import { GroupsService } from 'src/app/services/groups/groups.service';
+import { ConfigsService } from 'src/app/services/configs/configs.service';
+import { GroupName, ConfigName } from 'src/app/models/names.model';
+
 @Component({
   selector: 'app-form-machine',
   templateUrl: './form-machine.component.html',
@@ -36,5 +40,21 @@ export class FormMachineComponent {
     this.modalService.dismissAll();
   }
 
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private service: GroupsService,
+    private service2: ConfigsService
+  ) {
+    this.service.getNames().subscribe((data) => {
+      this.groupList = data;
+    });
+    this.service2.getNames().subscribe((data) => {
+      this.cfgList = data;
+    });
+    console.log(this.groupList);
+  }
+
+  //data for dropdown
+  groupList: GroupName[];
+  cfgList: ConfigName[];
 }

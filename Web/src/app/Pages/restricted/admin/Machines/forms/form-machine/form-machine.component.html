@@ -33,8 +33,8 @@
       formControlName="is_Active"
     />
     <!-- -->
-    <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
-    <app-input-multiselect [label]="'Groups'" class="col-md-6"/>
+    <app-input-multiselect [label]="'Configs'" class="col-md-6" [Data]="cfgList"/>
+    <app-input-multiselect [label]="'Groups'" class="col-md-6" [Data]="groupList"/>
     <!-- -->
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-primary" (click)="close();">

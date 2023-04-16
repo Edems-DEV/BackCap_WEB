@@ -72,8 +72,8 @@
     <app-input-path [label]="'Source paths'" class="col-md-6"/>
     <app-input-path [label]="'Destination paths'" class="col-md-6"/>
     <!-- -->
-    <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
-    <app-input-multiselect [label]="'Groups'" class="col-md-6"/>
+    <app-input-multiselect [label]="'Computers'" class="col-md-6" [Data]="pcList"/>
+    <app-input-multiselect [label]="'Groups'" class="col-md-6" [Data]="groupList"/>
     <!-- -->
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-primary" (click)="close();">

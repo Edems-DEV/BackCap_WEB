@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Config } from 'src/app/models/config.model';
 import { environment } from 'src/environments/environment';
 
-import { name } from 'src/app/models/names.model';
+import { ConfigName } from 'src/app/models/names.model';
 
 @Injectable({
   providedIn: 'root',
@@ -39,7 +39,7 @@ export class ConfigsService {
     return this.http.get<number>(this.url + '/count');
   }
   //--------------------------------------------------------------
-  public getNames(): Observable<name[]> {
-    return this.http.get<name[]>(this.url + '/names');
+  public getNames(): Observable<ConfigName[]> {
+    return this.http.get<ConfigName[]>(this.url + '/names');
   }
 }
