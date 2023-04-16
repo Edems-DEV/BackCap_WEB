@@ -29,6 +29,7 @@ export class FormUserComponent {
   }
 
   public save(): void {
+    console.log('saved', this.form.value);
     this.saved.emit(this.form.value);
     close();
   }

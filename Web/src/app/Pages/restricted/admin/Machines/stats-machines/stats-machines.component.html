@@ -1,6 +1,6 @@
 <app-section label="Stats last: 24 h">
   <app-card-stats label="Active" [stat]="pcActive"/>
   <app-card-stats label="Disable" [stat]="pcDisable"/>
-  <app-card-stats label="Broken" [stat]="pcAll"/>
+  <app-card-stats label="All" [stat]="pcActive + pcDisable"/>
   <!--FIX then change to ALL-->
 </app-section>

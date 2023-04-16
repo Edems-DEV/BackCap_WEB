@@ -26,11 +26,13 @@ export class FormGroupComponent {
     return fb.group({
       name: [group.name, [Validators.required]],
       description: [group.description, [Validators.required]],
-      configs: [group.configs],
+      // configs: [group.configs],
+      // machines: [group.machines],
     });
   }
 
   public save(): void {
+    console.log('saved', this.form.value);
     this.saved.emit(this.form.value);
     close();
   }

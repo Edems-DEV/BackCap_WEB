@@ -20,7 +20,7 @@ export class FormUserEditComponent {
   public constructor(private fb: FormBuilder, private service: UsersService) {}
 
   public ngOnInit(): void {
-    this.user2 = new User_PSW(this.user, 'psw');
+    this.user2 = new User_PSW(this.user, '');
     this.form = FormUserComponent.createForm(this.fb, this.user2);
   }
 

@@ -24,10 +24,12 @@ export class GroupsService {
   }
 
   public insert(group: Group): Observable<Group> {
+    console.log('insert', group);
     return this.http.post<Group>(this.url, group);
   }
 
   public update(group: Group): Observable<Group> {
+    console.log('update', group);
     return this.http.put<Group>(this.url + '/' + group.id, group);
   }
 

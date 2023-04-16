@@ -19,7 +19,7 @@ export class StatsMachinesComponent {
       console.log(pcActive);
     });
     this.machinesService.countDisable().subscribe((pcDisable) => {
-      this.pcAll = pcDisable;
+      this.pcDisable = pcDisable;
       console.log(pcDisable);
     });
     this.machinesService.count().subscribe((pcAll) => {
