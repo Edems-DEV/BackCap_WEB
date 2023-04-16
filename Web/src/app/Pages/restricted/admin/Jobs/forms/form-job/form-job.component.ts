@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Job } from 'src/app/models/job.model';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-form-job',
   templateUrl: './form-job.component.html',
@@ -29,5 +31,12 @@ export class FormJobComponent {
 
   public save(): void {
     this.saved.emit(this.form.value);
+    close();
   }
+
+  public close(): void {
+    this.modalService.dismissAll();
+  }
+
+  constructor(private modalService: NgbModal) {}
 }

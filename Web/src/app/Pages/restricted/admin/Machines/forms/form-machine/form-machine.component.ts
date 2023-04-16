@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Machine } from 'src/app/models/machine.model';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-form-machine',
   templateUrl: './form-machine.component.html',
@@ -27,5 +29,12 @@ export class FormMachineComponent {
 
   public save(): void {
     this.saved.emit(this.form.value);
+    close();
   }
+
+  public close(): void {
+    this.modalService.dismissAll();
+  }
+
+  constructor(private modalService: NgbModal) {}
 }

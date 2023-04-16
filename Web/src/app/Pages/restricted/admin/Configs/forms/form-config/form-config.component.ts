@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Config } from 'src/app/models/config.model';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-form-config',
   templateUrl: './form-config.component.html',
@@ -39,5 +41,12 @@ export class FormConfigComponent {
 
   public save(): void {
     this.saved.emit(this.form.value);
+    close();
   }
+
+  public close(): void {
+    this.modalService.dismissAll();
+  }
+
+  constructor(private modalService: NgbModal) {}
 }

@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Log } from 'src/app/models/log.model';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-form-log',
   templateUrl: './form-log.component.html',
@@ -26,5 +28,12 @@ export class FormLogComponent {
 
   public save(): void {
     this.saved.emit(this.form.value);
+    close();
   }
+
+  public close(): void {
+    this.modalService.dismissAll();
+  }
+
+  constructor(private modalService: NgbModal) {}
 }

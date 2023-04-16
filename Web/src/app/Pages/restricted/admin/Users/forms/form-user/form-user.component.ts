@@ -29,20 +29,13 @@ export class FormUserComponent {
   }
 
   public save(): void {
-    console.log('user-from => saved');
     this.saved.emit(this.form.value);
     close();
   }
 
   public close(): void {
-    this.closeModal();
-    console.log('user-from => close');
+    this.modalService.dismissAll();
   }
 
   constructor(private modalService: NgbModal) {}
-
-  closeModal() {
-    console.log('close');
-    this.modalService.dismissAll();
-  }
 }
