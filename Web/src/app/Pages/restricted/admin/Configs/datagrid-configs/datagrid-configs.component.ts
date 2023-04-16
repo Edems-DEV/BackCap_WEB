@@ -40,9 +40,9 @@ export class DatagridConfigsComponent {
     console.log(config);
   }
 
-  // public deleteConfig(config: Config): void {
-  //   this.service.delete(config).subscribe(() => this.refresh());
-  // }
+  public deleteConfig(config: Config): void {
+    this.service.delete(config).subscribe(() => this.refresh());
+  }
 
   private refresh(): void {
     this.service.findAll().subscribe((result) => (this.configs = result));
