@@ -16,26 +16,20 @@ export class StatsJobsComponent {
   constructor(private jobsService: JobsService) {}
 
   ngOnInit() {
-    this.jobsService.count().subscribe((jobRunning) => {
+    this.jobsService.count_running().subscribe((jobRunning) => {
       this.jobRunning = jobRunning;
-      console.log(jobRunning);
     });
-    this.jobsService.count().subscribe((jobWaiting) => {
+    this.jobsService.count_waiting().subscribe((jobWaiting) => {
       this.jobWaiting = jobWaiting;
-      console.log(jobWaiting);
     });
-    this.jobsService.count().subscribe((jobSuccessful) => {
+    this.jobsService.count_succesfull().subscribe((jobSuccessful) => {
       this.jobSuccessful = jobSuccessful;
-      console.log(jobSuccessful);
     });
-    this.jobsService.count().subscribe((jobWarning) => {
+    this.jobsService.count_warning().subscribe((jobWarning) => {
       this.jobWarning = jobWarning;
-      console.log(jobWarning);
     });
-    this.jobsService.count().subscribe((jobFailed) => {
+    this.jobsService.count_failed().subscribe((jobFailed) => {
       this.jobFailed = jobFailed;
-      console.log(jobFailed);
     });
-    //implement when api is ready
   }
 }

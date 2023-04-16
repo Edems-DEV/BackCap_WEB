@@ -36,13 +36,19 @@ export class JobsService {
   public count(): Observable<number> {
     return this.http.get<number>(this.url + '/count/all');
   }
-  public count_active(): Observable<number> {
-    return this.http.get<number>(this.url + '/count/active');
+  public count_running(): Observable<number> {
+    return this.http.get<number>(this.url + '/count/running');
   }
-  public count_disable(): Observable<number> {
-    return this.http.get<number>(this.url + '/count/disable');
+  public count_waiting(): Observable<number> {
+    return this.http.get<number>(this.url + '/count/waiting');
   }
-  public count_broken(): Observable<number> {
-    return this.http.get<number>(this.url + '/count/broken');
+  public count_succesfull(): Observable<number> {
+    return this.http.get<number>(this.url + '/count/succesfull');
+  }
+  public count_warning(): Observable<number> {
+    return this.http.get<number>(this.url + '/count/Warning');
+  }
+  public count_failed(): Observable<number> {
+    return this.http.get<number>(this.url + '/count/Failed');
   }
 }
