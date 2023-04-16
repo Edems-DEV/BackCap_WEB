@@ -18,10 +18,16 @@
     <!-- <app-input-text [label]="'Name'" class="col-md-6"/>
     <app-input-text-long [label]="'Description'" class="col-md-6"/> -->
     <!---->
-    <app-input-select [label]="'Type'" class="col-md-6">
-      <option value="1">Full</option>
-      <option value="2">Incremental</option>
-      <option value="3">Differencial</option>
+    <app-input-select
+      class="col-md-6"
+      [parentForm]="form"
+      fieldName="type"
+      label="Type"
+      formControlName="type"
+    >
+      <option value="Full">Full</option>
+      <option value="Inc">Incremental</option>
+      <option value="Diff">Differencial</option>
     </app-input-select>
     <app-input-switch [label]="'Compress'" class="col-md-6"/>
     <!-- -->
@@ -49,13 +55,13 @@
       label="Interval"
       formControlName="backup_interval"
     />
-    <app-input-date
+    <!-- <app-input-date
       class="col-md-6"
       [parentForm]="form"
       fieldName="interval_end"
       label="End of interval"
       formControlName="interval_end"
-    />
+    /> -->
     <!-- -->
     <app-input-path [label]="'Source paths'" class="col-md-6"/>
     <app-input-path [label]="'Destination paths'" class="col-md-6"/>

@@ -1,5 +1,16 @@
-<label for="{{ id }}" class="form-label">{{ label }}</label>
-<select class="form-select" id="{{ id }}">
+<label [for]="fieldName" class="form-label">{{ label }}</label>
+<select
+  class="form-select"
+  id="{{ id }}"
+  [ngClass]="{
+    'has-error': formField?.invalid && formField?.dirty
+  }"
+  [id]="fieldName"
+  [name]="fieldName"
+  [value]="value"
+  (input)="onChange($event)"
+  (blur)="touched()"
+>
   <option selected></option>
   <ng-content></ng-content>
 </select>

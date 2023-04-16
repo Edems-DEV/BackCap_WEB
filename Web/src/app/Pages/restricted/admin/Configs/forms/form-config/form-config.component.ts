@@ -27,7 +27,7 @@ export class FormConfigComponent {
   public static createForm(fb: FormBuilder, config: Config): FormGroup {
     return fb.group({
       name: [config.name, [Validators.required]],
-      descripton: [config.description, [Validators.required]],
+      description: [config.description, [Validators.required]],
       type: [config.type, [Validators.required]],
       isCompressed: [config.isCompressed, [Validators.required]],
       //---------------------------------------------------------

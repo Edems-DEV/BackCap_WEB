@@ -27,4 +27,45 @@ import {
 export class InputSelectComponent {
   @Input() label: string | undefined;
   @Input() id: string | undefined;
+  @Input() value: string = '';
+
+  @Input() //forgor :|
+  public parentForm: FormGroup;
+
+  @Input()
+  public fieldName: string;
+
+  public changed: (value: string) => void;
+
+  public touched: () => void;
+
+  public isDisabled: boolean;
+
+  get formField(): FormControl {
+    return this.parentForm?.get(this.fieldName) as FormControl;
+  }
+
+  constructor() {}
+
+  public writeValue(value: string): void {
+    this.value = value;
+  }
+
+  public onChange(event: Event): void {
+    const value: string = (<HTMLInputElement>event.target).value;
+
+    this.changed(value);
+  }
+
+  public registerOnChange(fn: any): void {
+    this.changed = fn;
+  }
+
+  public registerOnTouched(fn: any): void {
+    this.touched = fn;
+  }
+
+  public setDisabledState(isDisabled: boolean): void {
+    this.isDisabled = isDisabled;
+  }
 }
