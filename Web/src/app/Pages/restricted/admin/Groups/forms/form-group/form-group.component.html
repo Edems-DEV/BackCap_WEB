@@ -17,8 +17,8 @@
       formControlName="description"
     />
     <!-- -->
-    <app-input-multiselect [label]="'Configs'" class="col-md-6"/>
-    <app-input-multiselect [label]="'Computers'" class="col-md-6"/>
+    <app-input-multiselect [label]="'Configs'" class="col-md-6" [Data]="cfgList"/>
+    <app-input-multiselect [label]="'Computers'" class="col-md-6" [Data]="pcList"/>
     <!-- -->
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-primary" (click)="close();">
@@ -30,3 +30,7 @@
     </div>
   </form>
 </app-form-core>
+
+<!-- <div *ngFor="let item of pcList">
+  <span>{{item.id}}|{{item.name}}</span>
+</div> -->

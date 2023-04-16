@@ -1,24 +1,29 @@
-export interface MachineName {
+export interface name {
   id: number;
   name: string;
 }
 
-export interface GroupName {
+export interface MachineName extends name {
   id: number;
   name: string;
 }
 
-export interface ConfigName {
+export interface GroupName extends name {
   id: number;
   name: string;
 }
 
-export interface Source {
+export interface ConfigName extends name {
   id: number;
   name: string;
 }
 
-export interface Destination {
+export interface Source extends name {
+  id: number;
+  name: string;
+}
+
+export interface Destination extends name {
   id: number;
   name: string;
 }

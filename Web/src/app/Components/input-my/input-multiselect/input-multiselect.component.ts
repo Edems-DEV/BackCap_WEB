@@ -16,6 +16,7 @@ import {
   filter,
   map,
 } from 'rxjs/operators';
+import { name } from 'src/app/models/names.model';
 
 @Component({
   selector: 'app-input-multiselect',
@@ -31,12 +32,13 @@ import {
 })
 export class InputMultiselectComponent {
   @Input() label: string | undefined;
+  @Input() Data: name[];
 
-  selectedItems: Item[] = [];
+  selectedItems: name[] = [];
   selectedItem: string = '';
 
   onSelectItem(event: NgbTypeaheadSelectItemEvent) {
-    const item = event.item as Item;
+    const item = event.item as name;
     this.selectedItems.push(item);
     this.selectedItem = '';
     setTimeout(() => {
@@ -58,33 +60,13 @@ export class InputMultiselectComponent {
       distinctUntilChanged(),
       filter((term) => term.length >= 2),
       map((term) =>
-        ITEMS.filter(
+        this.Data.filter(
           (item) => item.name.toLowerCase().indexOf(term.toLowerCase()) > -1
         )
       )
     );
 
-  resultFormatter = (result: Item) => result.name;
+  resultFormatter = (result: name) => result.name;
 
-  inputFormatter = (item: Item) => item.name;
+  inputFormatter = (item: name) => item.name;
 }
-
-interface Item {
-  name: string;
-}
-
-const ITEMS: Item[] = [
-  { name: 'Apple' },
-  { name: 'Pc1' },
-  { name: 'Pc2' },
-  { name: 'Pc3' },
-  { name: 'Machine' },
-  { name: 'Joe PC' },
-  { name: 'NASA PC' },
-  { name: 'NASA PC' },
-  { name: 'Ultimate 3000' },
-  { name: 'Group1' },
-  { name: 'Group2' },
-  { name: 'Group3' },
-  { name: 'Room-107' },
-];

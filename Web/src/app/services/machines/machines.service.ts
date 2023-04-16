@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Machine } from 'src/app/models/machine.model';
 import { environment } from 'src/environments/environment';
+import { name } from 'src/app/models/names.model';
 
 @Injectable({
   providedIn: 'root',
@@ -43,5 +44,9 @@ export class MachinesService {
   }
   public countDisable(): Observable<number> {
     return this.http.get<number>(this.url + '/count?active=false');
+  }
+  //--------------------------------------------------------------
+  public getNames(): Observable<name[]> {
+    return this.http.get<name[]>(this.url + '/names');
   }
 }
