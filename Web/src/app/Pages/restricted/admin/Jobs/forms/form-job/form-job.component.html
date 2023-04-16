@@ -4,9 +4,9 @@
     <app-input-text
       class="col-md-6"
       [parentForm]="form"
-      fieldName="name"
+      fieldName="id"
       label="JobId"
-      formControlName="name"
+      formControlName="id"
       [isReadonly]=true
     />
     <!-- <app-input-text-long
@@ -23,29 +23,21 @@
       <option value="2">Success</option>
       <option value="3">Failure</option>
     </app-input-select> -->
-    <app-input-text
-      class="col-md-6"
-      [parentForm]="form"
-      fieldName="status"
-      label="Status"
-      formControlName="status"
-      [isReadonly]=true
-    />
     <!-- -->
-    <app-input-text
+        <app-input-text
       class="col-md-6"
       [parentForm]="form"
-      fieldName="configs"
-      label="Configs"
-      formControlName="configs"
+      fieldName="target"
+      label="Target"
+      formControlName="target"
       [isReadonly]=true
     />
     <app-input-text
-      class="col-md-6"
+      class="col-md-12"
       [parentForm]="form"
-      fieldName="computers"
-      label="Target"
-      formControlName="computers"
+      fieldName="config"
+      label="Config"
+      formControlName="config"
       [isReadonly]=true
     />
     <!-- <app-input-multiselect [label]="'Configs'" class="col-md-6"/> -->

@@ -28,13 +28,13 @@
         <span class="chip chip-purple">{{ job.target }}</span>
       </td>
       <td>
-        <span>{{ job.time_start | date : "dd.MM.yy" }}</span>
+        <span>{{ job.time_Start | date : "dd.MM.yy" }}</span>
         <span class="text-info"> - </span>
-        <span class="text-white">{{ job.time_start | date : "HH:mm" }}</span>
-        <ng-container *ngIf="job.time_end">
+        <span class="text-white">{{ job.time_Start | date : "HH:mm" }}</span>
+        <ng-container *ngIf="job.time_End">
           <!-- <i class="bi bi-chevron-double-right"></i> -->
           <i class="bi bi-arrow-right-short text-info"></i>
-          <span class="text-white">{{ job.time_end | date : "HH:mm" }}</span>
+          <span class="text-white">{{ job.time_End | date : "HH:mm" }}</span>
         </ng-container>
       </td>
     </tr>

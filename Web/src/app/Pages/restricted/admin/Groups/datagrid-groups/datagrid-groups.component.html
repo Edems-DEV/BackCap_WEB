@@ -5,7 +5,7 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
-      <!--<th scope="col">Computers</th>-->
+      <th scope="col">Computers</th>
       <th scope="col">Config</th>
     </tr>
   </thead>
@@ -14,7 +14,7 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ group.name }}</td>
       <td>{{ group.description }}</td>
-      <!--<td><td-array [items]="group.machines" [style]="'chip chip-blue'"/></td>-->
+      <td><td-array [items]="group.machines" [style]="'chip chip-blue'"/></td>
       <td><td-array [items]="group.configs" [style]="'chip chip-green'"/></td>
     </tr>
   </tbody>
