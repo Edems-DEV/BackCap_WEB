@@ -6,8 +6,8 @@ export class Machine {
   public description: string;
   public ip_Address: string;
   public is_Active: boolean;
-  public config: ConfigName;
-  public group: GroupName;
+  public config: ConfigName[];
+  public groups: GroupName[];
 
   public constructor(
     id: number,
@@ -15,8 +15,8 @@ export class Machine {
     description: string,
     ip_Address: string,
     is_Active: boolean,
-    config: ConfigName,
-    group: GroupName
+    config: ConfigName[],
+    groups: GroupName[]
   ) {
     this.id = id;
     this.name = name;
@@ -24,6 +24,6 @@ export class Machine {
     this.ip_Address = ip_Address;
     this.is_Active = is_Active;
     this.config = config;
-    this.group = group;
+    this.groups = groups;
   }
 }
