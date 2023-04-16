@@ -5,16 +5,15 @@ export class Config {
   name: string;
   description: string;
   type: string;
-  isCompressed: boolean;
+  isCompressed: boolean; // <= isCompressed
   packageSize: number;
-  retention: number;
-  backup_interval: string;
+  retention: number; // <= retencion
+  interval: string;
   interval_end: string;
   sources: Source[];
   destinations: Destination[];
-  machines: MachineName[];
-  groups: GroupName[];
-
+  machine: MachineName; // => computer's'
+  group: GroupName; // => group's'
   public constructor(
     id: number,
     name: string,
@@ -23,12 +22,12 @@ export class Config {
     isCompressed: boolean,
     packageSize: number,
     retention: number,
-    backup_interval: string,
+    interval: string,
     interval_end: string,
     sources: Source[],
     destinations: Destination[],
-    machines: MachineName[],
-    groups: GroupName[]
+    machine: MachineName, //[]
+    group: GroupName // []
   ) {
     this.id = id;
     this.name = name;
@@ -37,11 +36,11 @@ export class Config {
     this.isCompressed = isCompressed;
     this.packageSize = packageSize;
     this.retention = retention;
-    this.backup_interval = backup_interval;
+    this.interval = interval;
     this.interval_end = interval_end;
     this.sources = sources;
     this.destinations = destinations;
-    this.machines = machines;
-    this.groups = groups;
+    this.machine = machine;
+    this.group = group;
   }
 }

@@ -3,7 +3,7 @@
   <thead class="table-header">
     <tr>
       <th scope="col">#</th>
-      <!-- <th scope="col">Name</th> -->
+      <th scope="col">Name</th>
       <th scope="col"><i class="bi bi-file-earmark-zip" placement="top" ngbTooltip="isZip"></i></th>
       <th scope="col">Type</th>
       <th scope="col"><i class="bi bi-arrow-repeat" placement="top" ngbTooltip="Retention"></i></th>
@@ -11,29 +11,35 @@
       <th scope="col">Interval</th>
       <th scope="col">Destinations</th>
       <th scope="col">Sources</th>
-      <!-- <th scope="col">Computers</th>
-      <th scope="col">Groups</th> -->
+      <th scope="col">Computers</th>
+      <th scope="col">Groups</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let config of configs; index as i" (click)="editConfig(config)">
       <th scope="row">{{ i + 1 }}</th>
-      <!-- <td><b>{{ config.name }}</b></td> -->
+      <td><b>{{ config.name }}</b></td>
       <td><i class="bi bi-{{config.isCompressed ? 'check' : 'x'}}-lg"></i></td>
-      <!-- <td>
-        <div class="chip mx-1">
-          <span class="chip-green" *ngIf="config.type === 0">FULL</span>
-          <span class="chip-yellow" *ngIf="config.type === 1">DIFF</span>
-          <span class="chip-purple" *ngIf="config.type === 2">INC</span>
-        </div>
-      </td> -->
+      <td>
+        <span
+          class="chip mx-1"
+          [ngClass]="{
+            'chip-green': config.type.toLocaleLowerCase() === 'full',
+            'chip-yellow': config.type.toLocaleLowerCase() === 'diff',
+            'chip-purple': config.type.toLocaleLowerCase() === 'inc'
+          }">
+          {{ config.type.toLocaleUpperCase() }}
+        </span>
+      </td>
       <td>{{ config.retention }}</td>
       <td>{{ config.packageSize }}</td>
-      <td>{{ config.backup_interval }}</td>
+      <td>{{ config.interval }}</td>
       <td><td-array [items]="config.destinations" [style]="'chip chip-gray'"/></td>
       <td><td-array [items]="config.sources" [style]="'chip chip-gray'"/></td>
-      <!-- <td><td-array [items]="config.machines" [style]="'chip chip-blue'"/></td>
-      <td><td-array [items]="config.groups" [style]="'chip chip-purple'"/></td> -->
+      <td class="chip-solo chip-blue">{{config.machine.name}}</td>
+      <td class="chip-solo chip-purple">{{config.group.name}}</td>
+      <!-- <td><td-array [items]="config.machine" [style]="'chip chip-blue'"/></td>
+      <td><td-array [items]="config.group" [style]="'chip chip-purple'"/></td> -->
     </tr>
   </tbody>
 </app-datagrid>

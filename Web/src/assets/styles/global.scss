@@ -4,6 +4,13 @@ html {
   background-color: $bg-backgroud;
 }
 
+.chip-solo {
+  padding: 0.35em 0.65em;
+  border-radius: 5px;
+  font-size: 0.75em;
+  //------------
+}
+
 .chip {
   padding: 0.35em 0.65em;
   border-radius: 5px;

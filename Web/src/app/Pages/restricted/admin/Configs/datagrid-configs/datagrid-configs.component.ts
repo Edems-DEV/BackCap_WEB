@@ -37,6 +37,7 @@ export class DatagridConfigsComponent {
     });
     modalRef.componentInstance.config = config;
     modalRef.componentInstance.title = 'Edit';
+    console.log(config);
   }
 
   // public deleteConfig(config: Config): void {

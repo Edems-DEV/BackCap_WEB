@@ -10,7 +10,7 @@ export interface GroupName {
 
 export interface Source {
   id: number;
-  path: string;
+  name: string;
 }
 
 export interface Destination {
