@@ -29,7 +29,13 @@
       <option value="Inc">Incremental</option>
       <option value="Diff">Differencial</option>
     </app-input-select>
-    <app-input-switch [label]="'Compress'" class="col-md-6"/>
+    <app-input-switch
+      class="col-md-6"
+      [parentForm]="form"
+      fieldName="isCompressed"
+      label="Compress"
+      formControlName="isCompressed"
+    />
     <!-- -->
     <app-input-number
     class="col-md-6"

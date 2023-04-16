@@ -28,8 +28,33 @@ export class InputSwitchComponent {
   @Input() label: string = '';
   @Input() value: boolean = false;
 
-  @Output() valueChanged = new EventEmitter<boolean>();
+  @Input() public parentForm: FormGroup;
+  @Input() public fieldName: string;
+  get formField(): FormControl {
+    return this.parentForm?.get(this.fieldName) as FormControl;
+  }
+
+  constructor() {}
+
+  onChange: any = () => {};
+  onTouched: any = () => {};
+
+  writeValue(value: boolean) {
+    this.value = value;
+  }
+
+  registerOnChange(fn: any) {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any) {
+    this.onTouched = fn;
+  }
+
   onInput() {
-    this.valueChanged.emit(this.value);
+    //onInput
+    this.value = !this.value;
+    this.onChange(this.value);
+    this.onTouched();
   }
 }
