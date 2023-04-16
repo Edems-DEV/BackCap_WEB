@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from 'src/app/models/user.model';
+import { User, User_PSW } from 'src/app/models/user.model';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -18,13 +18,13 @@ export class FormUserComponent {
   @Output()
   saved: EventEmitter<any> = new EventEmitter<any>();
 
-  public static createForm(fb: FormBuilder, user: User): FormGroup {
+  public static createForm(fb: FormBuilder, user: User_PSW): FormGroup {
     return fb.group({
       name: [user.name, [Validators.required]],
       email: [user.email, [Validators.required, Validators.email]],
       interval_Report: user.interval_Report,
       password: user.password,
-      password2: user.password,
+      // password2: user.password,
     });
   }
 

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //------------------------------------------------------
-import { User } from 'src/app/models/user.model';
+import { User, User_PSW } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users/users.service';
 import { FormUserComponent } from '../form-user/form-user.component';
 
@@ -13,17 +13,21 @@ import { FormUserComponent } from '../form-user/form-user.component';
 export class FormUserEditComponent {
   @Input()
   public user: User;
+  user2: User_PSW;
 
   form: FormGroup;
 
   public constructor(private fb: FormBuilder, private service: UsersService) {}
 
   public ngOnInit(): void {
-    this.form = FormUserComponent.createForm(this.fb, this.user);
+    this.user2 = new User_PSW(this.user, 'psw');
+    this.form = FormUserComponent.createForm(this.fb, this.user2);
   }
 
   public saveUser(values: any): void {
-    Object.assign(this.user, values);
-    this.service.update(this.user).subscribe();
+    console.log(this.user2);
+    Object.assign(this.user2, values);
+    console.log(this.user2);
+    this.service.update(this.user2).subscribe();
   }
 }

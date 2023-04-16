@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //------------------------------------------------------
-import { User } from 'src/app/models/user.model';
+import { User, User_PSW } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users/users.service';
 import { FormUserComponent } from '../form-user/form-user.component';
 
@@ -13,14 +13,15 @@ import { FormUserComponent } from '../form-user/form-user.component';
 export class FormUserCreateComponent {
   form: FormGroup;
 
-  user: User;
+  user: User_PSW;
 
   public constructor(private fb: FormBuilder, private service: UsersService) {}
 
   public ngOnInit(): void {
+    const tempUser: User = new User(0, '', '', '');
     this.form = FormUserComponent.createForm(
       this.fb,
-      new User(0, '', '', '', '')
+      new User_PSW(tempUser, '')
     );
   }
 

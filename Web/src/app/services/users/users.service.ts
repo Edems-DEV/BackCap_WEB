@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { User } from 'src/app/models/user.model';
+import { User, User_PSW } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -21,12 +21,12 @@ export class UsersService {
     return this.http.get<User>(this.url + '/' + id);
   }
 
-  public insert(user: User): Observable<User> {
-    return this.http.post<User>(this.url, user);
+  public insert(user: User_PSW): Observable<User_PSW> {
+    return this.http.post<User_PSW>(this.url, user);
   }
 
-  public update(user: User): Observable<User> {
-    return this.http.put<User>(this.url + '/' + user.id, user);
+  public update(user: User_PSW): Observable<User_PSW> {
+    return this.http.put<User_PSW>(this.url + '/' + user.id, user);
   }
 
   public delete(user: User): Observable<User> {
