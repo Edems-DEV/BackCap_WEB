@@ -2,7 +2,7 @@
   <thead class="table-header">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Name</th>
+      <th scope="col">JobId</th>
       <th scope="col">Status</th>
       <th scope="col">Target</th>
       <th scope="col">Time</th>
@@ -13,22 +13,19 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ job.id }}</td>
       <td>
-        <span
-          class="chip mx-1"
-          [ngClass]="{
-            'chip-purple': job.status === 0,
-            'chip-yellow': job.status === 1,
-            'chip-green': job.status === 2,
-            'chip-red': job.status === 3
-          }"
+        <span class="chip mx-1 chip-purple" *ngIf="job.status == 0"
+          >waiting</span
         >
-          {{ job.status }}
-        </span>
+        <span class="chip mx-1 chip-yellow" *ngIf="job.status == 1"
+          >running</span
+        >
+        <span class="chip mx-1 chip-green" *ngIf="job.status == 2"
+          >success</span
+        >
+        <span class="chip mx-1 chip-red" *ngIf="job.status == 3">failed</span>
       </td>
       <td>
-        <span class="chip chip-purple">{{ job.machine }}</span>
-        <span class="chip chip-purple">{{ job.groups }}</span>
-        <!--CHANGE: ID => NAME -->
+        <span class="chip chip-purple">{{ job.target }}</span>
       </td>
       <td>
         <span>{{ job.time_start | date : "dd.MM.yy" }}</span>

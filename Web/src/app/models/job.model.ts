@@ -10,6 +10,8 @@ export class Job {
 
   public machine: string; // name?
   public groups: string;
+  public target: string;
+
   public config: string;
 
   public id_Machine: number; // => name
