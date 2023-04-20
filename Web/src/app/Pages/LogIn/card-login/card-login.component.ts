@@ -1,13 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { SessionsService } from 'src/app/services/auth/sessions.service';
 
 @Component({
   selector: 'app-card-login',
   templateUrl: './card-login.component.html',
   styleUrls: ['./card-login.component.scss'],
 })
-export class CardLoginComponent {
-  constructor(private modalService: NgbModal) {}
+export class CardLoginComponent implements OnInit {
+  constructor(
+    private modalService: NgbModal,
+    private fb: FormBuilder,
+    private router: Router,
+    private service: SessionsService
+  ) {}
+  //--------------Form-------------------
+  myForm: FormGroup;
+
+  // Form state
+  loading = false;
+  success = false;
+
+  ngOnInit() {
+    this.myForm = this.fb.group({
+      email: ['', Validators.required], //, Validators.email
+      password: ['', Validators.required],
+    });
+  }
+
+  public login(): void {
+    this.service
+      .login(this.myForm.value)
+      .pipe(filter((result) => result === true))
+      .subscribe(() => this.router.navigate(['/']));
+  }
+
+  //validate
+  get email() {
+    return this.myForm.get('email');
+  }
+
+  get password() {
+    return this.myForm.get('password');
+  }
+  //----------------Modal----------------
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
@@ -18,5 +58,11 @@ export class CardLoginComponent {
     ) as HTMLInputElement;
     emailInput.select();
     document.execCommand('copy');
+  }
+  //--------------Input-------------------
+  passwordVisible: boolean = false;
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
   }
 }

@@ -1,4 +1,4 @@
-@import "./../../../../assets/styles/colors.scss";
+@import "src/assets/styles/colors.scss";
 
 .outline-button {
   border: 1px solid $my-primary; /* set the button border */
@@ -16,4 +16,16 @@
 .btn-width {
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+.btn-primary:disabled {
+  background-color: $bg-field;
+  color: #555f73;
+  border: 0;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
 }
