@@ -66,6 +66,12 @@ import { FormLogEditComponent } from './Pages/restricted/admin/Dashboard/forms/f
 import { FormConfigEditComponent } from './Pages/restricted/admin/Configs/forms/form-config-edit/form-config-edit.component';
 import { FormConfigCreateComponent } from './Pages/restricted/admin/Configs/forms/form-config-create/form-config-create.component';
 import { FormGroupCreateComponent } from './Pages/restricted/admin/Groups/forms/form-group-create/form-group-create.component';
+import { JwtModule } from '@auth0/angular-jwt';
+
+function tokenGetter() {
+  console.log('xxx');
+  return sessionStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -132,12 +138,17 @@ import { FormGroupCreateComponent } from './Pages/restricted/admin/Groups/forms/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     NgbModule,
     FormsModule,
     NgParticlesModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

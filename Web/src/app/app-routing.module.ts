@@ -9,6 +9,7 @@ import { PageLoginComponent } from './Pages/LogIn/page-login/page-login.componen
 import { AdminComponent } from './Pages/restricted/admin/admin.component';
 import { PageConfigsComponent } from './Pages/restricted/admin/Configs/page-configs/page-configs.component';
 import { FormUserComponent } from './Pages/restricted/admin/Users/forms/form-user/form-user.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 // prettier-ignore
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     path: 'admin',
     title: 'BackCap - Admin',
     component: AdminComponent,
+    canActivate: [ AuthGuard ],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: PageDashboardComponent },
@@ -33,7 +35,7 @@ const routes: Routes = [
   },
   //WildCards
   { path: '', redirectTo: 'admin/dashboard', pathMatch: 'full' },
-  //{ path: '**', redirectTo: 'admin/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'admin/dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({
