@@ -6,6 +6,7 @@ import { Observable, catchError, of } from 'rxjs';
 import { User, User_PSW } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
 import { SessionsService } from 'src/app/services/auth/sessions.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root',
@@ -56,5 +57,28 @@ export class UsersService {
         Authorization: 'Bearer ' + this.sessions.token,
       }),
     };
+  }
+
+  //token data
+  public findProfile(): Observable<User> {
+    //get user id from token payload
+    // let token = this.sessions.loadToken();
+    // let userId = new JwtHelperService().decodeToken(token).data.userId;
+    // let user: User;
+    return this.http.get<User>(
+      this.url +
+        '/' +
+        new JwtHelperService().decodeToken(this.sessions.loadToken())['userId'],
+      this.options
+    );
+  }
+
+  public updateProfile(): void {
+    console.log('update profile: ');
+    let token = this.sessions.loadToken();
+    console.log('token: ', token);
+    //decode token and data userID
+    let userId = new JwtHelperService().decodeToken(token)['userId'];
+    console.log('update profile: ', userId);
   }
 }

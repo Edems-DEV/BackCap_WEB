@@ -40,11 +40,11 @@
   <!--Body-->
   <div class="modal-body">
     <form class="row g-3">
-      <app-input-text [label]="'Name'" [value]="'User_1'" class="col-md-12"/>
+      <app-input-text [label]="'Name'" [value]='username' class="col-md-12"/>
       <!-- -->
-      <app-input-text [label]="'Email'" [value]="'user1@gmail.com'"[type]="'email'" class="col-md-12"/>
+      <app-input-text [label]="'Email'" [value]='email' [type]="'email'" class="col-md-12"/>
       <!-- -->
-      <app-input-cron [label]="'Interval'" class="col-md-12"/>
+      <app-input-cron [label]="'Interval'" [value]='interval' class="col-md-12"/>
     </form>
   </div>
   <!--Footer-->
