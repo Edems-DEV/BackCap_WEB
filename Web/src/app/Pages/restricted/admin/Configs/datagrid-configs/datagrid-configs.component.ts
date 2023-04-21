@@ -27,7 +27,10 @@ export class DatagridConfigsComponent {
 
   //Modal data: Config
   public createConfig(): void {
-    this.modalService.open(FormConfigCreateComponent, { centered: true });
+    const modalRef = this.modalService.open(FormConfigCreateComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public editConfig(config: Config): void {
@@ -36,7 +39,7 @@ export class DatagridConfigsComponent {
     });
     modalRef.componentInstance.config = config;
     modalRef.componentInstance.title = 'Edit';
-    console.log(config);
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public deleteConfig(config: Config): void {

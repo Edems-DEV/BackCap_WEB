@@ -35,6 +35,7 @@ export class DatagridMachinesComponent {
     });
     modalRef.componentInstance.machine = machine;
     modalRef.componentInstance.title = 'Edit';
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public deleteMachine(machine: Machine): void {

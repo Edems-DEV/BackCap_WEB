@@ -35,6 +35,7 @@ export class DatagridLogsComponent {
     });
     modalRef.componentInstance.log = log;
     modalRef.componentInstance.title = 'Edit';
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public deleteLog(log: Log): void {

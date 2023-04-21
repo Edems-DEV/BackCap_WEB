@@ -26,7 +26,10 @@ export class DatagridGroupsComponent {
 
   Modaldata: Group;
   public createGroup(): void {
-    this.modalService.open(FormGroupCreateComponent, { centered: true });
+    const modalRef = this.modalService.open(FormGroupCreateComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public editGroup(group: Group): void {
@@ -35,6 +38,7 @@ export class DatagridGroupsComponent {
     });
     modalRef.componentInstance.group = group;
     modalRef.componentInstance.title = 'Edit';
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public deleteGroup(group: Group): void {
