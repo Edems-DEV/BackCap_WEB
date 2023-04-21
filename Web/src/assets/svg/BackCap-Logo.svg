@@ -17,7 +17,7 @@
 
       .cls-4 {
         fill: #fff;
-        font-family: NeueHaasUnica-ExtraBold, 'Neue Haas Unica';
+        font-family: NeueHaasUnica-ExtraBold, 'Neue Haas Unica', 'NHUnica', sans-serif;
         font-size: 69px;
         font-weight: 700;
       }

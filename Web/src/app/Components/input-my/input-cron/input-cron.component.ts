@@ -23,13 +23,12 @@ export class InputCronComponent {
   public isCollapsed = true;
   @Input() label: string = 'Interval';
   @Input() class: string = '';
+  @Input() value: string = '';
 
   active = 2;
   //-----------------------------------
   @Input() public parentForm: FormGroup;
   @Input() public fieldName: string;
-
-  public value: string;
 
   public changed: (value: string) => void;
 

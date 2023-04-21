@@ -29,11 +29,9 @@ export class PageDashboardComponent {
   ngOnInit() {
     this.machinesService.countActive().subscribe((pcActive) => {
       this.pcActive = pcActive;
-      console.log(pcActive);
     });
     this.machinesService.countDisable().subscribe((pcDisable) => {
       this.pcDisable = pcDisable;
-      console.log(pcDisable);
     });
     this.configsService.count().subscribe((configs) => {
       this.configs = configs;
