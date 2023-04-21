@@ -42,7 +42,7 @@ export class UsersService {
   }
 
   public delete(user: User): Observable<User> {
-    console.log('delete machine: ', user);
+    console.log('API-delete:' + user.name);
     return this.http.delete<User>(this.url + '/' + user.id, this.options);
   }
   //--------------------------------------------------------------

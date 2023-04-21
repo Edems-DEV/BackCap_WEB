@@ -39,10 +39,16 @@ export class DatagridUsersComponent implements OnInit {
   }
 
   public deleteUser(user: User): void {
-    this.service.delete(user).subscribe(() => this.refresh());
+    console.log('1/2 deleteUser: ' + user.name);
+    this.service.delete(user).subscribe(() => {
+      console.log('2/2 deleteUser: ' + user.name);
+      this.refresh();
+    });
   }
 
   private refresh(): void {
-    this.service.findAll().subscribe((result) => (this.data = result));
+    this.service.findAll().subscribe((result) => {
+      (this.data = result), console.log('refresh: ', this.data);
+    });
   }
 }
