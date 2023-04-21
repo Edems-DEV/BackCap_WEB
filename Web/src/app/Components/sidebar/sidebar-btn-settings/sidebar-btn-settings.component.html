@@ -17,7 +17,7 @@
             <a (click)="openVerticallyCentered(content)">
               <my-icon [name]="'settings'"/>
             </a>
-            <a routerLink="/login">
+            <a (click)="logout()">
               <!--TODO: unauthorized-->
               <my-icon [name]="'poweroff'"/>
             </a>
