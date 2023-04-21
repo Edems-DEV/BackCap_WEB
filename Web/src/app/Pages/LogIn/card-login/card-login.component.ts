@@ -29,10 +29,12 @@ export class CardLoginComponent implements OnInit {
     this.myForm = this.fb.group({
       email: ['', Validators.required], //, Validators.email
       password: ['', Validators.required],
+      remember: [false],
     });
   }
 
   public login(): void {
+    console.log(this.myForm.value);
     this.service
       .login(this.myForm.value)
       .pipe(filter((result) => result === true))
