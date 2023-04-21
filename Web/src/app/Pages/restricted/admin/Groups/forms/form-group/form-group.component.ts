@@ -34,7 +34,7 @@ export class FormGroupComponent {
   public save(): void {
     console.log('saved', this.form.value);
     this.saved.emit(this.form.value);
-    close();
+    this.modalService.dismissAll();
   }
 
   public close(): void {

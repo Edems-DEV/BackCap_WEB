@@ -45,7 +45,7 @@ export class FormConfigComponent {
 
   public save(): void {
     this.saved.emit(this.form.value);
-    close();
+    this.modalService.dismissAll();
   }
 
   public close(): void {
