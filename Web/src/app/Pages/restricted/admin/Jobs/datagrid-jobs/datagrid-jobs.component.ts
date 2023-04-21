@@ -21,7 +21,6 @@ export class DatagridJobsComponent {
   ) {}
 
   public ngOnInit(): void {
-    console.log('ngOnInit()');
     this.refresh();
   }
 

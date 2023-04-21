@@ -21,7 +21,6 @@ export class DatagridMachinesComponent {
   ) {}
 
   public ngOnInit(): void {
-    console.log('ngOnInit()');
     this.refresh();
   }
 

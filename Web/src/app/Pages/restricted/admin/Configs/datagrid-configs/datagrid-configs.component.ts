@@ -22,7 +22,6 @@ export class DatagridConfigsComponent {
   ) {}
 
   public ngOnInit(): void {
-    console.log('ngOnInit()');
     this.refresh();
   }
 

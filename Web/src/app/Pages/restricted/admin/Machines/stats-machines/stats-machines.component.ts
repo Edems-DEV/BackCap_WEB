@@ -16,15 +16,12 @@ export class StatsMachinesComponent {
   ngOnInit() {
     this.machinesService.countActive().subscribe((pcActive) => {
       this.pcActive = pcActive;
-      console.log(pcActive);
     });
     this.machinesService.countDisable().subscribe((pcDisable) => {
       this.pcDisable = pcDisable;
-      console.log(pcDisable);
     });
     this.machinesService.count().subscribe((pcAll) => {
       this.pcAll = pcAll;
-      console.log(pcAll);
     });
   }
 }

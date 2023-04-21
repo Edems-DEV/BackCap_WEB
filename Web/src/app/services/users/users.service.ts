@@ -61,24 +61,11 @@ export class UsersService {
 
   //token data
   public findProfile(): Observable<User> {
-    //get user id from token payload
-    // let token = this.sessions.loadToken();
-    // let userId = new JwtHelperService().decodeToken(token).data.userId;
-    // let user: User;
     return this.http.get<User>(
       this.url +
         '/' +
         new JwtHelperService().decodeToken(this.sessions.loadToken())['userId'],
       this.options
     );
-  }
-
-  public updateProfile(): void {
-    console.log('update profile: ');
-    let token = this.sessions.loadToken();
-    console.log('token: ', token);
-    //decode token and data userID
-    let userId = new JwtHelperService().decodeToken(token)['userId'];
-    console.log('update profile: ', userId);
   }
 }

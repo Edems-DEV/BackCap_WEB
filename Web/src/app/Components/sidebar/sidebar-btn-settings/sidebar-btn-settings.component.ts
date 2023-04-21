@@ -24,8 +24,6 @@ export class SidebarBtnSettingsComponent {
   ) {}
 
   public ngOnInit(): void {
-    console.log('ngOnInit - SidebarBtnSettingsComponent');
-    this.userService.updateProfile();
     this.userService.findProfile().subscribe((user) => {
       this.username = this.usernameFromMail(user.email);
       this.email = user.email;

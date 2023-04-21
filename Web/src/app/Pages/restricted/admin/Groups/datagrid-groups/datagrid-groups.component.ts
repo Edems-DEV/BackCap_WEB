@@ -21,7 +21,6 @@ export class DatagridGroupsComponent {
   ) {}
 
   public ngOnInit(): void {
-    console.log('ngOnInit()');
     this.refresh();
   }
 
