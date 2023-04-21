@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //------------------------------------------------------
 import { Config } from 'src/app/models/config.model';
@@ -14,6 +14,9 @@ export class FormConfigEditComponent {
   @Input()
   public config: Config;
 
+  @Output()
+  refresh_require: EventEmitter<any> = new EventEmitter<any>();
+
   form: FormGroup;
 
   public constructor(
@@ -27,6 +30,10 @@ export class FormConfigEditComponent {
 
   public saveConfig(values: any): void {
     Object.assign(this.config, values);
-    this.service.update(this.config).subscribe();
+    this.service.update(this.config).subscribe(() => this.refresh());
+  }
+
+  public refresh(): void {
+    this.refresh_require.emit(this.form.value);
   }
 }

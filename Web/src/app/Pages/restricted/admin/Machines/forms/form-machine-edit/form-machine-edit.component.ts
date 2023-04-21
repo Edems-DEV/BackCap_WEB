@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //------------------------------------------------------
 import { Machine } from 'src/app/models/machine.model';
@@ -14,6 +14,9 @@ export class FormMachineEditComponent {
   @Input()
   public machine: Machine;
 
+  @Output()
+  refresh_require: EventEmitter<any> = new EventEmitter<any>();
+
   form: FormGroup;
 
   public constructor(
@@ -27,6 +30,10 @@ export class FormMachineEditComponent {
 
   public saveMachine(values: any): void {
     Object.assign(this.machine, values);
-    this.service.update(this.machine).subscribe();
+    this.service.update(this.machine).subscribe(() => this.refresh());
+  }
+
+  public refresh(): void {
+    this.refresh_require.emit(this.form.value);
   }
 }

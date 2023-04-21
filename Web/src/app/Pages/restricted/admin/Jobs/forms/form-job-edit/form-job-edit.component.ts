@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //------------------------------------------------------
 import { Job } from 'src/app/models/job.model';
@@ -14,6 +14,9 @@ export class FormJobEditComponent {
   @Input()
   public job: Job;
 
+  @Output()
+  refresh_require: EventEmitter<any> = new EventEmitter<any>();
+
   form: FormGroup;
 
   public constructor(private fb: FormBuilder, private service: JobsService) {}
@@ -24,6 +27,10 @@ export class FormJobEditComponent {
 
   public saveJob(values: any): void {
     Object.assign(this.job, values);
-    this.service.update(this.job).subscribe();
+    this.service.update(this.job).subscribe(() => this.refresh());
+  }
+
+  public refresh(): void {
+    this.refresh_require.emit(this.form.value);
   }
 }

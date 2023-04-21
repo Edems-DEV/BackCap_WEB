@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //------------------------------------------------------
 import { Log } from 'src/app/models/log.model';
@@ -14,6 +14,9 @@ export class FormLogEditComponent {
   @Input()
   public log: Log;
 
+  @Output()
+  refresh_require: EventEmitter<any> = new EventEmitter<any>();
+
   form: FormGroup;
 
   public constructor(private fb: FormBuilder, private service: LogsService) {}
@@ -24,6 +27,10 @@ export class FormLogEditComponent {
 
   public saveLog(values: any): void {
     Object.assign(this.log, values);
-    this.service.update(this.log).subscribe();
+    this.service.update(this.log).subscribe(() => this.refresh());
+  }
+
+  public refresh(): void {
+    this.refresh_require.emit(this.form.value);
   }
 }
