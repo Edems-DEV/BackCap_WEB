@@ -1,5 +1,10 @@
-<app-form-core [title]=title [icon]="'group'">
-  <form [formGroup]="form" class="row g-3" autocomplete="off">
+<app-form-core [title]="title" [icon]="'group'">
+  <form
+    [formGroup]="form"
+    class="row g-3"
+    autocomplete="off"
+    onsubmit="document.getElementById('myButton').click();"
+  >
     <!-- -->
     <app-input-text
       class="col-md-6"
@@ -17,14 +22,27 @@
       [parentForm]="form"
     />
     <!-- -->
-    <app-input-multiselect [label]="'Configs'" class="col-md-6" [Data]="cfgList"/>
-    <app-input-multiselect [label]="'Computers'" class="col-md-6" [Data]="pcList"/>
+    <app-input-multiselect
+      [label]="'Configs'"
+      class="col-md-6"
+      [Data]="cfgList"
+    />
+    <app-input-multiselect
+      [label]="'Computers'"
+      class="col-md-6"
+      [Data]="pcList"
+    />
     <!-- -->
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-primary" (click)="close();">
+      <button type="button" class="btn btn-outline-primary" (click)="close()">
         Cancel
       </button>
-      <button type="submit" class="btn btn-primary" (click)="save()">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        id="myButton"
+        (click)="save()"
+      >
         Save
       </button>
     </div>

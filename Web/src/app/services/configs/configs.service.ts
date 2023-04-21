@@ -25,6 +25,7 @@ export class ConfigsService {
   }
 
   public insert(config: Config): Observable<Config> {
+    console.log('insert', config);
     return this.http.post<Config>(this.url, config, this.options);
   }
 
