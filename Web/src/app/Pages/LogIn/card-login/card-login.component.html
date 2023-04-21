@@ -19,6 +19,7 @@
             id="floatingInput"
             placeholder="name@example.com"
             formControlName="email"
+            (input)="onChange($event)"
           />
           <label for="floatingInput">Email</label>
           <div
@@ -39,6 +40,7 @@
               id="floatingPassword"
               placeholder="Password"
               formControlName="password"
+              (input)="onChange($event)"
             />
             <i
               class="bi password-toggle"
@@ -88,6 +90,9 @@
         >
           Continue
         </button>
+        <div *ngIf="!validCredentials" class="text-danger fs-6">
+          These credentials are wrong
+        </div>
       </form>
     </div>
   </div>

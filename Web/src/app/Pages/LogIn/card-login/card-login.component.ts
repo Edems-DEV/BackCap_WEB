@@ -33,12 +33,20 @@ export class CardLoginComponent implements OnInit {
     });
   }
 
+  validCredentials: boolean = true;
+
   public login(): void {
-    console.log(this.myForm.value);
     this.service
       .login(this.myForm.value)
-      .pipe(filter((result) => result === true))
-      .subscribe(() => this.router.navigate(['/']));
+      //.pipe(filter((result) => result === true))
+      //.subscribe(() => this.router.navigate(['/']));
+      .subscribe(
+        //(error) => console.log('login', error),
+        (error) => (this.validCredentials = error),
+        () => console.log(this.validCredentials),
+        () => this.router.navigate(['/'])
+      );
+    console.log('validCredentials', this.validCredentials);
   }
 
   //validate
@@ -49,6 +57,11 @@ export class CardLoginComponent implements OnInit {
   get password() {
     return this.myForm.get('password');
   }
+
+  public onChange(event: Event): void {
+    this.validCredentials = true;
+  }
+
   //----------------Modal----------------
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
