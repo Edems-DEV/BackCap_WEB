@@ -25,14 +25,10 @@ export class SidebarBtnSettingsComponent {
 
   public ngOnInit(): void {
     this.userService.findProfile().subscribe((user) => {
-      this.username = this.usernameFromMail(user.email);
+      this.username = user.name;
       this.email = user.email;
       this.interval = user.interval_Report;
     });
-  }
-
-  usernameFromMail(username: string): string {
-    return username.split('@')[0];
   }
 
   openVerticallyCentered(content: any) {
