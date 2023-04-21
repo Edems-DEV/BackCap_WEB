@@ -26,7 +26,10 @@ export class DatagridUsersComponent implements OnInit {
 
   //Modal data: User
   public createUser(): void {
-    this.modalService.open(FormUserCreateComponent, { centered: true });
+    const modalRef = this.modalService.open(FormUserCreateComponent, {
+      centered: true,
+    });
+    modalRef.result.then(() => this.refresh());
   }
 
   public editUser(user: User): void {
@@ -35,7 +38,7 @@ export class DatagridUsersComponent implements OnInit {
     });
     modalRef.componentInstance.user = user;
     modalRef.componentInstance.title = 'Edit';
-    modalRef.result.then(() => this.refresh());
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public deleteUser(user: User): void {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 //------------------------------------------------------
 import { User, User_PSW } from 'src/app/models/user.model';
@@ -17,6 +17,9 @@ export class FormUserEditComponent {
 
   form: FormGroup;
 
+  @Output()
+  refresh_require: EventEmitter<any> = new EventEmitter<any>();
+
   public constructor(private fb: FormBuilder, private service: UsersService) {}
 
   public ngOnInit(): void {
@@ -25,9 +28,13 @@ export class FormUserEditComponent {
   }
 
   public saveUser(values: any): void {
-    console.log(this.user2);
+    console.log('1/2 saveUser: ' + values.name);
     Object.assign(this.user2, values);
-    console.log(this.user2);
-    this.service.update(this.user2).subscribe();
+    console.log('2/2 saveUser: ' + values.name);
+    this.service.update(this.user2).subscribe(() => this.refresh());
+  }
+
+  public refresh(): void {
+    this.refresh_require.emit(this.form.value);
   }
 }

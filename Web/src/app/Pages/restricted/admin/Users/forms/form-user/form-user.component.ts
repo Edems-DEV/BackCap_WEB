@@ -30,7 +30,8 @@ export class FormUserComponent {
 
   public save(): void {
     this.saved.emit(this.form.value);
-    close();
+    this.modalService.dismissAll(); //close(); //doenst work IDK why
+    //error is not from here
   }
 
   public close(): void {
