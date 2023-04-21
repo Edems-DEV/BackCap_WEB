@@ -29,7 +29,7 @@ export class DatagridUsersComponent implements OnInit {
     const modalRef = this.modalService.open(FormUserCreateComponent, {
       centered: true,
     });
-    modalRef.result.then(() => this.refresh());
+    modalRef.componentInstance.refresh_require.subscribe(() => this.refresh());
   }
 
   public editUser(user: User): void {
@@ -42,16 +42,14 @@ export class DatagridUsersComponent implements OnInit {
   }
 
   public deleteUser(user: User): void {
-    console.log('1/2 deleteUser: ' + user.name);
     this.service.delete(user).subscribe(() => {
-      console.log('2/2 deleteUser: ' + user.name);
-      this.refresh();
+      this.refresh(); //, console.log('2/2 deleteUser: ' + user.name);
     });
   }
 
   private refresh(): void {
     this.service.findAll().subscribe((result) => {
-      (this.data = result), console.log('refresh: ', this.data);
+      this.data = result; //, console.log('refresh: ', this.data);
     });
   }
 }
