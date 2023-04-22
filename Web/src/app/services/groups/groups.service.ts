@@ -30,7 +30,7 @@ export class GroupsService {
   }
 
   public update(group: Group): Observable<Group> {
-    console.log('update', group);
+    console.log('update', JSON.stringify(group));
     return this.http.put<Group>(this.url + '/' + group.id, group, this.options);
   }
 

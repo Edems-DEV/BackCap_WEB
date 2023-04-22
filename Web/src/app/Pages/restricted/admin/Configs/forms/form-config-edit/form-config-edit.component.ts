@@ -30,6 +30,7 @@ export class FormConfigEditComponent {
 
   public saveConfig(values: any): void {
     Object.assign(this.config, values);
+    console.log('save-edit', this.config);
     this.service.update(this.config).subscribe(() => this.refresh());
   }
 

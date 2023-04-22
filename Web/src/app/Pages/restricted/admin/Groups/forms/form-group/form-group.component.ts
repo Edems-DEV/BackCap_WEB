@@ -22,6 +22,24 @@ export class FormGroupComponent {
   @Output()
   saved: EventEmitter<any> = new EventEmitter<any>();
 
+  //data for dropdown
+  pcList: MachineName[];
+  cfgList: ConfigName[];
+
+  constructor(
+    private modalService: NgbModal,
+    private service: MachinesService,
+    private service2: ConfigsService
+  ) {
+    this.service.getNames().subscribe((data) => {
+      this.pcList = data;
+    });
+    this.service2.getNames().subscribe((data) => {
+      this.cfgList = data;
+    });
+    console.log(this.pcList);
+  }
+
   public static createForm(fb: FormBuilder, group: Group): FormGroup {
     return fb.group({
       name: [group.name, [Validators.required]],
@@ -40,22 +58,4 @@ export class FormGroupComponent {
   public close(): void {
     this.modalService.dismissAll();
   }
-
-  constructor(
-    private modalService: NgbModal,
-    private service: MachinesService,
-    private service2: ConfigsService
-  ) {
-    this.service.getNames().subscribe((data) => {
-      this.pcList = data;
-    });
-    this.service2.getNames().subscribe((data) => {
-      this.cfgList = data;
-    });
-    console.log(this.pcList);
-  }
-
-  //data for dropdown
-  pcList: MachineName[];
-  cfgList: ConfigName[];
 }
