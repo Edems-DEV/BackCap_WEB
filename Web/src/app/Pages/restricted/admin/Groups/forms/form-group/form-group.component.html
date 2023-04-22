@@ -1,10 +1,5 @@
 <app-form-core [title]="title" [icon]="'group'">
-  <form
-    [formGroup]="form"
-    class="row g-3"
-    autocomplete="off"
-    onsubmit="document.getElementById('myButton').click();"
-  >
+  <form [formGroup]="form" class="row g-3" autocomplete="off">
     <!-- -->
     <app-input-text
       class="col-md-6"
@@ -37,12 +32,7 @@
       <button type="button" class="btn btn-outline-primary" (click)="close()">
         Cancel
       </button>
-      <button
-        type="submit"
-        class="btn btn-primary"
-        id="myButton"
-        (click)="save()"
-      >
+      <button type="submit" class="btn btn-primary" (click)="save()">
         Save
       </button>
     </div>

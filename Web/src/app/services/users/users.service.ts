@@ -33,7 +33,7 @@ export class UsersService {
   }
 
   public update(user: User_PSW): Observable<User_PSW> {
-    console.log('update machine: ', user);
+    console.log('update user: ', JSON.stringify(user));
     return this.http.put<User_PSW>(
       this.url + '/' + user.id,
       user,

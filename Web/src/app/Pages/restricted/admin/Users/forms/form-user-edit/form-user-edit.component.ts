@@ -28,6 +28,7 @@ export class FormUserEditComponent {
   }
 
   public saveUser(values: any): void {
+    console.log('edit-user: '); //, JSON.stringify(values)
     Object.assign(this.user2, values);
     this.service.update(this.user2).subscribe(() => this.refresh());
   }
