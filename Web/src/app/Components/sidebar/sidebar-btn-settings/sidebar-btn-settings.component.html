@@ -15,11 +15,11 @@
           </div>
           <div class="hstack">
             <a (click)="openVerticallyCentered(content)">
-              <my-icon [name]="'settings'"/>
+              <my-icon [name]="'settings'" />
             </a>
             <a (click)="logout()">
               <!--TODO: unauthorized-->
-              <my-icon [name]="'poweroff'"/>
+              <my-icon [name]="'poweroff'" />
             </a>
           </div>
         </div>
@@ -28,40 +28,50 @@
   </div>
 </div>
 
-
-
 <ng-template #content let-modal>
   <div class="modal-header text-center">
-      <h4 class="modal-title">My Account</h4>
+    <h4 class="modal-title">My Account</h4>
   </div>
   <!-- <div class="d-flex justify-content-center align-items-center flex-row">
     <my-icon [name]="'profile'"/>
   </div> -->
   <!--Body-->
   <div class="modal-body">
-    <form class="row g-3">
-      <app-input-text [label]="'Name'" [value]='username' class="col-md-12"/>
+    <form [formGroup]="form" autocomplete="off" class="row g-3">
+      <app-input-text
+        [label]="'Name'"
+        [parentForm]="form"
+        formControlName="name"
+        fieldName="name"
+        class="col-md-12"
+      />
       <!-- -->
-      <app-input-text [label]="'Email'" [value]='email' [type]="'email'" class="col-md-12"/>
+      <app-input-text
+        [label]="'Email'"
+        [parentForm]="form"
+        formControlName="email"
+        fieldName="email"
+        [type]="'email'"
+        class="col-md-12"
+      />
       <!-- -->
-      <app-input-cron [label]="'Interval'" [value]='interval' class="col-md-12"/>
+      <app-input-cron
+        [label]="'Interval'"
+        [parentForm]="form"
+        fieldName="interval_Report"
+        formControlName="interval_Report"
+        class="col-md-12"
+      />
     </form>
   </div>
   <!--Footer-->
   <div class="modal-footer">
     <button
-      type="button"
       class="btn btn-outline-primary"
       (click)="modal.close('Close click')"
     >
       Cancel
     </button>
-    <button
-      type="button"
-      class="btn btn-primary"
-      (click)="modal.close('Close click')"
-    >
-      Save
-    </button>
+    <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
   </div>
 </ng-template>
