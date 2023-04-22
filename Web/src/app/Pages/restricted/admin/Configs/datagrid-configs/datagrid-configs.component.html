@@ -1,25 +1,48 @@
 <app-datagrid>
-  <app-btn-add (clicked)="createConfig()" btn/>
+  <app-btn-add (clicked)="createConfig()" btn />
   <thead class="table-header">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col"><i class="bi bi-file-earmark-zip" placement="top" ngbTooltip="isZip"></i></th>
+      <th scope="col">
+        <i
+          class="bi bi-file-earmark-zip"
+          placement="top"
+          ngbTooltip="isZip"
+        ></i>
+      </th>
       <th scope="col">Type</th>
-      <th scope="col"><i class="bi bi-arrow-repeat" placement="top" ngbTooltip="Retention"></i></th>
-      <th scope="col"><i class="bi bi-box2-fill" placement="top" ngbTooltip="Package size"></i></th>
+      <th scope="col">
+        <i
+          class="bi bi-arrow-repeat"
+          placement="top"
+          ngbTooltip="Retention"
+        ></i>
+      </th>
+      <th scope="col">
+        <i
+          class="bi bi-box2-fill"
+          placement="top"
+          ngbTooltip="Package size"
+        ></i>
+      </th>
       <th scope="col">Interval</th>
       <th scope="col">Destinations</th>
       <th scope="col">Sources</th>
       <th scope="col">Computers</th>
       <th scope="col">Groups</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let config of configs; index as i" (click)="editConfig(config)">
+    <tr *ngFor="let config of configs; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td><b>{{ config.name }}</b></td>
-      <td><i class="bi bi-{{config.isCompressed ? 'check' : 'x'}}-lg"></i></td>
+      <td>
+        <b>{{ config.name }}</b>
+      </td>
+      <td>
+        <i class="bi bi-{{ config.isCompressed ? 'check' : 'x' }}-lg"></i>
+      </td>
       <td>
         <span
           class="chip mx-1"
@@ -27,19 +50,44 @@
             'chip-green': config.type.toLocaleLowerCase() === 'full',
             'chip-yellow': config.type.toLocaleLowerCase() === 'diff',
             'chip-purple': config.type.toLocaleLowerCase() === 'inc'
-          }">
+          }"
+        >
           {{ config.type.toLocaleUpperCase() }}
         </span>
       </td>
       <td>{{ config.retention }}</td>
       <td>{{ config.packageSize }}</td>
       <td>{{ config.interval }}</td>
-      <td><td-array [items]="config.destinations" [style]="'chip chip-gray'"/></td>
-      <td><td-array [items]="config.sources" [style]="'chip chip-gray'"/></td>
-      <td><span class="chip-solo chip-blue">{{config.machine.name}}</span></td>
-      <td><span class="chip-solo chip-purple" style="white-space: nowrap;">{{config.group.name}}</span></td>
+      <td>
+        <td-array [items]="config.destinations" [style]="'chip chip-gray'" />
+      </td>
+      <td><td-array [items]="config.sources" [style]="'chip chip-gray'" /></td>
+      <td>
+        <span class="chip-solo chip-blue">{{ config.machine.name }}</span>
+      </td>
+      <td>
+        <span class="chip-solo chip-purple" style="white-space: nowrap">{{
+          config.group.name
+        }}</span>
+      </td>
       <!-- <td><td-array [items]="config.machine" [style]="'chip chip-blue'"/></td>
       <td><td-array [items]="config.group" [style]="'chip chip-purple'"/></td> -->
+      <td class="text-left">
+        <button
+          type="button"
+          class="btn btn-link text-info"
+          (click)="editConfig(config)"
+        >
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-link text-danger"
+          (click)="deleteConfig(config)"
+        >
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
     </tr>
   </tbody>
 </app-datagrid>

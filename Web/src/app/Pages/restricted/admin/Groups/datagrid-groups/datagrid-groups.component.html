@@ -1,5 +1,5 @@
 <app-datagrid>
-  <app-btn-add (clicked)="createGroup()" btn/>
+  <app-btn-add (clicked)="createGroup()" btn />
   <thead class="table-header">
     <tr>
       <th scope="col">#</th>
@@ -7,15 +7,32 @@
       <th scope="col">Description</th>
       <th scope="col">Computers</th>
       <th scope="col">Config</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let group of groups; index as i" (click)="editGroup(group)">
+    <tr *ngFor="let group of groups; index as i">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ group.name }}</td>
       <td>{{ group.description }}</td>
-      <td><td-array [items]="group.machines" [style]="'chip chip-blue'"/></td>
-      <td><td-array [items]="group.configs" [style]="'chip chip-green'"/></td>
+      <td><td-array [items]="group.machines" [style]="'chip chip-blue'" /></td>
+      <td><td-array [items]="group.configs" [style]="'chip chip-green'" /></td>
+      <td class="text-left">
+        <button
+          type="button"
+          class="btn btn-link text-info"
+          (click)="editGroup(group)"
+        >
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-link text-danger"
+          (click)="deleteGroup(group)"
+        >
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
     </tr>
   </tbody>
 </app-datagrid>
