@@ -32,6 +32,7 @@ export class SidebarBtnSettingsComponent {
   public ngOnInit(): void {
     this.userService.findProfile().subscribe((user) => {
       this.user = new User_PSW(user, '');
+      this.username = user.name;
       this.form = this.fb.group({
         name: [user.name, [Validators.required]],
         email: [user.email, [Validators.required]], //, Validators.email

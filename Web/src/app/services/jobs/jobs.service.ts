@@ -48,10 +48,10 @@ export class JobsService {
     return this.http.get<number>(this.url + '/count/succesfull', this.options);
   }
   public count_warning(): Observable<number> {
-    return this.http.get<number>(this.url + '/count/Warning', this.options);
+    return this.http.get<number>(this.url + '/count/warning', this.options);
   }
   public count_failed(): Observable<number> {
-    return this.http.get<number>(this.url + '/count/Failed', this.options);
+    return this.http.get<number>(this.url + '/count/failed', this.options);
   }
 
   //Auth - JWT
