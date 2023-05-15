@@ -15,8 +15,6 @@
       label="Description"
       formControlName="description"
     />
-    <!-- <app-input-text [label]="'Name'" class="col-md-6"/>
-    <app-input-text-long [label]="'Description'" class="col-md-6"/> -->
     <!---->
     <app-input-select
       class="col-md-6"
@@ -51,8 +49,6 @@
       label="Retention"
       formControlName="retention"
     />
-    <!-- <app-input-number [label]="'Package size'" class="col-md-6"/>
-    <app-input-number [label]="'Retention'" class="col-md-6"/> -->
     <!-- -->
     <app-input-cron
       class="col-md-6"
@@ -69,18 +65,34 @@
       formControlName="interval_end"
     />
     <!-- -->
-    <app-input-path [label]="'Source paths'" class="col-md-6" />
-    <app-input-path [label]="'Destination paths'" class="col-md-6" />
+    <app-input-path
+      [label]="'Source paths'"
+      class="col-md-6"
+      fieldName="sources"
+      [parentForm]="form"
+    />
+    <app-input-path
+      [label]="'Destination paths'"
+      class="col-md-6"
+      fieldName="destinations"
+      [parentForm]="form"
+    />
     <!-- -->
     <app-input-multiselect
       [label]="'Computers'"
       class="col-md-6"
       [Data]="pcList"
+      fieldName="machine"
+      formControlName="machine"
+      [parentForm]="form"
     />
     <app-input-multiselect
       [label]="'Groups'"
       class="col-md-6"
       [Data]="groupList"
+      fieldName="group"
+      formControlName="group"
+      [parentForm]="form"
     />
     <!-- -->
     <div class="modal-footer">

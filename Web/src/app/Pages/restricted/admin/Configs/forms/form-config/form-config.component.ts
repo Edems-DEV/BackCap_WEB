@@ -35,11 +35,11 @@ export class FormConfigComponent {
       backup_interval: [config.interval, [Validators.required]],
       interval_end: [config.interval_end, [Validators.required]],
       //---------------------------------------------------------
-      sources: [config.sources, [Validators.required]],
-      destinations: [config.destinations, [Validators.required]],
+      sources: [config.sources],
+      destinations: [config.destinations],
       //---------------------------------------------------------
-      computer: [config.machine, [Validators.required]],
-      group: [config.group, [Validators.required]],
+      machine: [config.machine],
+      group: [config.group],
     });
   }
 
