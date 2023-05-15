@@ -37,9 +37,21 @@ export class InputMultiselectComponent {
   selectedItems: name[] = [];
   selectedItem: string = '';
 
+  @Input() public parentForm: FormGroup;
+  @Input() public fieldName: string;
+
+  get formField(): FormControl {
+    return this.parentForm?.get(this.fieldName) as FormControl;
+  }
+
+  ngOnInit(): void {
+    this.selectedItems = this.formField.value;
+  }
+
   onSelectItem(event: NgbTypeaheadSelectItemEvent) {
     const item = event.item as name;
     this.selectedItems.push(item);
+    this.formField.setValue(this.selectedItems); //not efficient
     this.selectedItem = '';
     setTimeout(() => {
       // add a small delay to ensure the input value has been cleared

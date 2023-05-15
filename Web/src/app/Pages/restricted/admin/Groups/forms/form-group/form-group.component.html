@@ -21,11 +21,17 @@
       [label]="'Configs'"
       class="col-md-6"
       [Data]="cfgList"
+      fieldName="configs"
+      formControlName="configs"
+      [parentForm]="form"
     />
     <app-input-multiselect
       [label]="'Computers'"
       class="col-md-6"
       [Data]="pcList"
+      fieldName="machines"
+      formControlName="machines"
+      [parentForm]="form"
     />
     <!-- -->
     <div class="modal-footer">

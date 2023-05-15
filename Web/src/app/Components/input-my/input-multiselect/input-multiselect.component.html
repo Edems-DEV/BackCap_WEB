@@ -8,19 +8,13 @@
   (selectItem)="onSelectItem($event)"
   [resultFormatter]="resultFormatter"
   [inputFormatter]="inputFormatter"
+  [id]="fieldName"
+  [name]="fieldName"
+  [value]="selectedItems"
 />
-<!-- <div class="w-100 bg-dark rounded"> -->
 <div class="d-flex flex-wrap my-2 gap-2">
   <div *ngFor="let item of selectedItems; let i = index" class="chip chip-blue">
     {{ item.name }}
     <button type="button" class="btn-close" (click)="removeItem(i)"></button>
   </div>
 </div>
-<!-- </div> -->
-
-<!-- DEBUG -->
-<!-- <pre>Input: {{ selectedItem }}</pre>
-<div *ngFor="let item of selectedItems; let i = index" class="selected-item">
-  <pre>Selected: {{ item }} | {{ item.name }} </pre>
-</div> -->
-<!---------->
