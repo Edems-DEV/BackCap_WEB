@@ -81,4 +81,11 @@ export class InputMultiselectComponent {
   resultFormatter = (result: name) => result.name;
 
   inputFormatter = (item: name) => item.name;
+
+  //For form
+  public writeValue(value: string): void {}
+  public onChange(event: Event): void {}
+  public registerOnChange(fn: any): void {}
+  public registerOnTouched(fn: any): void {}
+  public setDisabledState(isDisabled: boolean): void {}
 }
