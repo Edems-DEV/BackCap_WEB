@@ -37,11 +37,17 @@
       [label]="'Configs'"
       class="col-md-6"
       [Data]="cfgList"
+      fieldName="configs"
+      formControlName="configs"
+      [parentForm]="form"
     />
     <app-input-multiselect
       [label]="'Groups'"
       class="col-md-6"
       [Data]="groupList"
+      fieldName="groups"
+      formControlName="groups"
+      [parentForm]="form"
     />
     <!-- -->
     <div class="modal-footer">
