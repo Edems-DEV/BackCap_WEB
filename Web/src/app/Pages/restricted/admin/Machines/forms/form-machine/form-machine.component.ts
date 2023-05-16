@@ -28,7 +28,7 @@ export class FormMachineComponent {
       description: [machine.description, [Validators.required]],
       ip_Address: [machine.ip_Address, [Validators.required]],
       is_Active: [machine.is_Active, [Validators.required]],
-      configs: [machine.config],
+      configs: [machine.configs],
       groups: [machine.groups],
     });
   }
