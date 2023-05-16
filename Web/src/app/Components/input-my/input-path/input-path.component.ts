@@ -32,7 +32,10 @@ export class InputPathComponent {
   }
 
   ngOnInit(): void {
-    this.items = this.formField.value;
+    //this.items = this.formField.value;
+    this.formField.value.forEach((element) => {
+      this.items.push(element.name);
+    });
   }
 
   addItem() {
