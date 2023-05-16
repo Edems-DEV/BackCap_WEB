@@ -20,9 +20,12 @@ export class FormGroupCreateComponent {
 
   public constructor(private fb: FormBuilder, private service: GroupsService) {}
 
-  // public ngOnInit(): void {
-  //   this.form = FormGroupComponent.createForm(this.fb, new Group(0, ''));
-  // }
+  public ngOnInit(): void {
+    this.form = FormGroupComponent.createForm(
+      this.fb,
+      new Group(0, '', '', [], [])
+    );
+  }
 
   public saveGroup(values: any): void {
     this.service.insert(values).subscribe(() => this.refresh());

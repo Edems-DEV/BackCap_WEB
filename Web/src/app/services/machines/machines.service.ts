@@ -29,7 +29,7 @@ export class MachinesService {
   }
 
   public update(machine: Machine): Observable<Machine> {
-    console.log('update machine: ', machine);
+    console.log('update machine: ', JSON.stringify(machine));
     return this.http.put<Machine>(
       this.url + '/' + machine.id,
       machine,
