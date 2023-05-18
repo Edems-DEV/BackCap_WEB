@@ -38,8 +38,8 @@ export class FormConfigComponent {
       sources: [config.sources],
       destinations: [config.destinations],
       //---------------------------------------------------------
-      machine: [config.machine],
-      group: [config.group],
+      machines: [config.machines],
+      groups: [config.groups],
     });
   }
 

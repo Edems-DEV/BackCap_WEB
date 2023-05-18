@@ -12,8 +12,8 @@ export class Config {
   interval_end: Date;
   sources: Source[];
   destinations: Destination[];
-  machine: MachineName; // => computer's'
-  group: GroupName; // => group's'
+  machines: MachineName[]; // => computer's'
+  groups: GroupName[]; // => group's'
   // public constructor(
   //   id: number,
   //   name: string,

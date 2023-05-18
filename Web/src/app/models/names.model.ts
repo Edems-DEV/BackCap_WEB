@@ -27,3 +27,8 @@ export interface Destination extends name {
   id: number;
   name: string;
 }
+//----------------------------------
+export interface Path extends name {
+  id: number;
+  name: string;
+}
