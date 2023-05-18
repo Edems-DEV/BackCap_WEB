@@ -7,7 +7,7 @@
   }"
   [id]="fieldName"
   [name]="fieldName"
-  [value]="value"
+  [value]="value | date : 'yyyy-MM-dd'"
   [disabled]="isDisabled"
   (input)="onChange($event)"
   (blur)="touched()"
