@@ -68,7 +68,11 @@ const isMyFormat = (input: string): boolean => {
 };
 function convertDateFormatToTime(date: string): string {
   //if date is not in format yyyy-mm-dd, return null
-  if (!isMyFormat) return date;
+  if (!isMyFormat(date)) {
+    console.log('IfBlock: ', date);
+    return date;
+  }
+  console.log('MyFormat: ', date); //run evry time and IDK why
 
   let [year, month, day] = date.split('-');
   month = month.padStart(2, '0');
