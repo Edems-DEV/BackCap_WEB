@@ -62,16 +62,8 @@
         <td-array [items]="config.destinations" [style]="'chip chip-gray'" />
       </td>
       <td><td-array [items]="config.sources" [style]="'chip chip-gray'" /></td>
-      <!-- <td>
-        <span class="chip-solo chip-blue">{{ config.machine.name }}</span>
-      </td>
-      <td>
-        <span class="chip-solo chip-purple" style="white-space: nowrap">{{
-          config.group.name
-        }}</span>
-      </td> -->
-      <!-- <td><td-array [items]="config.machine" [style]="'chip chip-blue'"/></td>
-      <td><td-array [items]="config.group" [style]="'chip chip-purple'"/></td> -->
+      <td><td-array [items]="config.machines" [style]="'chip chip-blue'" /></td>
+      <td><td-array [items]="config.groups" [style]="'chip chip-purple'" /></td>
       <td class="text-left">
         <button
           type="button"
