@@ -25,11 +25,14 @@ export class ConfigsService {
   }
 
   public insert(config: Config): Observable<Config> {
-    console.log('insert', config);
+    config.interval_end = convertDateFormatToTime(config.interval_end);
+    console.log('insert', JSON.stringify(config));
     return this.http.post<Config>(this.url, config, this.options);
   }
 
   public update(config: Config): Observable<Config> {
+    config.interval_end = convertDateFormatToTime(config.interval_end);
+    console.log('update machine: ', JSON.stringify(config.interval_end));
     return this.http.put<Config>(
       this.url + '/' + config.id,
       config,
@@ -57,4 +60,24 @@ export class ConfigsService {
       }),
     };
   }
+}
+
+const isMyFormat = (input: string): boolean => {
+  const regex = /^\d{4}-\d{2}-\d{2}$/;
+  return regex.test(input);
+};
+function convertDateFormatToTime(date: string): string {
+  //if date is not in format yyyy-mm-dd, return null
+  if (!isMyFormat) return date;
+
+  let [year, month, day] = date.split('-');
+  month = month.padStart(2, '0');
+  day = day.padStart(2, '0');
+
+  const convertedDate: Date = new Date(`${year}-${month}-${day}T00:00:00`);
+  //time is useless because it only the end itnerval no cron
+  // const currentDate = new Date();
+  // convertedDate.setMinutes(currentDate.getMinutes() + 2);
+
+  return convertedDate.toISOString().toString();
 }

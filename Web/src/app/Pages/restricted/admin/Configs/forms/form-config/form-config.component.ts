@@ -23,6 +23,7 @@ export class FormConfigComponent {
   saved: EventEmitter<any> = new EventEmitter<any>();
 
   public static createForm(fb: FormBuilder, config: Config): FormGroup {
+    console.log(config.interval_end);
     return fb.group({
       name: [config.name, [Validators.required]],
       description: [config.description, [Validators.required]],

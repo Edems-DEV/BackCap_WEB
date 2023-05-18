@@ -9,7 +9,7 @@ export class Config {
   packageSize: number;
   retention: number; // <= retencion
   interval: string;
-  interval_end: Date;
+  interval_end: string;
   sources: Source[];
   destinations: Destination[];
   machines: MachineName[]; // => computer's'
