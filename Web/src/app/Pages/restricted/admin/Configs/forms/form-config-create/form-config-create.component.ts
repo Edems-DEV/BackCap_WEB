@@ -11,6 +11,7 @@ import {
   Source,
   Destination,
 } from 'src/app/models/names.model';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-form-config-create',
@@ -33,21 +34,7 @@ export class FormConfigCreateComponent {
   public ngOnInit(): void {
     this.form = FormConfigComponent.createForm(
       this.fb,
-      new Config()
-      // 0,
-      // '',
-      // '',
-      // '',
-      // false,
-      // 0,
-      // 0,
-      // '',
-      // new Date(),
-      // new Date(),
-      // new Array<Source>(),
-      // new Array<Destination>(),
-      // new MachineName(0, ''),
-      // new GroupName(0, '')
+      new Config(0, '', '', '', false, 0, 0, '', '', [], [], [], [])
     );
   }
 
