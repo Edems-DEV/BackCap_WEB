@@ -33,7 +33,7 @@ export class FormConfigComponent {
       packageSize: [config.packageSize, [Validators.required]],
       retention: [config.retention, [Validators.required]],
       //---------------------------------------------------------
-      backup_interval: [config.interval, [Validators.required]],
+      interval: [config.interval, [Validators.required]],
       interval_end: [config.interval_end, [Validators.required]],
       //---------------------------------------------------------
       sources: [config.sources],
